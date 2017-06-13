@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>客户付款记录</title>
+
+</head>
+<body>
+
+
+
+<!--中间部分-->
+<div>
+    <div class="getmoney_details">
+        <p class="getmoney_day">
+            <span>到账日期<input type="date" class="date_input" value="2016-01-01"/></span>
+            <span>至<input type="date" class="date_input" placeholder="请输入日期"/></span>
+        </p>
+        <label class="jf_list search_company">
+            <div class="jf_list_bd">
+                <p>企业名称</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow"> <input readonly type="text" value="1000010111-嘉银" id="company_name" onfocus="this.blur()"/></div>
+        </label>
+
+        <label class="jf_list search_sales">
+            <div class="jf_list_bd">
+                <p>销售代表</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow"> <input readonly type="text" value="何云东" id="salename_input" onfocus="this.blur()"/></div>
+        </label>
+
+
+    </div>
+
+
+
+    <!--收款记录-->
+
+
+
+    <!--中间部分2-->
+    <div class="payment_records">
+
+
+        <a class="payment_lists" href="customer_receipt_records.html">
+            <div class="payment_list">
+                <div class="payment_info">
+                    <div class="payment_info_name">
+                        <span>付款企业：</span>
+                        <span>苏州老顽童信息技术有限公司</span>
+                    </div>
+                    <div class="payment_info_name">
+                        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金额：</span>
+                        <span>520,000</span>
+                    </div>
+                    <div class="payment_info_name">
+                        <span>付款户名：</span>
+                        <span>苏州老顽童信息技术有限公司</span>
+                    </div>
+                    <div class="payment_info_name">
+                        <span>收款户名：</span>
+                        <span>上海淘略数据处理有限公司</span>
+                    </div>
+                    <div class="payment_info_name">
+                        <span>到账时间：</span>
+                        <span>2017.01.02 13:00:00</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </a>
+
+    </div>
+
+
+
+
+</div>
+
+
+<!--搜索公司-->
+<div id="top_search_company" class="top_search search_companypage ">
+    <div class="top_search_mian">
+        <a class="left goback"><img src="../../images/dingding/icon_pay_return.png"/></a>
+        <div class="center">
+            <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
+                <input type="search" placeholder="请输入查找的内容" class="search_input"/>
+                <a class="weui_icon_clear" id="text_cancle">×</a>
+            </label>
+        </div>
+        <a class="right">搜索</a>
+    </div>
+
+    <div class="company_name_lists">
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany"/>
+            </div>
+            <div>
+                <p>全部</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany"/>
+            </div>
+            <div>
+                <p>101010000-嘉银</p>
+                <p>2632612562</p>
+            </div>
+
+        </label>
+
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany"/>
+            </div>
+            <div>
+                <p>1012052455-嘉银</p>
+                <p>12321536256323</p>
+            </div>
+
+        </label>
+    </div>
+</div>
+
+
+<!--搜索销售代表-->
+<div id="top_search_sale" class="top_search search_salespage">
+    <div class="top_search_mian">
+        <a class="left gobackone"><img src="../../images/dingding/icon_pay_return.png"/></a>
+        <div class="center">
+            <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
+                <input type="search" placeholder="请输入查找的内容" class="search_input"/>
+                <a class="weui_icon_clear" id="text_cancle">×</a>
+            </label>
+        </div>
+        <a class="right">搜索</a>
+    </div>
+
+    <div class="company_name_lists">
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale"/>
+            </div>
+            <div>
+                <p>全部</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale"/>
+            </div>
+
+            <div>
+                <p>何云东</p>
+            </div>
+
+        </label>
+
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale"/>
+            </div>
+            <div>
+                <p>谯</p>
+            </div>
+
+        </label>
+    </div>
+</div>
+
+
+
+
+</body>
+
+<script>
+
+
+
+    //点击侧滑选择企业名称以及开票企业
+    $('label.search_company').on('click', function () {
+
+        jfFrameFlyShow.mainFrameShow({
+            "flyTime": "0.3s",//侧拉飞入平滑时间
+
+            "flyEleArea": "search_companypage",//侧拉飞入的元素class选择器
+
+            "hideButton": "goback",//侧拉返回关闭按钮的class选择器
+
+            "hideFn":function(){//关闭时执行的方法
+
+                chooseCompanyName('company_name','top_search_company');//参数一是当前需要填写的元素的ID值，参数二是当前侧拉页面的ID选择器
+            }
+        })
+    });
+
+    //点击侧滑选择企业名称以及开票企业
+    $('label.search_sales').on('click', function () {
+
+        jfFrameFlyShow.mainFrameShow({
+            "flyTime": "0.3s",//侧拉飞入平滑时间
+
+            "flyEleArea": "search_salespage",//侧拉飞入的元素class选择器
+
+            "hideButton": "gobackone",//侧拉返回关闭按钮的class选择器
+
+            "hideFn":function(){//关闭时执行的方法
+
+                chooseCompanyName('salename_input','top_search_sale')
+            }
+        })
+    });
+
+
+
+
+
+
+</script>
+</html>

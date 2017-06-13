@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>企业详情</title>
+
+</head>
+<body>
+
+
+<!--中间部分1-->
+
+
+<div class="jf_fapiao_lists">
+    <!-- list 1-->
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p>企业编号</p>
+        </div>
+        <div class="jf_list_ft"> <p>1000005815585</p></div>
+    </a>
+
+    <!-- list 2-->
+    <a class="jf_list" >
+        <div class="jf_list_bd">
+            <p>企业识别号</p>
+        </div>
+        <div class="jf_list_ft"> <p>GH1022</p></div>
+    </a>
+
+    <!--4-->
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p>企业名称</p>
+        </div>
+        <div class="jf_list_ft"> <p>上海嘉银金融服务有限公司</p></div>
+    </a>
+    <!--5-->
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p>认证状态</p>
+        </div>
+        <div class="jf_list_ft"> <p>已认证</p></div>
+    </a>
+
+
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p >企业类型</p>
+        </div>
+        <div class="jf_list_ft"><p>个人福利企业</p></div>
+    </a>
+
+
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p>企业来源</p>
+        </div>
+        <div class="jf_list_ft"> <p>自助平台</p></div>
+    </a>
+    <a class="jf_list list_modify">
+        <div class="jf_list_bd">
+            <p>统一社会信用代码</p>
+        </div>
+        <div class="jf_list_ft"> <input value="123456789852" class="credit_code_input"/></div>
+        <div class="modify_btn credit_code"><span>修改</span></div>
+    </a>
+    <a class="jf_list list_modify">
+        <div class="jf_list_bd">
+            <p>纳税人识别号</p>
+        </div>
+        <div class="jf_list_ft"><input value="123456789852" class="identification_num_input"/></div>
+        <div class="modify_btn identification_num"><span>修改</span></div>
+    </a>
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p>销售代表</p>
+        </div>
+        <div class="jf_list_ft"> <p>何云东</p></div>
+    </a>
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p>实收余额</p>
+        </div>
+        <div class="jf_list_ft jf_list_text"> <p>50,000</p></div>
+    </a>
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p>创建时间</p>
+        </div>
+        <div class="jf_list_ft jf_list_text"> <p>2017-01-01 10:00:00</p></div>
+    </a>
+
+
+</div>
+
+
+<!--中间部分2-->
+<div class="payment_records">
+
+
+    <div class="payment_lists">
+        <div class="payment_list">
+            <div class="payment_info">
+                <div class="payment_info_name">
+                    <span>银行账户名：</span>
+                    <span>上海你我贷互联网金融信息服务有限公司</span>
+                </div>
+                <div class="payment_info_number">
+                    <span>银行账号：&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>52555651565265465356</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment_list">
+            <div class="payment_info">
+                <div class="payment_info_name">
+                    <span>银行账户名：</span>
+                    <span>上海你我贷互联网金融信息服务有限公司</span>
+                </div>
+                <div class="payment_info_number">
+                    <span>银行账号：&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>52555651565265465356</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment_list">
+            <div class="payment_info">
+                <div class="payment_info_name">
+                    <span>银行账户名：</span>
+                    <span>上海你我贷互联网金融信息服务有限公司</span>
+                </div>
+                <div class="payment_info_number">
+                    <span>银行账号：&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    <span>52555651565265465356</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+</body>
+
+<script>
+
+    $('.credit_code').on("click", function () {
+
+        jfShowTips.dialogShow({
+            "mainText": "设置统一社会信用代码",
+            "minText": "<input class='modify_credit_code' placeholder='请输入' type='text'>",
+            "hasCheck": true,
+            "hasCancel": true,
+            "checkFn": function () {
+
+                var modifyCreditCode=$('.modify_credit_code').val();
+
+                $('.credit_code_input').val(modifyCreditCode);//赋值
+
+                jfShowTips.dialogRemove();//弹出框消失
+
+
+            }
+        })
+    })
+
+
+    $('.identification_num').on("click", function () {
+
+
+        jfShowTips.dialogShow({
+            "mainText": "设置纳税人识别号",
+            "minText": "<input class='modify_credit_code' placeholder='请输入' type='text'>",
+            "hasCheck": true,
+            "hasCancel": true,
+            "checkFn": function () {
+
+                var modifyIdentificationNum=$('.modify_credit_code').val();
+
+                $('.identification_num_input').val(modifyIdentificationNum);//弹出框消失
+
+                jfShowTips.dialogRemove();//弹出框消失
+            }
+        })
+    })
+
+</script>
+</html>

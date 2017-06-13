@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>企业垫资</title>
+
+
+</head>
+<body>
+
+<div>
+    <div class="jf_fapiao_lists">
+        <!-- list 1-->
+
+        <label class="jf_list">
+            <div class="jf_list_bd">
+                <p>个人垫资余额（元）</p>
+            </div>
+            <div class="jf_list_ft">
+               <p>90,000.00</p>
+            </div>
+        </label>
+
+        <!-- list 2-->
+        <label class="jf_list search_company">
+            <div class="jf_list_bd">
+                <p>垫资企业</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow"><input type="text" readonly placeholder="请选择" id="company_name" onfocus="this.blur()"/></div>
+        </label>
+        <label class="jf_list ">
+            <div class="jf_list_bd">
+                <p>企业实收余额（元）</p>
+            </div>
+            <div class="jf_list_ft"><input type="number" readonly id="sale_input"/></div>
+        </label>
+
+        <label class="jf_list ">
+            <div class="jf_list_bd">
+                <p>个人垫资金额（元）</p>
+            </div>
+            <div class="jf_list_ft"><input placeholder="输入分配金额" type="number"/></div>
+        </label>
+
+        <label class="jf_list ">
+            <div class="jf_list_bd">
+                <p class="list_textinput">申请备注</p>
+                <textarea rows="3" maxlength="100" placeholder="选填，100字以内" cols="42"></textarea>
+            </div>
+            <div class="jf_list_ft">
+
+            </div>
+        </label>
+
+    </div>
+    <!-- 按钮 -->
+    <div class="jf_fabiao_btn">
+        <div class="jf_btn jf_btn_blue">下一步</div>
+    </div>
+
+    <div class="company_pay_tips">目前该功能处于试用阶段，仅供上海一部同事使用</div>
+
+</div>
+
+<!--选择垫资企业-->
+<div id="top_search" class="top_search">
+    <div class="top_search_mian">
+        <a class="left goback"><img src="../../images/dingding/icon_pay_return.png"/></a>
+        <div class="center">
+            <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
+                <input type="search" placeholder="请输入查找的内容" class="search_input"/>
+                <a class="weui_icon_clear" id="text_cancle">×</a>
+            </label>
+        </div>
+        <a class="right">搜索</a>
+    </div>
+
+    <div class="company_name_lists">
+        <label class="name_list company_jiayin" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany" checked="true" data-sale="9999"/>
+            </div>
+            <div>
+                <p>上海淘略数据处理有限公司</p>
+                <p>14584584965555596</p>
+            </div>
+
+        </label>
+
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany" data-sale="1234"/>
+            </div>
+           <div>
+               <p>上海嘉银支付有限公司</p>
+               <p>42654964956586</p>
+           </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany" data-sale="8000.00"/>
+            </div>
+          <div>
+              <p>支付宝</p>
+              <p>4962649465636</p>
+          </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany" data-sale="33325.45"/>
+            </div>
+           <div>
+               <p>淘略</p>
+               <p>49652+65+5+2</p>
+           </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany" data-sale="5000.00"/>
+            </div>
+           <div>
+               <p>上海嘉银支付有限公司</p>
+               <p>56248248518624585</p>
+           </div>
+
+        </label>
+    </div>
+</div>
+
+
+<!--确认垫资弹出框-->
+<div class="frame_drag_up frame_one">
+    <div class="frame-main">
+        <div class="weui_actionsheet">
+            <!--弹出窗口-->
+            <div class="weui_actionsheet_menu">
+                <div class="title_top">
+                    <span class="cancle"></span>
+                    <span>确认垫资</span>
+                    <span class="check_choose"><img src='../../images/dingding/icon_pay_close.png'></span>
+                </div>
+                <!--列表-->
+                <div class="company_order_lists" id="type_lists">
+                  <div class="order_list">
+                      <p>垫资企业</p>
+                      <p>上海淘略数据处理有限公司</p>
+                  </div>
+                    <div class="order_list">
+                        <p>垫资金额</p>
+                        <p><span>5000</span>元</p>
+                    </div>
+                    <div class="order_list">
+                        <p>当前实收余额</p>
+                        <p><span>4500</span>元</p>
+                    </div>
+                    <div class="order_list">
+                        <p>垫资后实收余额</p>
+                        <p><span>5500</span>元</p>
+                    </div>
+                </div>
+                <!--按钮-->
+                <div class="order_btn"><a href="company_pay_fail.html">确认</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="weui_mask_transition mask_drag"></div>
+</div>
+
+
+</body>
+
+<script>
+
+    //点击侧滑选择企业名称以及开票企业
+    $('label.search_company').on('click', function () {
+
+        jfFrameFlyShow.mainFrameShow({
+            "flyTime": "0.3s",//侧拉飞入平滑时间
+
+            "flyEleArea": "top_search",//侧拉飞入的元素class选择器
+
+            "hideButton": "goback",//侧拉返回关闭按钮的class选择器
+
+            hideFn: function () {
+
+                chooseCompanyName('company_name','top_search');//参数一是当前需要填写的元素的ID值，参数二是当前侧拉页面的ID选择器
+            }
+        })
+    });
+
+/*上拉框*/
+    $("div.jf_btn_blue").on("click",function(){
+        jfDragup.Eleshow({
+
+            "distance":"0",//回到初始位置
+            "hideButton":"title_top"//关闭按钮，Class选择器
+        })
+    })
+</script>
+</html>

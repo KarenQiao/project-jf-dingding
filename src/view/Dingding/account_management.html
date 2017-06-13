@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>开票申请查询</title>
+
+</head>
+<body>
+
+
+
+
+    <div class="edit_account">
+
+
+        <div class="payment_lists">
+            <div class="payment_list">
+                <div class="payment_info">
+                    <div class="payment_info_details">
+                        <span>银行户名：</span>
+                        <span>李志明</span>
+                    </div>
+                    <div class="payment_info_details">
+                        <span>银行账号：</span>
+                        <span>6222659825496325256</span>
+                    </div>
+                    <div class="payment_info_details">
+                        <span>银行名称：</span>
+                        <span>上海银行</span>
+                    </div>
+                </div>
+                <div class="payment_moneyvalue">
+                    <span><a href="edit_account.html">编辑</a></span>
+                    <span class="bank_delete">删除</span>
+                </div>
+
+            </div>
+
+            <div class="payment_list">
+                <div class="payment_info">
+                    <div class="payment_info_details">
+                        <span>银行户名：</span>
+                        <span>李志明</span>
+                    </div>
+                    <div class="payment_info_details">
+                        <span>银行账号：</span>
+                        <span>6222659825496325256</span>
+                    </div>
+                    <div class="payment_info_details">
+                        <span>银行名称：</span>
+                        <span>上海银行</span>
+                    </div>
+                </div>
+                <div class="payment_moneyvalue">
+                    <span><a href="edit_account.html">编辑</a></span>
+                    <span class="bank_delete">删除</span>
+                </div>
+
+            </div>
+
+            <div class="payment_list">
+                <div class="payment_info">
+                    <div class="payment_info">
+                        <div class="payment_info_details">
+                            <span>银行户名：</span>
+                            <span>李志明</span>
+                        </div>
+                        <div class="payment_info_details">
+                            <span>银行账号：</span>
+                            <span>6222659825496325256</span>
+                        </div>
+                        <div class="payment_info_details">
+                            <span>银行名称：</span>
+                            <span>上海银行</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment_moneyvalue">
+                    <span><a href="edit_account.html">编辑</a></span>
+                    <span class="bank_delete">删除</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+<!--底部固定按钮-->
+    <div class="fixed_btn"><a href="add_account.html">添加账号</a></div>
+
+
+
+
+</body>
+
+<script>
+
+
+    $('.bank_delete').on("click",function(){
+        var thislist = $(this).parents('.payment_list');
+        jfShowTips.dialogShow({
+            "mainText": "确认删除这条账户信息吗？",
+            "minText": " ",
+            "hasCheck": true,
+            "hasCancel": true,
+            "checkFn": function () {
+
+                thislist.addClass('payment_list_hide');
+
+                jfShowTips.dialogRemove();//弹出框消失
+
+                setTimeout(function () {
+                    thislist.css("display", "none");
+                }, 300);
+
+            }
+        })
+    })
+
+
+
+
+
+
+</script>
+</html>
