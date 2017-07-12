@@ -2,10 +2,9 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1"/>
-    <meta content="telephone=no" name="format-detection"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <meta content="telephone=no" name="format-detection">
     <title>企业详情</title>
-
 </head>
 <body>
 
@@ -23,7 +22,7 @@
     </a>
 
     <!-- list 2-->
-    <a class="jf_list" >
+    <a class="jf_list">
         <div class="jf_list_bd">
             <p>企业识别号</p>
         </div>
@@ -48,7 +47,7 @@
 
     <a class="jf_list">
         <div class="jf_list_bd">
-            <p >企业类型</p>
+            <p>企业类型</p>
         </div>
         <div class="jf_list_ft"><p>个人福利企业</p></div>
     </a>
@@ -62,23 +61,27 @@
     </a>
     <a class="jf_list list_modify">
         <div class="jf_list_bd">
-            <p>统一社会信用代码</p>
+            <p style="white-space: normal">统一社会信用代码</p>
         </div>
-        <div class="jf_list_ft"> <input value="123456789852" class="credit_code_input"/></div>
+        <div class="jf_list_ft"> <input value="12345678901234567890" class="credit_code_input" readonly></div>
         <div class="modify_btn credit_code"><span>修改</span></div>
     </a>
     <a class="jf_list list_modify">
         <div class="jf_list_bd">
-            <p>纳税人识别号</p>
+            <p style="white-space: normal">纳税人识别号</p>
         </div>
-        <div class="jf_list_ft"><input value="123456789852" class="identification_num_input"/></div>
+        <div class="jf_list_ft"><input value="12345678901234567890" class="identification_num_input" readonly></div>
         <div class="modify_btn identification_num"><span>修改</span></div>
     </a>
-    <a class="jf_list">
+    <a class="jf_list list_modify">
         <div class="jf_list_bd">
             <p>销售代表</p>
         </div>
-        <div class="jf_list_ft"> <p>何云东</p></div>
+        <div class="jf_list_ft">
+            <input value="何云东" readonly id="salename_input">
+        </div>
+
+        <div class="modify_btn transfer_sale"><span>转移</span></div>
     </a>
     <a class="jf_list">
         <div class="jf_list_bd">
@@ -145,22 +148,82 @@
 </div>
 
 
+<!--搜索销售代表-->
+<div id="top_search_sale" class="top_search search_salespage">
+    <div class="top_search_mian">
+        <a class="left gobackone"><img src="../../images/dingding/icon_pay_return.png"></a>
+        <div class="center">
+            <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
+                <input type="search" placeholder="请输入查找的内容" class="search_input">
+                <a class="weui_icon_clear" id="text_cancle">×</a>
+            </label>
+        </div>
+        <a class="right">搜索</a>
+    </div>
+
+    <div class="company_name_lists">
+
+        <label class="name_list">
+
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+
+            <div>
+                <p>何云东</p>
+            </div>
+
+        </label>
+
+        <label class="name_list">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+            <div>
+                <p>谯</p>
+            </div>
+
+        </label>
+        <label class="name_list">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+            <div>
+                <p>小王</p>
+            </div>
+
+        </label>
+        <label class="name_list">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+            <div>
+                <p>小李</p>
+            </div>
+
+        </label>
+    </div>
+</div>
 
 
 
 
 
-</body>
 
+
+
+<script src="../../js/jquery-3.0.0.min.js"></script>
+<script src="../../js/fastclick.js"></script>
+<script src="../../js/dingding.js"></script>
 <script>
 
+
+    //社会信用代码弹出框
     $('.credit_code').on("click", function () {
 
         jfShowTips.dialogShow({
             "mainText": "设置统一社会信用代码",
             "minText": "<input class='modify_credit_code' placeholder='请输入' type='text'>",
-            "hasCheck": true,
-            "hasCancel": true,
             "checkFn": function () {
 
                 var modifyCreditCode=$('.modify_credit_code').val();
@@ -175,14 +238,12 @@
     })
 
 
+    //纳税人识别号弹出框
     $('.identification_num').on("click", function () {
-
 
         jfShowTips.dialogShow({
             "mainText": "设置纳税人识别号",
             "minText": "<input class='modify_credit_code' placeholder='请输入' type='text'>",
-            "hasCheck": true,
-            "hasCancel": true,
             "checkFn": function () {
 
                 var modifyIdentificationNum=$('.modify_credit_code').val();
@@ -194,5 +255,46 @@
         })
     })
 
+
+
+    //侧拉选择销售代表
+    $('.transfer_sale').on('click', function () {
+
+        jfFrameFlyShow.mainFrameShow({
+            "flyTime": "0.3s",//侧拉飞入平滑时间
+
+            "flyEleArea": "search_salespage",//侧拉飞入的元素class选择器
+
+            "hideButton": "gobackone",//侧拉返回关闭按钮的class选择器
+
+            "hideFn":function(){//关闭时执行的方法
+
+                chooseCompanyName('salename_input','top_search_sale');//参数一是待输入的input的ID选择器，参数二是侧拉页面的ID选择器时
+            }
+        })
+    });
+
+
+    /*弹出确认框*/
+    $('.name_list').on("click", function () {
+
+        jfShowTips.dialogShow({
+            "mainText": "转移销售代表",
+            "minText": "转移后嘉付宝公司将由何云东负责，请确认是否转移",
+            "checkFn": function () {
+
+                jfShowTips.dialogRemove();//弹出框消失；
+
+                jfFrameFlyShow.mainFrameHide();//关闭侧拉页面
+
+
+            }
+        })
+    })
+
+
 </script>
+</body>
+
+
 </html>
