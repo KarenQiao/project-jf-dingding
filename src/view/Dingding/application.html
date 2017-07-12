@@ -24,6 +24,13 @@
             </div>
         </label>
 
+        <label class="jf_list ">
+            <div class="jf_list_bd">
+                <p>纳税人识别号</p>
+            </div>
+            <div class="jf_list_ft"><input  type="text"/></div>
+        </label>
+
         <!-- list 2-->
         <label class="jf_list">
             <div class="jf_list_bd">
@@ -81,7 +88,7 @@
         <!--6--带单位，题目超长-->
         <label class="jf_list ">
             <div class="jf_list_bd">
-                <p class="list_maxmoneyinput">单张发票最大金额（元）</p>
+                <p class="list_maxmoneyinput">单张发票最大金额（含税）</p>
             </div>
             <div class="jf_list_ft jf_list_text">
                 <input type="tel" pattern="[0-9]" id="max_input" class="moneyinput" readonly></div>
@@ -89,7 +96,7 @@
         <!--7-->
         <label class="jf_list ">
             <div class="jf_list_bd">
-                <p class="list_minmoneyinput">最低开票金额（元）</p>
+                <p class="list_minmoneyinput">最低开票金额（不含税）</p>
             </div>
             <div class="jf_list_ft jf_list_text"><input type="tel" id="min_input" pattern="[0-9]" class="moneyinput"
                                                         readonly>
@@ -131,6 +138,31 @@
             </div>
             <div class="jf_list_ft"><input class="date_input date_input_one" type="date" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当日"/>
             </div>
+        </label>
+
+        <label class="jf_list ">
+            <div class="jf_list_bd">
+                <p>地址</p>
+            </div>
+            <div class="jf_list_ft"><input placeholder="选填，填写后打印在发票上" type="text"/></div>
+        </label>
+        <label class="jf_list ">
+            <div class="jf_list_bd">
+                <p>电话</p>
+            </div>
+            <div class="jf_list_ft"><input placeholder="选填，填写后打印在发票上" type="text"/></div>
+        </label>
+        <label class="jf_list ">
+            <div class="jf_list_bd">
+                <p>开户行</p>
+            </div>
+            <div class="jf_list_ft"><input placeholder="选填，填写后打印在发票上" type="text"/></div>
+        </label>
+        <label class="jf_list ">
+            <div class="jf_list_bd">
+                <p>账号</p>
+            </div>
+            <div class="jf_list_ft"><input placeholder="选填，填写后打印在发票上" type="text"/></div>
         </label>
         <label class="jf_list ">
             <div class="jf_list_bd">
@@ -226,22 +258,29 @@
 
 <script>
 
-
     //点击侧滑选择企业名称以及开票企业
     $('label.search_company').on('click', function () {
 
-        jfFrameFlyShow.mainFrameShow({
-            "flyTime": "0.3s",//侧拉飞入平滑时间
+        document.activeElement.blur();
 
-            "flyEleArea": "top_search",//侧拉飞入的元素class选择器
+        setTimeout(function(){
 
-            "hideButton": "goback",//侧拉返回关闭按钮的class选择器
+            jfFrameFlyShow.mainFrameShow({
+                "flyTime": "0.3s",//侧拉飞入平滑时间
 
-            hideFn: function () {
+                "flyEleArea": "top_search",//侧拉飞入的元素class选择器
 
-                chooseCompanyName('companyname_input','top_search');//参数一是当前需要填写的元素的ID值，参数二是当前侧拉页面的ID选择器
-            }
-        })
+                "hideButton": "goback",//侧拉返回关闭按钮的class选择器
+
+                hideFn: function () {
+
+                    chooseCompanyName('companyname_input','top_search');//参数一是当前需要填写的元素的ID值，参数二是当前侧拉页面的ID选择器
+                }
+            })
+
+        },300)
+
+
     });
 
 
@@ -323,7 +362,7 @@
 
 
 
-    jfShowTips.loadingShow({'text':'数据加载中'});//loading出现
+   // jfShowTips.loadingShow({'text':'数据加载中'});//loading出现
 
     setTimeout(function(){
 

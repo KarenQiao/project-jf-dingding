@@ -37,7 +37,7 @@ gulp.task('imageMinDev',devImg);
 gulp.task('devWatch',function () {
 
     //less文件修改 ，注入css
-    gulp.watch('src/component/**/*.less', ['changeLessDev']);
+    gulp.watch('src/**/*.less', ['changeLessDev']);
 
     //图片文件修改 ，注入css
     gulp.watch(['src/images/**/*.*'], ['imageMinDev']);

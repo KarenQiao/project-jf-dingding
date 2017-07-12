@@ -372,13 +372,10 @@ var jfShowTips = {
         var thisInnerHtml='<div class="text_dialog_container"><div class="text_big">'+mainText+'</div><div class="text_small">'+minText+'</div><div class="dialog_button">';
 
         if(!hasCheck){
-
             thisInnerHtml+='<a class="dialog_check" href='+thisUrl+'>'+checkBtnText+'</a>'
-
         }
 
         if(!hasCancel){
-
             thisInnerHtml+='<a class="dialog_cancel" href="#">'+cancleBtnText+'</a>'
 
         }
@@ -782,7 +779,7 @@ var jfFrameFlyShow = {
 
         _this.flyTime = details.flyTime || '0.3s';//侧拉飞入平滑过度时间
 
-        _this.flyEleArea = details.flyEleArea || 0;//侧拉飞入的元素class选择器
+        _this.flyEleArea = details.flyEleArea || 0;//侧拉飞入的元素CLASS选择器
 
         _this.hideFn = details.hideFn || 0;//关闭时发生的事件
 
@@ -798,6 +795,7 @@ var jfFrameFlyShow = {
         var thisFlyWidth = window.innerWidth;//当前浏览区的宽度
 
         var thisFlyHeight = window.innerHeight;//当前浏览器的高度
+
 
         thisFlyArea.style.display = "block";
 
@@ -864,14 +862,31 @@ var jfFrameFlyShow = {
 
             setTimeout(function(){
 
-                if(document.getElementById('getmoney_details_page')&&document.getElementById('getmoney_details_page').style.display=="block"){//针对侧拉页面里面包含侧拉页面，添加收款页面
 
-                    document.getElementsByTagName("body")[0].className = "ovfHiden";//页面禁止滚动
-                    document.getElementsByTagName("html")[0].className = "ovfHiden";//页面禁止滚动
-                }
-                else {
-                    document.getElementsByTagName("body")[0].className = "";//页面滚动
-                    document.getElementsByTagName("html")[0].className = "";//页面滚动
+                //针对侧拉页面里面包含侧拉页面，添加收款页面
+                var allFirstFlypage=document.getElementsByClassName('getmoney_details_page');
+
+                if(allFirstFlypage){
+
+                    var allstyle="";
+
+                    for(var i=0;i<allFirstFlypage.length;i++){
+
+                        allstyle+=allFirstFlypage[i].style.display;
+                    }
+
+                    if(allstyle.indexOf('block')>-1){
+
+                        document.getElementsByTagName("body")[0].className = "ovfHiden";//页面禁止滚动
+                        document.getElementsByTagName("html")[0].className = "ovfHiden";//页面禁止滚动
+
+                    }else {
+
+                        document.getElementsByTagName("body")[0].className = "";//页面滚动
+                        document.getElementsByTagName("html")[0].className = "";//页面滚动
+
+                    }
+
                 }
 
             },500)
@@ -917,14 +932,30 @@ var jfFrameFlyShow = {
 
         setTimeout(function(){
 
-            if(document.getElementById('getmoney_details_page')&&document.getElementById('getmoney_details_page').style.display=="block"){//针对侧拉页面里面包含侧拉页面，添加收款页面
+            //针对侧拉页面里面包含侧拉页面，添加收款页面
+            var allFirstFlypage=document.getElementsByClassName('getmoney_details_page');
 
-                document.getElementsByTagName("body")[0].className = "ovfHiden";//页面禁止滚动
-                document.getElementsByTagName("html")[0].className = "ovfHiden";//页面禁止滚动
-            }
-            else {
-                document.getElementsByTagName("body")[0].className = "";//页面滚动
-                document.getElementsByTagName("html")[0].className = "";//页面滚动
+            if(allFirstFlypage){
+
+                var allstyle="";
+
+                for(var i=0;i<allFirstFlypage.length;i++){
+
+                    allstyle+=allFirstFlypage[i].style.display;
+                }
+
+                if(allstyle.indexOf('block')>-1){
+
+                    document.getElementsByTagName("body")[0].className = "ovfHiden";//页面禁止滚动
+                    document.getElementsByTagName("html")[0].className = "ovfHiden";//页面禁止滚动
+
+                }else {
+
+                    document.getElementsByTagName("body")[0].className = "";//页面滚动
+                    document.getElementsByTagName("html")[0].className = "";//页面滚动
+
+                }
+
             }
 
         },500)
@@ -1069,7 +1100,29 @@ for(var i=0;i<selectinput.length;i++){
 
 
 
+/*页面滚动时，自动失去焦点*/
+if(browser.os.android){
+    document.addEventListener('touchmove', function () {
 
+        var thisActiveEle = document.activeElement;//当前获取焦点的元素
+
+        if (thisActiveEle.tagName == 'INPUT') {//如果当前元素是input
+
+            var thisActiveEleType = thisActiveEle.getAttribute('type');//获取当前元素的type属性
+
+            var inputType = ['checkbox', 'radio', 'button', 'image', 'range', 'reset', 'submit', 'week'];//定义type类型不会发生变化的数组
+
+            if (inputType.indexOf(thisActiveEleType) == -1) {//如果当前type类型不存在，则添加Class
+
+
+                thisActiveEle.blur();
+            }
+
+        }
+
+
+    }, false)
+}
 
 
 
