@@ -16,11 +16,11 @@ var gulp = require('gulp'),
 
     rename = require("gulp-rename");//重命名
 
-   minifyCss = require("gulp-minify-css")//css文件压缩
+   minifyCss = require("gulp-minify-css");//css文件压缩
 
 
 function devLess(){
-    gulp.src('src/css/*.less')
+    gulp.src('src/**/*.less')
 
         .pipe(less())//编译less文件
 
@@ -35,15 +35,13 @@ function devLess(){
 
         }))
 
-        .pipe(gulp.dest('build/css'))
+        .pipe(gulp.dest('build'))
 
         .pipe(minifyCss())//压缩css
 
         .pipe(rename({suffix: '.min'}))
 
-
-        .pipe(gulp.dest('build/css'))
-
+        .pipe(gulp.dest('build'))
 
         .pipe(connect.reload());
 
