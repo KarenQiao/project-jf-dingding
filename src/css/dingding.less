@@ -604,10 +604,13 @@ input[type=date]{
       .payment_info_name {
 
         padding: 4px 0;
+        display: flex;
+        justify-content: flex-start;
 
         span {
           &:first-child {
             color: grey;
+            white-space: nowrap;
           }
 
           &:last-child {
@@ -617,11 +620,14 @@ input[type=date]{
       }
       .payment_info_number {
         padding: 4px 0;
+        display: flex;
+        justify-content: flex-start;
 
         span {
 
           &:first-child {
             color: grey;
+            white-space: nowrap;
           }
           &:last-child {
             color: #4a4a4a;
@@ -890,6 +896,29 @@ input[type=date]{
       }
     }
 
+    .jf_list.litter_show{
+      padding: 12px 15px;
+
+      &:after {
+        content: " ";
+        border: none;
+      }
+    }
+    .jf_list.choose_company,.jf_list.choose_tilte{
+      &:before {
+        content: " ";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        border-top: 1px solid #d9d9d9;
+        color: #d9d9d9;
+        transform-origin: 0 0;
+        transform: scaleY(0.5);
+      }
+    }
+
     .jf_list.list_modify{
       padding: 13px 15px;
       .jf_list_ft{
@@ -1089,6 +1118,35 @@ input[type=date]{
 
 
 
+    }
+
+
+    .title{
+      width: 85%;
+      margin: 0 auto;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      a{
+        display: block;
+        border-radius: 5px;
+        border: 1px solid #10a6e2;
+        background: #10a6e2;
+        color: white;
+        padding: 4px 15px;
+        white-space: nowrap;
+
+        &:active{
+          background:#0994cc ;
+          color: rgba(255, 255, 255, 0.4);
+        }
+      }
+
+      p{
+        font-size: 16px;
+      }
     }
 
 
@@ -2679,3 +2737,131 @@ input[type=date]{
   font-size: 16px;
 box-shadow: none;
 }
+
+/*选择发票抬头*/
+.choose_invoice_title.top_search{
+  background: #f5f5f9;
+}
+
+.choose_title_page{
+
+  height: calc(~'100vh - 45px');
+  overflow-y: auto;
+
+
+  .cards{
+
+    background: #fff;
+    width: 95%;
+    margin: 20px auto 0;
+    border: solid 1px #DDDDDD;
+    border-radius: 4px;
+
+    .title{
+      border-bottom: solid 1px #DDDDDD;
+      padding: 5px 0 5px 10px;
+    }
+
+    p{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 4px 0 4px 10px;
+
+      >span{
+        display: inline-block;
+
+        &:first-child{
+          min-width: 100px;
+          text-align: left;
+        }
+
+      }
+    }
+
+    .btn_area{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 5px 10px;
+      margin-bottom: 10px;
+
+      .edit{
+        display: block;
+        border-radius: 5px;
+        color: #10a6e2;
+        border: 1px solid #10a6e2;
+        text-align: center;
+        padding: 4px 0;
+        width: 100px;
+        &:active{
+          color:white;
+          background: #0994cc; ;
+        }
+      }
+      .delete{
+        display: block;
+        border-radius: 5px;
+        color: grey;
+        border: 1px solid grey;
+        text-align: center;
+        padding: 4px 0;
+        margin:0 20px;
+        width: 100px;
+        &:active{
+          color: rgba(255, 255, 255, 0.4);
+          background: grey;
+
+        }
+      }
+      .selected{
+        display: block;
+        border-radius: 5px;
+        color: #fff;
+        border: 1px solid #10a6e2;
+        background: #10a6e2;
+        text-align: center;
+        padding: 4px 0;
+        width: 150px;
+
+        &:active{
+          color: rgba(255, 255, 255, 0.4);
+          background: #0994cc; ;
+        }
+
+      }
+    }
+
+
+
+  }
+
+}
+
+/*编辑发票抬头*/
+
+
+.recharge_balance {
+  padding: 8px 5px;
+  font-size: 12px;
+  margin-bottom: 15px;
+  background: rgba(243, 152, 0, 0.2);
+  position: relative;
+  display: flex;
+  align-items:flex-start;
+  justify-content: flex-start;
+}
+.recharge_balance > img {
+  width: 16px;
+  height: 16px;
+}
+.recharge_balance > span {
+  display: inline-block;
+  color: #fc6329;
+  padding-left: 8px;
+  line-height: 14px;
+  box-sizing: border-box;
+}
+
+
+
