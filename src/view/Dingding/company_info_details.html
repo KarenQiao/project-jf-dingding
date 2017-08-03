@@ -66,13 +66,13 @@
         <div class="jf_list_ft"> <input value="12345678901234567890" class="credit_code_input" readonly></div>
         <div class="modify_btn credit_code"><span>修改</span></div>
     </a>
-    <a class="jf_list list_modify">
+   <!-- <a class="jf_list list_modify">
         <div class="jf_list_bd">
             <p style="white-space: normal">纳税人识别号</p>
         </div>
         <div class="jf_list_ft"><input value="12345678901234567890" class="identification_num_input" readonly></div>
         <div class="modify_btn identification_num"><span>修改</span></div>
-    </a>
+    </a>-->
     <a class="jf_list list_modify">
         <div class="jf_list_bd">
             <p>销售代表</p>
@@ -100,8 +100,57 @@
 </div>
 
 
-<!--中间部分2-->
+<!--发票-->
 <div class="payment_records">
+
+    <div class="title">
+        <p>发票抬头</p>
+        <a href="add_invoice_title.html">新增</a>
+    </div>
+
+
+    <div class="payment_lists">
+        <div class="payment_list" >
+            <a class="payment_info" href="edit_invoice_title.html">
+                <div class="payment_info_name">
+                    <span>发票抬头：</span>
+                    <span>上海你我贷互联网金融信息服务有限公司</span>
+                </div>
+                <div class="payment_info_number">
+                    <span>纳税人识别号：</span>
+                    <span>52555651565265465356</span>
+                </div>
+            </a>
+
+            <div class="payment_close"><img src="../../images/dingding/icon_pay_close.png" class="close_icon"></div>
+        </div>
+
+        <div class="payment_list" href="edit_invoice_title.html">
+            <a class="payment_info" href="edit_invoice_title.html">
+                <div class="payment_info_name">
+                    <span>发票抬头：</span>
+                    <span>上海你我贷互联网金融信息服务有限公司</span>
+                </div>
+                <div class="payment_info_number">
+                    <span>纳税人识别号：</span>
+                    <span>52555651565265465356</span>
+                </div>
+            </a>
+
+            <div class="payment_close"><img src="../../images/dingding/icon_pay_close.png" class="close_icon"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<!--银行账号-->
+<div class="payment_records">
+
+
+    <div class="title">
+        <p>银行账号</p>
+    </div>
 
 
     <div class="payment_lists">
@@ -238,25 +287,6 @@
     })
 
 
-    //纳税人识别号弹出框
-    $('.identification_num').on("click", function () {
-
-        jfShowTips.dialogShow({
-            "mainText": "设置纳税人识别号",
-            "minText": "<input class='modify_credit_code' placeholder='请输入' type='text'>",
-            "checkFn": function () {
-
-                var modifyIdentificationNum=$('.modify_credit_code').val();
-
-                $('.identification_num_input').val(modifyIdentificationNum);//弹出框消失
-
-                jfShowTips.dialogRemove();//弹出框消失
-            }
-        })
-    })
-
-
-
     //侧拉选择销售代表
     $('.transfer_sale').on('click', function () {
 
@@ -276,11 +306,12 @@
 
 
     /*弹出确认框*/
-    $('.name_list').on("click", function () {
+    $('.aui-radio').on("click", function () {
+
 
         jfShowTips.dialogShow({
             "mainText": "转移销售代表",
-            "minText": "转移后嘉付宝公司将由何云东负责，请确认是否转移",
+            "minText": "<p>转移后<span>嘉付宝公司</span>将由<span>何云东</span>负责</p>请确认是否转移",
             "checkFn": function () {
 
                 jfShowTips.dialogRemove();//弹出框消失；
@@ -290,7 +321,31 @@
 
             }
         })
-    })
+    });
+
+
+    /*点击删除按钮，实现删除该条记录*/
+    $('.payment_close').on("click", function () {
+
+        var thislist = $(this).parent('.payment_list');
+
+        jfShowTips.dialogShow({
+            "mainText": "确认删除发票抬头？",
+            "minText": " ",
+            "checkFn": function () {
+
+               thislist.addClass('payment_list_hide');
+
+                jfShowTips.dialogRemove();//弹出框消失
+
+                setTimeout(function () {
+                    thislist.css("display", "none");
+                }, 300);
+
+            }
+        })
+    });
+
 
 
 </script>

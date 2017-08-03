@@ -982,8 +982,6 @@ function chooselists(chooseEle) {
 
     var namelists = document.getElementsByClassName(chooseEle)[0].getElementsByTagName('P');
 
-    // console.log(namelists)
-
     for (var i = 0; i < namelists.length; i++) {
 
         namelists[i].addEventListener("click", function () {
@@ -1010,6 +1008,7 @@ function chooseCompanyName(companyNameELe,thisChoosePage) {//参数一是当前�
 
     function getrightIndex(ThisELe) {
 
+
         for (var i = 0; i < checkCompanyName.length; i++) {
 
             if (checkCompanyName[i].checked == true) {
@@ -1021,7 +1020,7 @@ function chooseCompanyName(companyNameELe,thisChoosePage) {//参数一是当前�
 
     var j = getrightIndex();
 
-    if(document.getElementById('sale_input')){//如果当前需要选择销售代表
+    if(document.getElementById('sale_input')&&j>-1&&checkCompanyName[j].getAttribute('data-sale')!=null){//如果当前需要选择销售代表
 
         document.getElementById('sale_input').value=checkCompanyName[j].getAttribute('data-sale')
     }
@@ -1030,7 +1029,15 @@ function chooseCompanyName(companyNameELe,thisChoosePage) {//参数一是当前�
 
         //companyName.value = checkCompanyName[j].nextElementSibling.innerText;//获取当前公司的名字
 
-        companyName.value = checkCompanyName[j].parentElement.nextElementSibling.firstElementChild.innerText;//获取当前公司的名字
+      if(checkCompanyName[j].parentElement.nextElementSibling.firstElementChild.childElementCount>1){
+
+          companyName.value = checkCompanyName[j].parentElement.nextElementSibling.firstElementChild.firstElementChild.innerText;//获取当前公司的名字
+
+      }else {
+          companyName.value = checkCompanyName[j].parentElement.nextElementSibling.firstElementChild.innerText;//获取当前公司的名字
+      }
+
+
 
     }
 
@@ -1081,7 +1088,7 @@ $('div.approval_status,div.getmoney_status,div.kaipiao_status,div.welfare_type')
 
 $('div.frame_drag_down').find('.choose_cancle').on("click",function(){
 
-    var thisChooseALL=$('div.choose_all')
+    var thisChooseALL=$('div.choose_all');
 
     thisChooseALL.siblings('.sorts_selected').removeClass('sorts_selected');
 
@@ -1122,6 +1129,41 @@ if(browser.os.android){
 
 
     }, false)
+}
+
+
+
+//获取所有的发票抬头相关信息，并导入申请页面
+function getInvoiceTilte(ele){
+
+    var thisSelect=$(ele).parents('.cards');
+
+    getRightText('#invoice_tilte',thisSelect.find('.title_text').text());
+
+    getRightText('#identify_number',thisSelect.find('.num').text());
+
+    getRightText('#address',thisSelect.find('.address').text());
+
+    getRightText('#tel',thisSelect.find('.tel').text());
+
+    getRightText('#bank',thisSelect.find('.bankname').text());
+
+    getRightText('#account',thisSelect.find('.account').text());
+
+
+    function getRightText(ele,text){
+
+        if(text==""||text=="暂无"){
+
+            $(ele).parents('.litter_show').css('display','none')
+        }else {
+            $(ele).val(text);
+
+            $(ele).parents('.litter_show').css('display','')
+        }
+
+    }
+
 }
 
 
