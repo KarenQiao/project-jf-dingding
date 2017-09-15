@@ -49,12 +49,20 @@
             </div>
         </label>
         <!--4-->
-        <label class="jf_list choose_company" id="choose_company">
+        <label class="jf_list choose_company">
             <div class="jf_list_bd">
                 <p>开票公司</p>
             </div>
             <div class="jf_list_ft jf_list_arrow">
-               <input readonly placeholder="请先选择企业名称，在选择开票公司" id="invoice_company_name">
+                <select>
+                    <option>请选择</option>
+                    <option>上海淘略数据处理有限公司</option>
+                    <option>上海嘉银支付有限公司</option>
+                    <option>支付宝</option>
+                    <option>上海贝耀数据科技有限公司大连分公司</option>
+                    <option>上海淘略数据处理有限公司</option>
+                    <option>上海贝耀数据科技有限公司大连分公司</option>
+                </select>
             </div>
         </label>
 
@@ -65,14 +73,14 @@
                     <p class="list_maxmoneyinput">单张发票最大金额（含税）</p>
                 </div>
                 <div class="jf_list_ft jf_list_text">
-                    <input type="tel" pattern="[0-9]" id="max_input" class="moneyinput" readonly></div>
+                    <input type="tel" pattern="[0-9]" id="max_input" class="moneyinput" readonly onfocus="this.blur()"/></div>
             </label>
             <!--7-->
             <label class="jf_list litter_show">
                 <div class="jf_list_bd">
                     <p class="list_minmoneyinput">最低开票金额（不含税）</p>
                 </div>
-                <div class="jf_list_ft jf_list_text"><input type="tel" id="min_input" pattern="[0-9]" class="moneyinput" readonly>
+                <div class="jf_list_ft jf_list_text"><input type="tel" id="min_input" pattern="[0-9]" class="moneyinput" readonly onfocus="this.blur()"/>
                 </div>
             </label>
             <!--8-->
@@ -80,7 +88,7 @@
                 <div class="jf_list_bd">
                     <p>票面税率</p>
                 </div>
-                <div class="jf_list_ft"><input id="tax_input" readonly type="text"></div>
+                <div class="jf_list_ft"><input id="tax_input" readonly type="text" onfocus="this.blur()"/></div>
             </label>
 
 
@@ -103,7 +111,7 @@
         </label>
 
 
-        <label class="jf_list choose_tilte">
+        <label class="jf_list choose_tilte" onclick="window.location='choose_invoice_title.html'">
             <div class="jf_list_bd">
                 <p>发票抬头</p>
             </div>
@@ -114,32 +122,32 @@
             <div class="jf_list_bd">
                 <p>纳税人识别号</p>
             </div>
-            <div class="jf_list_ft"><input readonly type="text" id="identify_number"/></div>
+            <div class="jf_list_ft"><input readonly type="text" id="identify_number" onfocus="this.blur()"/></div>
         </label>
 
         <label class="jf_list litter_show">
             <div class="jf_list_bd">
                 <p>地址</p>
             </div>
-            <div class="jf_list_ft"><input readonly type="text" id="address"/></div>
+            <div class="jf_list_ft"><input readonly type="text" id="address" onfocus="this.blur()"/></div>
         </label>
         <label class="jf_list litter_show">
             <div class="jf_list_bd">
                 <p>电话</p>
             </div>
-            <div class="jf_list_ft"><input readonly type="text" id="tel"/></div>
+            <div class="jf_list_ft"><input readonly type="text" id="tel" onfocus="this.blur()"/></div>
         </label>
         <label class="jf_list litter_show">
             <div class="jf_list_bd">
                 <p>开户行</p>
             </div>
-            <div class="jf_list_ft"><input readonly type="text" id="bank"/></div>
+            <div class="jf_list_ft"><input readonly type="text" id="bank" onfocus="this.blur()"/></div>
         </label>
         <label class="jf_list litter_show">
             <div class="jf_list_bd">
                 <p>账号</p>
             </div>
-            <div class="jf_list_ft"><input readonly type="text" id="account"/></div>
+            <div class="jf_list_ft"><input readonly type="text" id="account" onfocus="this.blur()"/></div>
         </label>
 
 
@@ -321,137 +329,7 @@
 </div>
 
 
-<!--选择发票抬头-->
-<div id="choose_invoice_title" class="top_search choose_invoice_title">
 
-    <!--固定顶部-->
-    <nav class="Top_navigation">
-        <div class="weui_tab_bd"></div>
-        <div class="container_tab">
-            <a>
-                <div class="nav_left"><img src="../../images/dingding/icon_pay_return.png"></div>
-            </a>
-            <div class="nav_center">
-                <div>选择发票抬头</div>
-            </div>
-            <a  href="add_invoice_title.html">
-                <div class="nav_right"><img src="../../images/dingding/icon_add.png"></div>
-            </a>
-        </div>
-    </nav>
-
-    <div class="choose_title_page">
-        <div class="cards">
-
-            <p class="title">
-                <span>发票抬头：</span>
-                <span class="title_text">上海淘略数据处理有限公司</span>
-            </p>
-            <p>
-                <span>纳税人识别号：</span>
-                <span class="num">15862965666256ADF62536</span>
-            </p>
-            <p>
-                <span>地址：</span>
-                <span  class="address">上海市徐汇区虹桥路808号加华商务中心</span>
-            </p>
-            <p>
-                <span>电话：</span>
-                <span class="tel">135698545623</span>
-            </p>
-            <p >
-                <span>开户行：</span>
-                <span class="bankname">中国工商银行上海徐汇分行</span>
-            </p>
-            <p >
-                <span>账号：</span>
-                <span class="account">6245154558158425642545</span>
-            </p>
-
-            <div class="btn_area">
-                <a class="edit" href="edit_invoice_title.html">编辑</a>
-                <a class="delete">删除</a>
-                <a class="selected">选择</a>
-            </div>
-
-        </div>
-
-        <div class="cards">
-
-            <p class="title">
-                <span>发票抬头：</span>
-                <span class="title_text">上海嘉银支付有限公司</span>
-            </p>
-            <p>
-                <span>纳税人识别号：</span>
-                <span class="num">146102514542514256ADF62536</span>
-            </p>
-            <p>
-                <span>地址：</span>
-                <span class="address">暂无</span>
-            </p>
-            <p>
-                <span>电话：</span>
-                <span class="tel">暂无</span>
-            </p>
-            <p>
-                <span>开户行：</span>
-                <span class="bankname">暂无</span>
-            </p>
-            <p>
-                <span>账号：</span>
-                <span class="account">暂无</span>
-            </p>
-
-            <div class="btn_area">
-                <a class="edit" href="edit_invoice_title.html">编辑</a>
-                <a class="delete">删除</a>
-                <a class="selected">选择</a>
-            </div>
-
-        </div>
-
-        <div class="cards">
-
-            <p class="title">
-                <span>发票抬头：</span>
-                <span class="title_text">支付宝</span>
-            </p>
-            <p>
-                <span>纳税人识别号：</span>
-                <span class="num">546543546546456543</span>
-            </p>
-            <p>
-                <span>地址：</span>
-                <span class="address">暂无</span>
-            </p>
-            <p>
-                <span>电话：</span>
-                <span class="tel">暂无</span>
-            </p>
-            <p>
-                <span>开户行：</span>
-                <span class="bankname">暂无</span>
-            </p>
-            <p>
-                <span>账号：</span>
-                <span class="account">暂无</span>
-            </p>
-
-            <div class="btn_area">
-                <a class="edit" href="edit_invoice_title.html">编辑</a>
-                <a class="delete">删除</a>
-                <a class="selected">选择</a>
-            </div>
-
-        </div>
-    </div>
-
-
-
-
-
-</div>
 
 
 </body>
@@ -488,6 +366,7 @@
     });
 
 
+/*
 
     //点击侧滑开票企业
     $('label.choose_company').on('click', function () {
@@ -514,32 +393,7 @@
 
 
     });
-
-
-    //点击侧滑选择企业名称以及开票企业
-    $('label.choose_tilte').on('click', function () {
-
-        document.activeElement.blur();
-
-        setTimeout(function(){
-
-            jfFrameFlyShow.mainFrameShow({
-                "flyTime": "0.3s",//侧拉飞入平滑时间
-
-                "flyEleArea": "choose_invoice_title",//侧拉飞入的元素class选择器
-
-                "hideButton": "nav_left",//侧拉返回关闭按钮的class选择器
-
-                hideFn: function () {
-
-                   // chooseCompanyName('companyname_input','top_search');//参数一是当前需要填写的元素的ID值，参数二是当前侧拉页面的ID选择器
-                }
-            })
-
-        },300)
-
-
-    });
+*/
 
 
 
@@ -549,42 +403,9 @@
     }, false);
 
 
-    //选择发票抬头
-    $('.btn_area>.selected').on("click",function(){
-
-        getInvoiceTilte(this);//获取所有的发票抬头相关信息，并导入申请页面（参数为选择当前元素）
-
-        jfFrameFlyShow.mainFrameHide();//关闭侧拉页面
-
-    });
 
 
 
-
-
-    /*点击删除按钮，实现删除该条记录*/
-    $('.btn_area>.delete').on("click", function () {
-
-        var thislist = $(this).parents('.cards');
-
-        jfShowTips.dialogShow({
-            "mainText": "确认删除此项发票？",
-            "minText": " ",
-            "hasCheck": true,
-            "hasCancel": true,
-            "checkFn": function () {
-
-                thislist.addClass('payment_list_hide');
-
-                jfShowTips.dialogRemove();//弹出框消失
-
-                setTimeout(function () {
-                    thislist.css("display", "none");
-                }, 300);
-
-            }
-        })
-    });
 
 
 
