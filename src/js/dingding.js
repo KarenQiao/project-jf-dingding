@@ -773,7 +773,7 @@ var jfDragup = {
 var jfFrameFlyShow = {
 
     mainFrameShow: function (details) {/*侧拉出现*/
-        var _this = this
+        var _this = this;
 
         _this.hideButton = details.hideButton || 0;//关闭的按钮
 
@@ -828,6 +828,7 @@ var jfFrameFlyShow = {
         if(_this.otherHideButton){
             var otherHideButton = document.getElementsByClassName(_this.otherHideButton)[0];//关闭的元素
             //关闭页面
+
             otherHideButton.onclick = function () {
 
                 mainFrameHide()
@@ -837,7 +838,7 @@ var jfFrameFlyShow = {
        //关闭方法（用于侧拉页面里面，还有多个侧拉页面）
         function mainFrameHide(){
 
-            $(hideButton).unbind("click");//关闭的时候，事件解除绑定
+
 
             if (_this.hideFn) {
                 _this.hideFn(); //执行 关闭时加入的函数参数
@@ -891,6 +892,8 @@ var jfFrameFlyShow = {
 
             },500)
 
+            $(hideButton).unbind("click");//关闭的时候，事件解除绑定
+
 
 
             if (_this.hideFn) {
@@ -907,7 +910,7 @@ var jfFrameFlyShow = {
 
         var hideButton = document.getElementsByClassName(_this.hideButton)[0];//关闭的元素
 
-        $(hideButton).unbind("click");//关闭的时候，事件解除绑定
+       // $(hideButton).unbind("click");//关闭的时候，事件解除绑定
 
         if (_this.hideFn) {
             _this.hideFn(); //执行 关闭时加入的函数参数
@@ -921,6 +924,10 @@ var jfFrameFlyShow = {
         thisFlyArea.style.transform = "translate3d(100%,0,0)";
         thisFlyArea.style.webkitTransform = "translate3d(100%,0,0)";
 
+
+
+
+
         //页面隐藏
         function pageHide() {
 
@@ -931,6 +938,7 @@ var jfFrameFlyShow = {
         }
 
         setTimeout(function(){
+
 
             //针对侧拉页面里面包含侧拉页面，添加收款页面
             var allFirstFlypage=document.getElementsByClassName('getmoney_details_page');
@@ -960,8 +968,200 @@ var jfFrameFlyShow = {
 
         },500)
 
+        $(hideButton).unbind("click");//关闭的时候，事件解除绑定
+
     }
 }
+
+
+
+/*侧拉页面----
+ * 2017/3/14
+ * 谯丹*/
+
+var jfFrameFly={
+
+    FlyShow:function(details){
+
+        var _this = this;
+
+        _this.showButton=details.showButton||0;//点击会出现侧拉页面的按钮，ID选择器
+
+        _this.flyTime = details.flyTime || '0.3s';//侧拉飞入平滑过度时间
+
+        _this.flyEleArea = details.flyEleArea || 0;//侧拉飞入的元素class选择器
+
+        _this.hideFn = details.hideFn || 0;//关闭时发生的事件
+
+        _this.otherHideButton = details.otherHideButton || 0;//其他关闭的按钮,CLass选择器
+
+        _this.hasIframe=details.hasIframe||false;// 是否需要有iframe导入，class选择器
+
+        _this.iframeName=details.iframeName||0;//iframe的class选择器
+
+        _this.hideButton = details.hideButton || 0;//关闭的按钮,ID选择器
+
+        _this.InitEleArea=details.InitEleArea||0;//初始页面，class选择器
+
+
+
+        var thisFlyFrame=document.getElementsByClassName(_this.flyEleArea)[0];//出现侧拉页面
+
+        var thisHideButton = document.getElementById(_this.hideButton);//关闭的元素
+
+        var thisOtherHideButton=thisFlyFrame.getElementsByClassName( _this.otherHideButton)[0];//其他关闭的元素
+
+        var thisShowButton=document.getElementById(_this.showButton);//点击的目标元素
+
+        var thisInitEleArea=document.getElementsByClassName(_this.InitEleArea)[0];//初始页面
+
+        _this.run=function(){
+
+            document.activeElement.blur();
+
+            var thisFlyWidth = window.innerWidth;//当前浏览区的宽度
+
+            var thisFlyHeight = window.innerHeight;//当前浏览器的高度
+
+            thisFlyFrame.style.display = "block";
+
+            setTimeout(function(){
+                thisFlyFrame.style.position = "absolute";
+                thisFlyFrame.style.left = "0";
+                thisFlyFrame.style.top = "0";
+                thisFlyFrame.style.width = thisFlyWidth + "px";
+                thisFlyFrame.style.height = thisFlyHeight + "px";
+
+                thisFlyFrame.style.transform = "translate3d(0,0,0)";
+                thisFlyFrame.style.webkitTransform = "translate3d(0,0,0)";
+                thisFlyFrame.style.transition = "" + _this.flyTime + " transform";
+                thisFlyFrame.style.webkitTransition = "" + _this.flyTime + " transform";
+
+                thisInitEleArea.style.display="none";//初始页面隐藏
+
+
+                document.getElementsByTagName("body")[0].className = "ovfHiden";//页面禁止滚动
+                document.getElementsByTagName("html")[0].className = "ovfHiden";//页面禁止滚动
+
+
+                if(_this.hasIframe){
+
+                    window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function () {
+                        var t = setTimeout(vipIframe, 100)
+                    }, false); //页面转动时 重新设置宽于高
+
+
+
+                    vipIframe();//iframe出现
+
+
+                    function vipIframe(){
+
+                        var thisIframe=thisFlyFrame.getElementsByClassName( _this.iframeName)[0];
+
+                        thisIframe.style.width = thisFlyWidth + "px";//设置iframe的宽度
+
+                        thisIframe.style.height = thisFlyHeight + "px";//iframe的宽度
+
+                        thisFlyFrame.style.overflow="auto";
+
+                    }
+
+                    thisHideButton=window.frames[ _this.iframeName].document.getElementById(_this.hideButton);
+
+
+
+                }
+
+
+                if(thisHideButton){
+
+                    thisHideButton.onclick=function(){
+                        _this.stop()
+                    };
+                }
+
+
+            },10);
+
+            setTimeout(function(){
+               // thisInitEleArea.style.display="none";//初始页面隐藏
+            },500)
+
+
+        };
+
+        _this.stop=function(){
+
+            thisFlyFrame.addEventListener('webkitTransitionEnd', pageHide, false);
+            thisFlyFrame.addEventListener('transitionend', pageHide, false); //绑定过渡事件
+
+            thisInitEleArea.style.display="block";
+
+            thisFlyFrame.style.transform = "translate3d(100%,0,0)";
+            thisFlyFrame.style.webkitTransform = "translate3d(100%,0,0)";
+
+            //页面隐藏
+            function pageHide() {
+
+                thisFlyFrame.style.display = "none";
+                thisFlyFrame.style.position = "";
+                thisFlyFrame.style.left = "";
+                thisFlyFrame.style.top = "";
+                thisFlyFrame.style.width ="";
+                thisFlyFrame.style.height = "";
+
+                thisFlyFrame.style.transform = "";
+                thisFlyFrame.style.webkitTransform = "";
+                thisFlyFrame.style.transition = "";
+                thisFlyFrame.style.webkitTransition = "" ;
+
+                if(_this.hasIframe){
+
+                    var thisIframe=thisFlyFrame.getElementsByClassName( _this.iframeName)[0];
+
+                    thisIframe.style.width = "";
+
+                    thisIframe.style.height = "";
+                }
+
+
+                thisFlyFrame.removeEventListener('webkitTransitionEnd', pageHide, false);
+                thisFlyFrame.removeEventListener('transitionend', pageHide, false); //解除过渡事件
+            }
+
+            if (_this.hideFn) {
+                _this.hideFn(); //执行 关闭时加入的函数参数
+            };
+
+            document.getElementsByTagName("body")[0].className = "";//页面禁止滚动
+            document.getElementsByTagName("html")[0].className = "";//页面禁止滚动
+
+        };
+
+
+        /*目标按钮点击出现*/
+        thisShowButton.onclick=function(){
+
+            _this.run();
+        };
+
+        if(thisOtherHideButton){//其他关闭按钮
+
+            thisOtherHideButton.addEventListener("click",function(){
+
+                _this.stop()
+            },false)
+
+        }
+
+    }
+
+
+
+};
+
+/*侧拉页面结束*/
 
 
 /*搜索框清除内容*/
@@ -1134,7 +1334,7 @@ if(browser.os.android){
 
 
 //获取所有的发票抬头相关信息，并导入申请页面
-function getInvoiceTilte(ele){
+/*function getInvoiceTilte(ele){
 
     var thisSelect=$(ele).parents('.cards');
 
@@ -1164,7 +1364,644 @@ function getInvoiceTilte(ele){
 
     }
 
+}*/
+
+
+
+
+/**
+ * Created by Administrator on 2017/6/7.
+ *
+ *  地址插件 */
+var shoppingCart = {
+
+    changeX:1,
+
+    changeY:1,
+    /*加载方法*/
+    xhr: function (details) {
+
+        var _this = this;
+
+        var api = details.api || 0;
+
+        var type = details.type || 'get';
+
+        var xhr = function () {
+            if (window.XMLHttpRequest) {
+                return new XMLHttpRequest();
+            } else {
+                return new ActiveObject('Micrsorf.XMLHttp');
+            }
+        }();
+
+        xhr.onreadystatechange = function () {
+            switch (xhr.readyState) {
+                case 0 :
+                    // console.log(0, '未初始化....');
+                    break;
+                case 1 :
+                    /*console.log(1, '请求参数已准备，尚未发送请求...');*/
+                    break;
+                case 2 :
+                    /*console.log(2, '已经发送请求,尚未接收响应');*/
+                    break;
+                case 3 :
+                    /*console.log(3, '正在接受部分响应.....');*/
+                    break;
+                case 4 :
+                    /*console.log(4, '响应全部接受完毕');*/
+                    if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+
+                        _this.fn(xhr.responseText,details)
+
+                    }
+
+                    else {
+
+                        console.log('读取失败');
+
+                    }
+                    break;
+            }
+        };
+
+        xhr.open(type, api);
+
+        xhr.send(null);
+
+    },
+
+    run: function (details) {
+
+        this.xhr(details);
+
+        this.changeClass(details)
+
+    },
+
+    //切换样式名称
+    changeClass: function () {
+
+        var allEle = document.getElementById('jd_address_select');
+
+        var firstEle = allEle.getElementsByClassName('top_address')[0].getElementsByTagName('div');
+
+        if(allEle.getElementsByClassName('show')[0]){
+
+            clearClass(1)
+        }
+
+        firstEle[0].innerHTML='请选择';
+
+        if(firstEle[0].className.indexOf('show')==-1) {
+
+            firstEle[0].className = 'show';
+
+        }
+
+        if(allEle.getElementsByClassName('address')[0].className.indexOf('show')==-1) {
+
+            allEle.getElementsByClassName('address')[0].className += ' show';
+
+        }
+
+        if(this.changeX) {
+
+            for (var i = 0; i < firstEle.length; i++) {
+
+                firstEle[i].addEventListener('click', clickEle, false)
+
+            }
+
+            this.changeX=0;
+
+        }
+
+        function clickEle() {
+
+            clearClass(2);
+
+            for (var j = 0; j < firstEle.length; j++) {
+
+                if (this == firstEle[j]) {
+
+                    break
+
+                }
+
+            }
+
+            this.className = 'show';
+
+            allEle.getElementsByClassName('address')[j].className += ' show';
+
+
+        }
+
+        function clearClass(num) {
+
+            for (var i = 0; i < num; i++) {
+
+                allEle.getElementsByClassName('show')[0].className = allEle.getElementsByClassName('show')[0].className.replace('show', '');
+
+            }
+
+        }
+
+    },
+
+    /*渲染地址列表*/
+    fn: function (thisJson,details) {
+
+        writeAddressInner = details.targetDom;
+
+        var thisFn = details.fn;
+
+        var ele = document.getElementById('jd_address_select');
+
+        var data = JSON.parse(thisJson).data;
+
+        var tabCity = ele.getElementsByClassName('top_address')[0].getElementsByTagName('div');
+
+        for(var i=1;i<tabCity.length;i++){
+
+            tabCity[i].innerHTML=""
+
+        }
+
+        addLi(ele.getElementsByClassName('address')[0], data);
+
+        function addLi(faEle, allData) {
+
+            var thisDomH = '<p data-li="';
+
+            var thisDomM = '">';
+
+            var thisDomB = '</p>';
+
+            var writeDom = '';
+
+
+            for (var i = 0; i < allData.length; i++) {
+
+                writeDom += thisDomH + i + thisDomM + allData[i].name + thisDomB
+
+            }
+
+            faEle.innerHTML = writeDom;
+
+            var allP = faEle.getElementsByTagName('p');
+
+            for (var j = 0; j < allP.length; j++) {
+
+                allP[j].addEventListener('click', clickFn, false)
+
+            }
+
+        }
+
+        /*每个元素点击事件*/
+        function clickFn() {
+
+            if (this.parentNode.getElementsByClassName('p_show')[0]) {
+
+                this.parentNode.getElementsByClassName('p_show')[0].removeAttribute('class');
+
+            }
+
+            this.className = 'p_show'
+
+        }
+
+
+        var allTab = ele.getElementsByClassName('address');
+
+        if(this.changeY) {
+
+            for (var i = 0; i < allTab.length; i++) {
+
+                allTab[i].addEventListener('click', fatherEleClick,false)
+
+            }
+
+            this.changeY=0;
+
+        }
+
+        var allCityPoint = [];
+
+        var thisCityAll = [];
+
+        //chooseAdressId=[];
+
+        /*每个父切换元素*/
+        function fatherEleClick(evt) {
+
+            if (this.className.indexOf('show') > -1) {
+
+                for (var j = 0; j < allTab.length; j++) {
+
+                    if (this == allTab[j]) {
+
+                        break
+
+                    }
+
+                }
+
+                /*渲染下一个列表*/
+
+                var thisNum = evt.target.getAttribute('data-li');
+
+                allCityPoint[j] = thisNum;
+
+                allCityPoint=allCityPoint.slice(0,j+1);
+
+                var thisData = data;
+
+                var thisCity;
+
+                for (var z = 0; z <= j; z++) {
+
+                    thisCity = thisData[allCityPoint[z]];
+
+                    thisData = thisCity.child;
+
+                    if(!thisData)break
+
+                }
+
+
+
+                /*修改tab*/
+
+                var tabCity = ele.getElementsByClassName('top_address')[0].getElementsByTagName('div');
+
+                thisCityAll[j] = thisCity.name;
+
+                thisCityAll=thisCityAll.slice(0,j+1);
+
+                tabCity[j].innerHTML = thisCity.name;
+
+                tabCity[j].removeAttribute('class');
+
+
+                if (thisData) {
+
+                    tabCity[j + 1].innerHTML = '请选择';
+
+                    tabCity[j + 1].className = 'show';
+
+                    allTab[j + 1].className += ' show';
+
+                    this.className = this.className.replace(' show', '');
+
+                    addLi(allTab[j + 1], thisData);
+
+                }
+
+                else {
+
+                    var thisInnerHtml='';
+
+                    for (var x = 0; x < thisCityAll.length; x++) {
+
+                        thisInnerHtml += thisCityAll[x];
+
+                        if(x!=thisCityAll.length-1) {
+
+                            thisInnerHtml += '，'
+
+                        }
+
+                    }
+
+                    writeAddressInner.value=thisInnerHtml;
+
+                    chooseAdressId=(function(){
+
+
+                        var allNum=[];
+
+                        var thisData=data;
+
+
+                        for(var i=0;i<allCityPoint.length;i++) {
+
+                            allNum[i]=thisData[allCityPoint[i]].id;
+
+                            thisData=thisData[allCityPoint[i]].child;
+
+                        }
+
+                        return allNum;
+
+                        //地址数据data;
+
+
+                    })();
+
+
+                    setTimeout(function () {
+
+                        thisFn();
+
+
+
+
+                    },300)
+
+
+
+                }
+                //切换tab
+
+
+            }
+
+        }
+
+    },
+
+
+};
+
+
+/**
+ * Created by Qiaodan on 2017/10/9.
+ *
+ * 上拉框
+ */
+
+
+var jfShowPop = function (details) {
+
+    if(!details){
+
+        details ={}
+
+    }
+
+    this.details = details;
+
+    var thisEle = document.getElementById(this.details.ele);
+
+
+
+
+    thisEle.getElementsByClassName('pop_cancel')[0].addEventListener('click', clickEven.bind(this), false);
+
+    thisEle.getElementsByClassName('jf_pop_up_bg')[0].addEventListener('click', clickEven.bind(this), false);
+
+
+    function clickEven() {
+
+        this.hide();
+    }
+
+
+    if(thisEle.getElementsByClassName('jf_pop_up_bg')[0]) {
+
+        if(browser.os.android){
+
+            thisEle.getElementsByClassName('jf_pop_up_bg')[0].addEventListener('touchmove',windowBanEvent.Canceling,false);
+
+        }
+        else {
+
+            addEvent(thisEle.getElementsByClassName('jf_pop_up_bg')[0]);
+        }
+
+
+    }
+
+
+    function addEvent(ele) {
+
+        var allEvent=['touchstart','touchmove','touchend'];
+
+        for(var i=0;i<allEvent.length;i++) {
+
+            ele.addEventListener(allEvent[i],eventBan,false)
+
+        }
+
+    }
+
+    function eventBan(e) {
+
+        // window.event? window.event.cancelBubble = true : e.stopPropagation();
+
+        window.event ? window.event.returnValue = false : e.preventDefault();
+
+
+    }
+
+
+
+
+
+};
+
+jfShowPop.prototype.show = function (details) {
+
+    if(details){
+
+        details.fn();
+    }
+
+    var thisEle = document.getElementById(this.details.ele);
+
+    thisEle.style.display = 'block';
+
+    setTimeout(function () {
+
+        if (thisEle.className.indexOf('show') == -1) {
+
+            thisEle.className += ' show'
+
+        }
+
+    }, 1);
+
+    document.getElementsByClassName('jf_pop_up_bg')[0].addEventListener('touchmove',windowBanEvent.Canceling,false);//给阴影绑定冒泡事件
+
+
+    document.getElementsByTagName("body")[0].className = "ovfHiden";//页面禁止滚动
+    document.getElementsByTagName("html")[0].className = "ovfHiden";//页面禁止滚动
+
+
+
+};
+
+jfShowPop.prototype.hide = function () {
+
+    var thisEle = document.getElementById(this.details.ele);
+
+
+    if (thisEle.className.indexOf('show') > -1) {
+
+
+        transitionMove(thisEle);
+
+        thisEle.className = thisEle.className.replace(' show', '')
+
+    }
+
+    windowBanEvent.unbundling();//解绑页面禁止事件
+
+    function transitionMove(ele) {
+
+        // Safari 3.1 到 6.0 代码
+        ele.addEventListener("webkitTransitionEnd", MFunction);
+        // 标准语法
+        ele.addEventListener("transitionend", MFunction);
+
+        function MFunction() {
+
+            ele.style.display = 'none';
+            // Safari 3.1 到 6.0 代码
+            ele.removeEventListener("webkitTransitionEnd", MFunction);
+            // 标准语法
+            ele.removeEventListener("transitionend", MFunction);
+
+
+        }
+
+
+    }
+
+    document.getElementsByTagName("body")[0].className = "";//页面禁止滚动
+    document.getElementsByTagName("html")[0].className = "";//页面禁止滚动
+
+
+};
+
+
+
+//开票申请页面，金额转变大写
+var moneyNumChange={
+
+    showRightMoney:function(){
+        document.getElementsByClassName('num_money')[0].addEventListener("blur",function(){
+
+            var thisInsertValue=this.value;
+
+            if(thisInsertValue.length>1){
+
+                document.getElementsByClassName('text_money')[0].value=moneyNumChange.smallToBig(thisInsertValue);//实现金额大写
+
+            }
+
+        },false);
+
+        document.getElementsByClassName('num_money')[0].addEventListener("focus",function(){
+
+
+            document.getElementsByClassName('text_money')[0].value=""
+
+        },false);
+    },
+
+
+    smallToBig:function(n){//金额变大写
+
+        var fraction = ['角', '分'];
+        var digit = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];
+        var unit = [ ['元', '万', '亿'], ['', '拾', '佰', '仟']  ];
+        var head = n < 0? '欠': '';
+        n = Math.abs(n);
+
+        var s = '';
+
+        for (var i = 0; i < fraction.length; i++)
+        {
+            s += (digit[Math.floor(n * 10 * Math.pow(10, i)) % 10] + fraction[i]).replace(/零./, '');
+        }
+        s = s || '整';
+        n = Math.floor(n);
+
+        for (var i = 0; i < unit[0].length && n > 0; i++)
+        {
+            var p = '';
+            for (var j = 0; j < unit[1].length && n > 0; j++)
+            {
+                p = digit[n % 10] + unit[1][j] + p;
+                n = Math.floor(n / 10);
+            }
+            s = p.replace(/(零.)*零$/, '').replace(/^$/, '零')  + unit[0][i] + s;
+        }
+        return head + s.replace(/(零.)*零元/, '元').replace(/(零.)+/g, '零').replace(/^整$/, '零元整');
+    },
+
+    numCalc:function(num){//金额自带千分号
+
+
+        num=num.replace(/^(\d*)$/,"$1.");
+        num=(num+"00").replace(/(\d*\.\d\d)\d*/,"$1");
+        num=num.replace(".",",");
+        var re=/(\d)(\d{3},)/;
+        while(re.test(num))
+            num=num.replace(re,"$1,$2");
+        num=num.replace(/,(\d\d)$/,".$1");
+        return  num.replace(/^\./,"0.")
+    }
 }
+
+
+
+
+//地址选择
+function showAddress(){
+
+    var allCheckAddress=document.getElementById('choose_address').getElementsByTagName('input');
+
+    var showAddressEle=document.getElementsByClassName('addressTextarea')[0];
+
+    var showNameTel=document.getElementsByClassName('name_tel')[0];
+
+    function getIndex(){
+        for(var i=0;i<allCheckAddress.length;i++){
+
+            if(allCheckAddress[i].checked){
+
+                return i
+            }
+        }
+
+    }
+
+    var j=getIndex();
+
+    if(j>-1){
+
+        var getFatherEle=document.getElementById('choose_address').getElementsByClassName('name_list');
+
+        var chooseAddress=getFatherEle[j].getElementsByClassName('address')[0].innerHTML;
+
+        var nameTel=getFatherEle[j].getElementsByClassName('name')[0].innerHTML+'('+getFatherEle[j].getElementsByClassName('tel')[0].innerHTML+')';
+
+        console.log(chooseAddress)
+
+        showAddressEle.value=chooseAddress;
+
+        showNameTel.value=nameTel;
+
+
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
 
 
 
