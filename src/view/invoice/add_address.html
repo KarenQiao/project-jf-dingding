@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>新增配送地址</title>
+</head>
+<body>
+
+<div class="jf_fapiao_lists">
+
+    <!--4-->
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p><span class="red_star">*</span>收件人姓名</p>
+        </div>
+        <div class="jf_list_ft"><input type="text" placeholder="请输入姓名"></div>
+    </a>
+    <!--5-->
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p><span class="red_star">*</span>手机号码</p>
+        </div>
+        <div class="jf_list_ft"><input type="tel" placeholder="请输入手机号码"></div>
+    </a>
+
+
+    <a class="jf_list" onclick="contactAddress.show({fn:
+
+function(){
+
+     shoppingCart.run({
+     api: '../../api/address.json',
+     type: 'get',
+     targetDom:document.getElementById('address_show'),
+     fn:function() {
+      contactAddress.hide();
+
+        //console.log(chooseAdressId);//当前选择地址ID
+     }
+
+     })
+}
+
+})">
+        <div class="jf_list_bd">
+            <p><span class="red_star">*</span>省、市</p>
+        </div>
+        <div class="jf_list_ft jf_list_arrow"><input type="text" id="address_show" placeholder="请选择" readonly onfocus="this.blur()" ></div>
+    </a>
+
+
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p><span class="red_star">*</span>详细地址</p>
+
+            <textarea rows="3"  placeholder="请输入详细地址" cols="42" style="padding-left: 5px"></textarea>
+        </div>
+        <div class="jf_list_ft"></div>
+    </a>
+
+
+
+</div>
+
+<div class="set_default_address">
+
+    <label>
+        <input class="current_checkbox" type="checkbox">
+        <span>设为默认地址</span>
+    </label>
+
+</div>
+
+<!-- 按钮 -->
+<div class="jf_fabiao_btn">
+    <a class="jf_btn jf_btn_blue" href="../invoice/application.html">保存并使用</a>
+</div>
+
+
+<div class="jf_pop_up" id="product_address">
+
+    <div class="jf_pop_up_main">
+
+        <div class="pop_top">
+
+            <div class="pop_title">请选择地址</div>
+
+            <div class="pop_cancel"></div>
+
+            <!--            <div class="pop_line"></div>-->
+
+
+        </div>
+
+        <div class="pop_main">
+
+            <div class="product_prompt_address">
+
+                <div id="jd_address_select">
+
+                    <div class="top_address">
+
+                        <div>请选择</div>
+
+                        <div></div>
+
+                        <div></div>
+
+                        <div></div>
+
+                        <div></div>
+
+                    </div>
+
+                    <div class="address"></div>
+
+                    <div class="address"></div>
+
+                    <div class="address"></div>
+
+                    <div class="address"></div>
+
+                    <div class="address"></div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="jf_pop_up_bg">
+
+    </div>
+
+</div>
+
+<script>
+
+    //地址弹出框
+    var contactAddress = new jfShowPop({
+
+        'ele': 'product_address'
+    })
+
+</script>
+
+</body>
+</html>

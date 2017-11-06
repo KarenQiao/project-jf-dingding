@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <meta content="telephone=no" name="format-detection">
+    <title>企业详情</title>
+</head>
+<body>
+
+
+
+<div class="main_info">
+
+    <div class="jf_fapiao_lists">
+        <!-- list 1-->
+        <a class="jf_list">
+            <div class="jf_list_bd">
+                <p>企业编号</p>
+            </div>
+            <div class="jf_list_ft"> <p>1000005815585</p></div>
+        </a>
+
+        <!-- list 2-->
+        <a class="jf_list">
+            <div class="jf_list_bd">
+                <p>企业识别号</p>
+            </div>
+            <div class="jf_list_ft"> <p>GH1022</p></div>
+        </a>
+
+        <!--4-->
+        <a class="jf_list">
+            <div class="jf_list_bd">
+                <p>企业名称</p>
+            </div>
+            <div class="jf_list_ft"> <p>上海嘉银金融服务有限公司</p></div>
+        </a>
+        <!--5-->
+        <a class="jf_list">
+            <div class="jf_list_bd">
+                <p>认证状态</p>
+            </div>
+            <div class="jf_list_ft"> <p>已认证</p></div>
+        </a>
+
+
+        <a class="jf_list">
+            <div class="jf_list_bd">
+                <p>企业类型</p>
+            </div>
+            <div class="jf_list_ft"><p>个人福利企业</p></div>
+        </a>
+
+
+        <a class="jf_list">
+            <div class="jf_list_bd">
+                <p>企业来源</p>
+            </div>
+            <div class="jf_list_ft"> <p>自助平台</p></div>
+        </a>
+        <a class="jf_list list_modify">
+            <div class="jf_list_bd">
+                <p style="white-space: normal">统一社会信用代码</p>
+            </div>
+            <div class="jf_list_ft"> <input value="12345678901234567890" class="credit_code_input" readonly></div>
+            <div class="modify_btn credit_code"><span>修改</span></div>
+        </a>
+        <!-- <a class="jf_list list_modify">
+             <div class="jf_list_bd">
+                 <p style="white-space: normal">纳税人识别号</p>
+             </div>
+             <div class="jf_list_ft"><input value="12345678901234567890" class="identification_num_input" readonly></div>
+             <div class="modify_btn identification_num"><span>修改</span></div>
+         </a>-->
+        <a class="jf_list list_modify">
+            <div class="jf_list_bd">
+                <p>销售代表</p>
+            </div>
+            <div class="jf_list_ft">
+                <input value="何云东" readonly id="salename_input">
+            </div>
+
+            <div class="modify_btn transfer_sale"><span>转移</span></div>
+        </a>
+        <a class="jf_list">
+            <div class="jf_list_bd">
+                <p>实收余额</p>
+            </div>
+            <div class="jf_list_ft jf_list_text"> <p>50,000</p></div>
+        </a>
+        <a class="jf_list">
+            <div class="jf_list_bd">
+                <p>创建时间</p>
+            </div>
+            <div class="jf_list_ft jf_list_text"> <p>2017-01-01 10:00:00</p></div>
+        </a>
+
+
+    </div>
+
+
+    <!--发票-->
+    <div class="payment_records">
+
+        <div class="title">
+            <p>发票抬头</p>
+            <a id="add_invoice" class="add_invoice">新增</a>
+        </div>
+
+
+        <div class="payment_lists">
+            <div class="payment_list" >
+                <a class="payment_info edit">
+                    <div class="payment_info_name">
+                        <span>发票抬头：</span>
+                        <span>上海你我贷互联网金融信息服务有限公司</span>
+                    </div>
+                    <div class="payment_info_number">
+                        <span>纳税人识别号：</span>
+                        <span>52555651565265465356</span>
+                    </div>
+                </a>
+
+                <div class="payment_close"><img src="../../images/dingding/icon_pay_close.png" class="close_icon"></div>
+            </div>
+
+            <div class="payment_list" >
+                <a class="payment_info edit">
+                    <div class="payment_info_name">
+                        <span>发票抬头：</span>
+                        <span>上海你我贷互联网金融信息服务有限公司</span>
+                    </div>
+                    <div class="payment_info_number">
+                        <span>纳税人识别号：</span>
+                        <span>52555651565265465356</span>
+                    </div>
+                </a>
+
+                <div class="payment_close"><img src="../../images/dingding/icon_pay_close.png" class="close_icon"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--银行账号-->
+    <div class="payment_records">
+
+
+        <div class="title">
+            <p>银行账号</p>
+        </div>
+
+
+        <div class="payment_lists">
+            <div class="payment_list">
+                <div class="payment_info">
+                    <div class="payment_info_name">
+                        <span>银行账户名：</span>
+                        <span>上海你我贷互联网金融信息服务有限公司</span>
+                    </div>
+                    <div class="payment_info_number">
+                        <span>银行账号：&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span>52555651565265465356</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment_list">
+                <div class="payment_info">
+                    <div class="payment_info_name">
+                        <span>银行账户名：</span>
+                        <span>上海你我贷互联网金融信息服务有限公司</span>
+                    </div>
+                    <div class="payment_info_number">
+                        <span>银行账号：&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span>52555651565265465356</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment_list">
+                <div class="payment_info">
+                    <div class="payment_info_name">
+                        <span>银行账户名：</span>
+                        <span>上海你我贷互联网金融信息服务有限公司</span>
+                    </div>
+                    <div class="payment_info_number">
+                        <span>银行账号：&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        <span>52555651565265465356</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!--配送地址-->
+    <div class="payment_records">
+
+        <div class="title">
+            <p>配送地址</p>
+            <a class="management_address" id="management_address">管理</a>
+        </div>
+
+
+        <div class="payment_lists">
+            <div class="payment_list" >
+                <a class="payment_info" id="edit_thisAdd">
+                    <div class="payment_info_name">
+                        <span>收件人：</span>
+                        <span>葫芦娃</span>
+                    </div>
+                    <div class="payment_info_number">
+                        <span>联系电话：</span>
+                        <span>13596847562</span>
+                    </div>
+
+                    <div class="payment_info_number">
+                        <span>配送地址：</span>
+                        <span><span class="default_address">(默认)</span>上海市徐汇区虹桥路嘉华商务中心D5座</span>
+                    </div>
+                </a>
+
+
+                <div class="payment_close"><img src="../../images/dingding/icon_pay_close.png" class="delete_address"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!--中间部分1-->
+
+
+
+
+<!--搜索销售代表-->
+<div id="top_search_sale" class="top_search search_salespage">
+    <div class="top_search_mian">
+        <a class="left gobackone"><img src="../../images/dingding/icon_pay_return.png"></a>
+        <div class="center">
+            <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
+                <input type="search" placeholder="请输入查找的内容" class="search_input">
+                <a class="weui_icon_clear" id="text_cancle">×</a>
+            </label>
+        </div>
+        <a class="right">搜索</a>
+    </div>
+
+    <div class="company_name_lists">
+
+        <label class="name_list">
+
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+
+            <div>
+                <p>何云东</p>
+            </div>
+
+        </label>
+
+        <label class="name_list">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+            <div>
+                <p>谯</p>
+            </div>
+
+        </label>
+        <label class="name_list">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+            <div>
+                <p>小王</p>
+            </div>
+
+        </label>
+        <label class="name_list">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+            <div>
+                <p>小李</p>
+            </div>
+
+        </label>
+    </div>
+</div>
+
+
+<!--编辑发票抬头-->
+<div id="edit_invoice_title" class="top_search edit_invoice_title">
+
+        <div class="recharge_balance">
+            <img src="../../images/dingding/icon_warning.png">
+      <span>
+        <p>注意：公司规定发票抬头必须与企业名称一致。若有特殊情况，客户需要开其他名称的发票抬头。请发邮件与运营部周欣联系，并说明原因。</p>
+      </span>
+        </div>
+
+
+        <!--信息1-->
+        <div class="jf_fapiao_lists">
+            <!-- list 1-->
+            <a class="jf_list">
+                <div class="jf_list_bd">
+                    <p>申请开票企业</p>
+                </div>
+                <div class="jf_list_ft"> <p>上海淘略数据处理有限公司</p></div>
+            </a>
+
+            <!-- list 2-->
+            <a class="jf_list">
+                <div class="jf_list_bd">
+                    <p>发票抬头</p>
+                </div>
+                <div class="jf_list_ft"> <p>上海淘略数据处理有限公司</p></div>
+            </a>
+
+            <!--4-->
+            <a class="jf_list">
+                <div class="jf_list_bd">
+                    <p>纳税人识别号</p>
+                </div>
+                <div class="jf_list_ft"><input type="text" value="1562566265652665SCFF55"></div>
+            </a>
+            <!--5-->
+            <a class="jf_list">
+                <div class="jf_list_bd">
+                    <p>开户行</p>
+                </div>
+                <div class="jf_list_ft"><input type="text" value="中国工商银行上海徐汇分行"></div>
+            </a>
+
+
+            <a class="jf_list">
+                <div class="jf_list_bd">
+                    <p>账号</p>
+                </div>
+                <div class="jf_list_ft"><input type="text" value="6662498158428425125"></div>
+            </a>
+
+
+            <a class="jf_list">
+                <div class="jf_list_bd">
+                    <p>电话</p>
+                </div>
+                <div class="jf_list_ft"><input type="text" value="13569854562"></div>
+            </a>
+            <a class="jf_list">
+                <div class="jf_list_bd">
+                    <p>地址</p>
+                </div>
+                <div class="jf_list_ft"><input type="text" value="上海市徐汇区虹桥路808号"></div>
+            </a>
+
+        </div>
+
+
+        <!-- 按钮 -->
+        <div class="jf_fabiao_btn">
+            <a class="jf_btn jf_btn_blue edit_save">保存</a>
+        </div>
+
+
+</div>
+
+
+<!--新增发票抬头-->
+<div id="add_invoice_title" class="top_search add_invoice_title">
+
+
+        <div class="recharge_balance">
+            <img src="../../images/dingding/icon_warning.png">
+      <span>
+        <p>注意：公司规定发票抬头必须与企业名称一致。若有特殊情况，客户需要开其他名称的发票抬头。请发邮件与运营部周欣联系，并说明原因。</p>
+      </span>
+        </div>
+
+
+        <!--信息1-->
+        <div class="jf_fapiao_lists">
+            <!-- list 1-->
+            <a class="jf_list">
+                <div class="jf_list_bd">
+                    <p>申请开票企业</p>
+                </div>
+                <div class="jf_list_ft"> <p>上海淘略数据处理有限公司</p></div>
+            </a>
+
+            <!-- list 2-->
+            <a class="jf_list">
+                <div class="jf_list_bd">
+                    <p>发票抬头</p>
+                </div>
+                <div class="jf_list_ft"> <p>上海淘略数据处理有限公司</p></div>
+            </a>
+
+            <!--4-->
+            <a class="jf_list">
+                <div class="jf_list_bd">
+                    <p>纳税人识别号</p>
+                </div>
+                <div class="jf_list_ft"><input type="text" placeholder="必填"></div>
+            </a>
+            <!--5-->
+            <a class="jf_list">
+                <div class="jf_list_bd">
+                    <p>开户行</p>
+                </div>
+                <div class="jf_list_ft"><input type="text" placeholder="选填"></div>
+            </a>
+
+
+            <a class="jf_list">
+                <div class="jf_list_bd">
+                    <p>账号</p>
+                </div>
+                <div class="jf_list_ft"><input type="text" placeholder="选填"></div>
+            </a>
+
+
+            <a class="jf_list">
+                <div class="jf_list_bd">
+                    <p>电话</p>
+                </div>
+                <div class="jf_list_ft"><input type="text" placeholder="选填"></div>
+            </a>
+            <a class="jf_list">
+                <div class="jf_list_bd">
+                    <p>地址</p>
+                </div>
+                <div class="jf_list_ft"><input type="text" placeholder="选填，50字以内"></div>
+            </a>
+
+        </div>
+
+
+        <!-- 按钮 -->
+        <div class="jf_fabiao_btn">
+            <a class="jf_btn jf_btn_blue add_save">保存</a>
+        </div>
+
+
+
+
+
+</div>
+
+
+
+<!--管理配送地址--设置默认-->
+<div id="set_default_address" class="top_search set_default_address">
+    <div class="top_search_mian">
+        <a class="left address_back" id="address_back"><img src="../../images/dingding/icon_pay_return.png"/></a>
+        <div class="center"><p>设置默认配送地址</p></div>
+        <a class="right"></a>
+    </div>
+
+    <div class="company_name_lists">
+
+        <label class="name_list" onclick="addressIframeShow.stop()" >
+            <div>
+                <input type="radio" class="aui-radio" name="address"/>
+            </div>
+            <div class="details_address">
+                <p><span>收件人：<span>葫芦娃</span></span> <span>135968454545</span></p>
+
+                <p></span>上海市徐汇区嘉华商务中心D5座</p>
+            </div>
+
+        </label>
+
+        <label class="name_list" onclick="addressIframeShow.stop()">
+            <div>
+                <input type="radio" class="aui-radio" name="address"/>
+            </div>
+
+            <div class="details_address">
+                <p><span>收件人：<span>葫芦娃</span></span> <span>135968454545</span></p>
+
+                <p>上海市徐汇区嘉华商务中心D5座上海市徐汇区嘉华商务中心D5座上海市徐汇区嘉华商务中心D5座上海市徐汇区嘉华商务中心D5座</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick="addressIframeShow.stop()" >
+            <div>
+                <input type="radio" class="aui-radio" name="address"/>
+            </div>
+            <div class="details_address">
+                <p><span>收件人：<span>葫芦娃</span></span> <span>135968454545</span></p>
+
+                <p>上海市徐汇区嘉华商务中心D5座</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick="addressIframeShow.stop()">
+            <div>
+                <input type="radio" class="aui-radio" name="address"/>
+            </div>
+            <div class="details_address">
+                <p><span>收件人：<span>葫芦娃</span></span> <span>135968454545</span></p>
+
+                <p>上海市徐汇区嘉华商务中心D5座</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick="addressIframeShow.stop()">
+            <div> <input type="radio" class="aui-radio" name="address"/></div>
+            <div class="details_address">
+                <p><span>收件人：<span>葫芦娃</span></span> <span>135968454545</span></p>
+
+                <p>上海市徐汇区嘉华商务中心D5座</p>
+            </div>
+        </label>
+    </div>
+
+    <div class="add_address">
+        <a>新增配送地址</a>
+    </div>
+</div>
+
+
+<!--新增配送地址-->
+<div class="top_search add_addresspage" >
+    <div class="jf_fapiao_lists">
+
+        <!--4-->
+        <a class="jf_list">
+            <div class="jf_list_bd">
+                <p><span class="red_star">*</span>收件人姓名</p>
+            </div>
+            <div class="jf_list_ft"><input type="text" placeholder="请输入姓名"></div>
+        </a>
+        <!--5-->
+        <a class="jf_list">
+            <div class="jf_list_bd">
+                <p><span class="red_star">*</span>手机号码</p>
+            </div>
+            <div class="jf_list_ft"><input type="tel" placeholder="请输入手机号码"></div>
+        </a>
+
+
+        <a class="jf_list" onclick="contactAddress.show({fn:
+
+function(){
+
+     shoppingCart.run({
+     api: '../../api/address.json',
+     type: 'get',
+     targetDom:document.getElementById('address_show'),
+     fn:function() {
+      contactAddress.hide();
+
+        //console.log(chooseAdressId);//当前选择地址ID
+     }
+
+     })
+}
+
+})">
+            <div class="jf_list_bd">
+                <p><span class="red_star">*</span>省、市</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow"><input type="text" id="address_show" placeholder="请选择" readonly onfocus="this.blur()" ></div>
+        </a>
+
+
+        <a class="jf_list">
+            <div class="jf_list_bd">
+                <p><span class="red_star">*</span>详细地址</p>
+
+                <textarea rows="3"  placeholder="请输入详细地址" cols="42" style="padding-left: 5px"></textarea>
+            </div>
+            <div class="jf_list_ft"></div>
+        </a>
+
+
+
+    </div>
+
+    <div class="set_default_address">
+
+        <label>
+            <input class="current_checkbox" type="checkbox">
+            <span>设为默认地址</span>
+        </label>
+
+    </div>
+
+    <!-- 按钮 -->
+    <div class="jf_fabiao_btn">
+        <a class="jf_btn jf_btn_blue save_address">保存</a>
+    </div>
+
+
+
+</div>
+
+
+
+<!--编辑配送地址-->
+<div class="top_search edit_addresspage" >
+    <div class="jf_fapiao_lists">
+
+        <!--4-->
+        <a class="jf_list">
+            <div class="jf_list_bd">
+                <p><span class="red_star">*</span>收件人姓名</p>
+            </div>
+            <div class="jf_list_ft"><input type="text" value="葫芦娃"></div>
+        </a>
+        <!--5-->
+        <a class="jf_list">
+            <div class="jf_list_bd">
+                <p><span class="red_star">*</span>手机号码</p>
+            </div>
+            <div class="jf_list_ft"><input type="tel" value="13596874562"></div>
+        </a>
+
+
+        <a class="jf_list" onclick="contactAddress.show({fn:
+
+function(){
+
+     shoppingCart.run({
+     api: '../../api/address.json',
+     type: 'get',
+     targetDom:document.getElementById('address_show_one'),
+     fn:function() {
+      contactAddress.hide();
+
+        //console.log(chooseAdressId);//当前选择地址ID
+     }
+
+     })
+}
+
+})">
+            <div class="jf_list_bd">
+                <p><span class="red_star">*</span>省、市</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow"><input type="text" id="address_show_one" placeholder="请选择" readonly onfocus="this.blur()" ></div>
+        </a>
+
+
+        <a class="jf_list">
+            <div class="jf_list_bd">
+                <p><span class="red_star">*</span>详细地址</p>
+
+                <textarea rows="3"  placeholder="请输入详细地址" cols="42" style="padding-left: 5px"></textarea>
+            </div>
+            <div class="jf_list_ft"></div>
+        </a>
+
+
+
+    </div>
+
+    <!-- 按钮 -->
+    <div class="jf_fabiao_btn">
+        <a class="jf_btn jf_btn_blue " id="save_edit_address">保存</a>
+    </div>
+</div>
+
+
+
+<div class="jf_pop_up" id="product_address">
+
+    <div class="jf_pop_up_main">
+
+        <div class="pop_top">
+
+            <div class="pop_title">请选择地址</div>
+
+            <div class="pop_cancel"></div>
+
+            <!--            <div class="pop_line"></div>-->
+
+
+        </div>
+
+        <div class="pop_main">
+
+            <div class="product_prompt_address">
+
+                <div id="jd_address_select">
+
+                    <div class="top_address">
+
+                        <div>请选择</div>
+
+                        <div></div>
+
+                        <div></div>
+
+                        <div></div>
+
+                        <div></div>
+
+                    </div>
+
+                    <div class="address"></div>
+
+                    <div class="address"></div>
+
+                    <div class="address"></div>
+
+                    <div class="address"></div>
+
+                    <div class="address"></div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="jf_pop_up_bg">
+
+    </div>
+
+</div>
+
+
+
+
+<script>
+
+    //社会信用代码弹出框
+    $('.credit_code').on("click", function () {
+
+        jfShowTips.dialogShow({
+            "mainText": "设置统一社会信用代码",
+            "minText": "<input class='modify_credit_code' placeholder='请输入' type='text'>",
+            "checkFn": function () {
+
+                var modifyCreditCode=$('.modify_credit_code').val();
+
+                $('.credit_code_input').val(modifyCreditCode);//赋值
+
+                jfShowTips.dialogRemove();//弹出框消失
+
+
+            }
+        })
+    })
+
+
+    //侧拉选择销售代表
+    $('.transfer_sale').on('click', function () {
+
+        jfFrameFlyShow.mainFrameShow({
+            "flyTime": "0.3s",//侧拉飞入平滑时间
+
+            "flyEleArea": "search_salespage",//侧拉飞入的元素class选择器
+
+            "hideButton": "gobackone",//侧拉返回关闭按钮的class选择器
+
+            "hideFn":function(){//关闭时执行的方法
+
+                chooseCompanyName('salename_input','top_search_sale');//参数一是待输入的input的ID选择器，参数二是侧拉页面的ID选择器时
+            }
+        })
+    });
+
+
+    /*弹出确认框*/
+    $('#top_search_sale').find('.aui-radio').on("click", function () {
+
+
+        jfShowTips.dialogShow({
+            "mainText": "转移销售代表",
+            "minText": "<p>转移后<span>嘉付宝公司</span>将由<span>何云东</span>负责</p>请确认是否转移",
+            "checkFn": function () {
+
+                jfShowTips.dialogRemove();//弹出框消失；
+
+                jfFrameFlyShow.mainFrameHide();//关闭侧拉页面
+
+
+            }
+        })
+    });
+
+
+    /*点击删除按钮，实现删除该条发票记录*/
+    $('.close_icon').on("click", function () {
+
+        var thislist = $(this).parents('.payment_list');
+
+        jfShowTips.dialogShow({
+            "mainText": "确认删除发票抬头？",
+            "minText": " ",
+            "checkFn": function () {
+
+               thislist.addClass('payment_list_hide');
+
+                jfShowTips.dialogRemove();//弹出框消失
+
+                setTimeout(function () {
+                    thislist.css("display", "none");
+                }, 300);
+
+            }
+        })
+    });
+
+    //点击侧滑编辑发票抬头
+    $('.edit').on('click', function () {
+
+        document.activeElement.blur();
+
+        setTimeout(function(){
+
+            jfFrameFlyShow.mainFrameShow({
+                "flyTime": "0.3s",//侧拉飞入平滑时间
+
+                "flyEleArea": "edit_invoice_title",//侧拉飞入的元素class选择器
+
+                "hideButton": "edit_save"//侧拉返回关闭按钮的class选择器
+
+            })
+
+        },300)
+
+
+    });
+
+    //点击侧滑新增发票抬头
+    $('.add_invoice').on('click', function () {
+
+        document.activeElement.blur();
+
+        setTimeout(function(){
+
+            jfFrameFlyShow.mainFrameShow({
+                "flyTime": "0.3s",//侧拉飞入平滑时间
+
+                "flyEleArea": "add_invoice_title",//侧拉飞入的元素class选择器
+
+                "hideButton": "add_save"//侧拉返回关闭按钮的class选择器
+
+            })
+
+        },300)
+
+
+    });
+
+
+    /*点击设置默认配送地址*/
+    var addressIframeShow=new jfFrameFly.FlyShow({
+
+        "showButton":"management_address",//点击会出现侧拉页面的按钮，ID选择器
+
+        "hideButton":"address_back",//关闭的按钮,ID选择器
+
+        "flyEleArea":"set_default_address",//侧拉飞入的元素class选择器
+
+        "hasIframe":false,//不存在IFrame
+
+        "InitEleArea":"main_info",//当前初始页面
+
+        "hideFn":function(){
+           // console.log($('#set_default_address').find('.aui-radio:checked'))
+        },//关闭的时候可以发生的脚本
+
+    });
+
+    //点击添加配送地址
+    $('.add_address').on('click', function () {
+
+        document.activeElement.blur();
+
+        setTimeout(function(){
+
+            jfFrameFlyShow.mainFrameShow({
+                "flyTime": "0.3s",//侧拉飞入平滑时间
+
+                "flyEleArea": "add_addresspage",//侧拉飞入的元素class选择器
+
+                "hideButton": "save_address"//侧拉返回关闭按钮的class选择器
+
+            })
+
+        },300)
+
+
+    });
+
+    //点击编辑地址
+    var editAddressShow=new jfFrameFly.FlyShow({
+
+        "showButton":"edit_thisAdd",//点击会出现侧拉页面的按钮，ID选择器
+
+        "hideButton":"save_edit_address",//关闭的按钮,ID选择器
+
+        "flyEleArea":"edit_addresspage",//侧拉飞入的元素class选择器
+
+        "hasIframe":false,//不存在IFrame
+
+        "InitEleArea":"main_info",//当前初始页面
+
+        "hideFn":function(){
+            // console.log($('#set_default_address').find('.aui-radio:checked'))
+        },//关闭的时候可以发生的脚本
+
+
+    });
+
+    /*点击删除按钮，实现删除该条发票记录*/
+    $('.delete_address').on("click", function () {
+
+        var thislist = $(this).parents('.payment_list');
+
+        jfShowTips.dialogShow({
+            "mainText": "确认删除该条地址信息？",
+            "minText": " ",
+            "checkFn": function () {
+
+                thislist.addClass('payment_list_hide');
+
+                jfShowTips.dialogRemove();//弹出框消失
+
+                setTimeout(function () {
+                    thislist.css("display", "none");
+                }, 300);
+
+            }
+        })
+    });
+
+
+
+    //地址弹出框
+    var contactAddress = new jfShowPop({
+
+        'ele': 'product_address'
+    })
+
+
+
+
+</script>
+</body>
+
+
+</html>
