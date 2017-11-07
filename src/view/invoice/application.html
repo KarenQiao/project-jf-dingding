@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>开票申请</title>
+
+
+</head>
+<body>
+
+<div>
+    <div class="jf_fapiao_lists">
+        <!-- list 1-->
+
+        <label class="jf_list search_company">
+            <div class="jf_list_bd">
+                <p>企业名称</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow">
+                <input class="bussiness_type_name" placeholder="请选择企业名称" readonly  id="companyname_input" onfocus="this.blur()"/>
+            </div>
+        </label>
+
+
+        <!-- list 2-->
+        <label class="jf_list">
+            <div class="jf_list_bd">
+                <p class="list_textinput">销售代表</p>
+            </div>
+            <div class="jf_list_ft"><input type="text" readonly id="sale_input"/></div>
+        </label>
+        <!-- list 3 -->
+        <label class="jf_list">
+            <div class="jf_list_bd ">
+                <p>业务类型</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow">
+                <select>
+                    <option>请选择</option>
+                    <option>乐班班</option>
+                    <option>福利</option>
+                    <option>兼职</option>
+                    <option>代购</option>
+                    <option>VIP</option>
+                </select>
+            </div>
+        </label>
+        <!--4-->
+        <label class="jf_list choose_company">
+            <div class="jf_list_bd">
+                <p>开票公司</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow">
+                <select>
+                    <option>请选择</option>
+                    <option>上海淘略数据处理有限公司</option>
+                    <option>上海嘉银支付有限公司</option>
+                    <option>支付宝</option>
+                    <option>上海贝耀数据科技有限公司大连分公司</option>
+                    <option>上海淘略数据处理有限公司</option>
+                    <option>上海贝耀数据科技有限公司大连分公司</option>
+                </select>
+            </div>
+        </label>
+
+
+            <!--6--带单位，题目超长-->
+            <label class="jf_list litter_show">
+                <div class="jf_list_bd">
+                    <p class="list_maxmoneyinput">单张发票最大金额（含税）</p>
+                </div>
+                <div class="jf_list_ft jf_list_text">
+                    <input type="tel" pattern="[0-9]" id="max_input" class="moneyinput" readonly onfocus="this.blur()"/></div>
+            </label>
+            <!--7-->
+            <label class="jf_list litter_show">
+                <div class="jf_list_bd">
+                    <p class="list_minmoneyinput">最低开票金额（不含税）</p>
+                </div>
+                <div class="jf_list_ft jf_list_text"><input type="tel" id="min_input" pattern="[0-9]" class="moneyinput" readonly onfocus="this.blur()"/>
+                </div>
+            </label>
+            <!--8-->
+            <label class="jf_list litter_show">
+                <div class="jf_list_bd">
+                    <p>票面税率</p>
+                </div>
+                <div class="jf_list_ft"><input id="tax_input" readonly type="text" onfocus="this.blur()"/></div>
+            </label>
+
+
+        <!--5-->
+        <label class="jf_list fapiao_type">
+            <div class="jf_list_bd  ">
+                <p>发票科目</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow">
+                <select class="course_select" id="course_select" >
+                    <option>请选择</option>
+                    <option>采购费</option>
+                    <option>培训费</option>
+                    <option>福利费</option>
+                    <option>咨询服务费</option>
+                    <option>会务费</option>
+                    <option>技术服务费</option>
+                </select>
+            </div>
+        </label>
+
+
+        <label class="jf_list choose_tilte" onclick="window.location='choose_invoice_title.html'">
+            <div class="jf_list_bd">
+                <p>发票抬头</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow"><input placeholder="请选择发票抬头" type="text" readonly id="invoice_tilte" onfocus="this.blur()"/></div>
+        </label>
+
+        <label class="jf_list litter_show">
+            <div class="jf_list_bd">
+                <p>纳税人识别号</p>
+            </div>
+            <div class="jf_list_ft"><input readonly type="text" id="identify_number" onfocus="this.blur()"/></div>
+        </label>
+
+        <label class="jf_list litter_show">
+            <div class="jf_list_bd">
+                <p>地址</p>
+            </div>
+            <div class="jf_list_ft"><input readonly type="text" id="address" onfocus="this.blur()"/></div>
+        </label>
+        <label class="jf_list litter_show">
+            <div class="jf_list_bd">
+                <p>电话</p>
+            </div>
+            <div class="jf_list_ft"><input readonly type="text" id="tel" onfocus="this.blur()"/></div>
+        </label>
+        <label class="jf_list litter_show">
+            <div class="jf_list_bd">
+                <p>开户行</p>
+            </div>
+            <div class="jf_list_ft"><input readonly type="text" id="bank" onfocus="this.blur()"/></div>
+        </label>
+        <label class="jf_list litter_show">
+            <div class="jf_list_bd">
+                <p>账号</p>
+            </div>
+            <div class="jf_list_ft"><input readonly type="text" id="account" onfocus="this.blur()"/></div>
+        </label>
+
+
+        <label class="jf_list ">
+            <div class="jf_list_bd">
+                <p>开票金额（元）</p>
+            </div>
+            <div class="jf_list_ft"><input class="num_money" placeholder="8位以内" type="number"/></div>
+        </label>
+
+        <label class="jf_list ">
+            <div class="jf_list_bd">
+                <p>开票金额（大写）</p>
+            </div>
+            <div class="jf_list_ft"><input class="text_money" placeholder="8位以内" type="text" readonly onfocus="this.blur()"/></div>
+        </label>
+
+
+        <label class="jf_list ">
+            <div class="jf_list_bd">
+                <p>张数</p>
+            </div>
+            <div class="jf_list_ft"><input class="fapiaotitle" type="tel" pattern="[0-9]" value="1"/></div>
+        </label>
+
+        <label class="jf_list" onclick="this.getElementsByTagName('input')[0].click()">
+            <div class="jf_list_bd">
+                <p>开票日期</p>
+            </div>
+            <div class="jf_list_ft"><input class="date_input date_input_one" type="date" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当日"/>
+            </div>
+        </label>
+
+
+        <label class="jf_list choose_address">
+            <div class="jf_list_bd">
+                <p class="list_textinput">配送地址：</p>
+
+            </div>
+            <div class="jf_list_ft jf_list_arrow">
+                <textarea rows="3"  placeholder="请选择配送地址" readonly class="addressTextarea"></textarea>
+            </div>
+        </label>
+
+        <!-- list 2-->
+        <label class="jf_list">
+            <div class="jf_list_bd">
+                <p>收件人：</p>
+            </div>
+            <div class="jf_list_ft"><input type="text" class="name_tel" readonly/></div>
+        </label>
+
+    </div>
+    <!-- 按钮 -->
+    <div class="jf_fabiao_btn">
+        <a class="jf_btn jf_btn_blue" href="add_payment_records.html">下一步</a>
+    </div>
+
+</div>
+
+<!--搜索公司-->
+<div id="top_search" class="top_search search_company_name">
+    <div class="top_search_mian">
+        <a class="left goback"><img src="../../images/dingding/icon_pay_return.png"/></a>
+        <div class="center">
+            <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
+                <input type="search" placeholder="请输入查找的内容" class="search_input"/>
+                <a class="weui_icon_clear" id="text_cancle">×</a>
+            </label>
+        </div>
+        <a class="right">搜索</a>
+    </div>
+
+    <div class="company_name_lists">
+        <label class="name_list company_jiayin" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany" checked="true" data-sale="谯"/>
+            </div>
+            <div>
+                <p>上海淘略数据处理有限公司上海淘略数据处理有限公司上海淘略数据处理有限公司</p>
+                <p>193648665365193648665365193648665365193648665365193648665365</p>
+            </div>
+
+        </label>
+
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany" data-sale="李"/>
+            </div>
+
+            <div>
+                <p>上海嘉银支付有限公司</p>
+                <p>26225625632656</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany" data-sale="王"/>
+            </div>
+            <div>
+                <p>支付宝</p>
+                <p>4612656262555625</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany" data-sale="王"/>
+            </div>
+            <div>
+                <p>淘略</p>
+                <p>45245825455</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div> <input type="radio" class="aui-radio" name="searchcompany" data-sale="王"/></div>
+            <div>
+                <p>上海嘉银支付有限公司</p>
+                <p>496256956</p>
+            </div>
+
+
+        </label>
+    </div>
+</div>
+
+
+
+<!--开票公司-->
+<div id="search_invoice_company" class="top_search search_invoice_company">
+    <div class="top_search_mian">
+        <a class="left goback"><img src="../../images/dingding/icon_pay_return.png"/></a>
+        <div class="center">
+            <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
+                <input type="search" placeholder="请输入查找的内容" class="search_input"/>
+                <a class="weui_icon_clear">×</a>
+            </label>
+        </div>
+        <a class="right">搜索</a>
+    </div>
+
+    <div class="company_name_lists">
+        <label class="name_list company_jiayin" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="invoice_company"/>
+            </div>
+            <div>
+                <p><span>上海淘略数据处理有限公司</span> <small>（普通科目）</small></p>
+            </div>
+
+        </label>
+
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="invoice_company"/>
+            </div>
+
+            <div>
+                <p><span>上海嘉银支付有限公司</span> <small>（附加科目）</small></p>
+
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="invoice_company"/>
+            </div>
+            <div>
+                <p><span>上海贝耀数据科技有限公司大连分公司</span> <small>（全国科目）</small></p>
+
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="invoice_company"/>
+            </div>
+            <div>
+                <p><span>支付宝</span><small>（本地科目）</small></p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div> <input type="radio" class="aui-radio" name="invoice_company"/></div>
+            <div>
+                <p><span>淘略数据</span> <small>（本地科目）</small></p>
+            </div>
+
+
+        </label>
+    </div>
+</div>
+
+
+
+<!--选择配送地址-->
+<div id="choose_address" class="top_search choose_application_address">
+    <div class="top_search_mian">
+        <a class="left goback"><img src="../../images/dingding/icon_pay_return.png"/></a>
+        <div class="center"><p>选择配送地址</p></div>
+        <a class="right"></a>
+    </div>
+
+    <div class="company_name_lists">
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="address"/>
+            </div>
+            <div class="details_address">
+                <p><span>收件人：<span class="name">葫芦娃</span></span> <span class="tel">135968454545</span></p>
+
+                <p><span class="default_address">（默认）</span><span class="address">上海市徐汇区嘉华商务中心D5座</span></p>
+            </div>
+
+        </label>
+
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="address"/>
+            </div>
+
+            <div class="details_address">
+                <p><span>收件人：<span class="name">葫芦娃</span></span> <span class="tel">135968454545</span></p>
+
+                <p><span class="address">上海市徐汇区嘉华商务中心D5座上海市徐汇区嘉华商务中心D5座上海市徐汇区嘉华商务中心D5座上海市徐汇区嘉华商务中心D5座</span></p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="address"/>
+            </div>
+            <div class="details_address">
+                <p><span>收件人：<span class="name">葫芦娃</span></span> <span class="tel">135968454545</span></p>
+
+                <p><span class="address">上海市徐汇区嘉华商务中心D5座</span></p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="address"/>
+            </div>
+            <div class="details_address">
+                <p><span>收件人：<span class="name">葫芦娃</span></span> <span class="tel">135968454545</span></p>
+
+                <p><span class="address">上海市徐汇区嘉华商务中心D5座</span></p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div> <input type="radio" class="aui-radio" name="address"/></div>
+            <div class="details_address">
+                <p><span>收件人：<span class="name">葫芦娃</span></span> <span class="tel">135968454545</span></p>
+
+                <p><span class="address">上海市徐汇区嘉华商务中心D5座</span></p>
+            </div>
+
+
+        </label>
+    </div>
+
+    <div class="add_address">
+        <a href="add_address.html">新增配送地址</a>
+    </div>
+</div>
+
+
+
+
+
+</body>
+
+<script type="text/javascript" src="../../js/vue.min.js"></script>
+<script type="text/javascript" src="../../js/vue-resource.js"></script>
+
+<script>
+
+
+   // moneyChange();//金额实现千分符以及大写金额变化
+
+
+    moneyNumChange.showRightMoney()
+
+
+
+    //点击侧滑选择企业名称
+    $('label.search_company').on('click', function () {
+
+        document.activeElement.blur();
+
+        setTimeout(function(){
+
+            jfFrameFlyShow.mainFrameShow({
+                "flyTime": "0.3s",//侧拉飞入平滑时间
+
+                "flyEleArea": "search_company_name",//侧拉飞入的元素class选择器
+
+                "hideButton": "goback",//侧拉返回关闭按钮的class选择器
+
+                hideFn: function () {
+
+                    chooseCompanyName('companyname_input','top_search');//参数一是当前需要填写的元素的ID值，参数二是当前侧拉页面的ID选择器
+                }
+            })
+
+        },300)
+
+
+    });
+
+
+
+    //选择地址侧拉
+
+    $('label.choose_address').on('click', function () {
+
+        document.activeElement.blur();
+
+        setTimeout(function(){
+
+            jfFrameFlyShow.mainFrameShow({
+                "flyTime": "0.3s",//侧拉飞入平滑时间
+
+                "flyEleArea": "choose_application_address",//侧拉飞入的元素class选择器
+
+                "hideButton": "goback",//侧拉返回关闭按钮的class选择器
+
+                hideFn: function () {//关闭的时候发生的脚本
+
+                    showAddress();//地址选择
+
+                }
+            })
+
+        },300)
+
+
+    });
+
+
+/*
+
+    //点击侧滑开票企业
+    $('label.choose_company').on('click', function () {
+
+        document.activeElement.blur();
+
+        setTimeout(function(){
+
+            jfFrameFlyShow.mainFrameShow({
+                "flyTime": "0.3s",//侧拉飞入平滑时间
+
+                "flyEleArea": "search_invoice_company",//侧拉飞入的元素class选择器
+
+                "hideButton": "goback",//侧拉返回关闭按钮的class选择器
+
+                hideFn: function () {
+
+                    chooseCompanyName('invoice_company_name','search_invoice_company');//参数一是当前需要填写的元素的ID值，参数二是当前侧拉页面的ID选择器
+
+                }
+            })
+
+        },300)
+
+
+    });
+*/
+
+
+
+    /*当select框里的值发生变化时，改变相应值*/
+    document.getElementsByClassName('course_select')[0].addEventListener('change', function () {
+        //this.style.color="#4d4d4d"
+    }, false);
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

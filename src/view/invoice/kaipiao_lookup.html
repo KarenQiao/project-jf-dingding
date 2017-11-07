@@ -71,7 +71,7 @@
     <div class="getmoney_details_lists">
 
         <!--list-->
-        <div class="kaipiao_lsit">
+        <div class="kaipiao_lsit" >
             <div class="list_left">
 
             <!--上-->
@@ -442,13 +442,12 @@
         jfShowTips.dialogShow({
             "mainText": "确认撤销这条开票记录吗？",
             "minText": " ",
-            "hasCheck": true,
-            "hasCancel": true,
             "checkFn": function () {
 
                 thislist.addClass('payment_list_hide');
 
                 jfShowTips.dialogRemove();//弹出框消失
+
 
                 setTimeout(function () {
                     thislist.css("display", "none");

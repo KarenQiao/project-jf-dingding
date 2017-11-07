@@ -22,17 +22,31 @@ function devEjs(){
 
         .pipe(ejs())
 
-        //增加样式文件
+       /* //增加样式文件
         .pipe(cheerio(function($){
 
-            var addCss="\n<link rel='stylesheet'  href='../../css/dingding.css'/>\n";
+            var addCss="\n<link rel='stylesheet'  href='../../css/dingding.min.css'/>\n";
 
             $('head').append(addCss)
 
+        }))*/
+
+        .pipe(cheerio({
+            run:function($){
+
+                var addCss="\n<link rel='stylesheet'  href='../../css/dingding.min.css'/>\n";
+
+                $('head').append(addCss)
+            },
+
+            parserOptions: {
+                // Options here
+                decodeEntities: false
+            }
         }))
         //顺序增加脚本文件
         .pipe(cheerio(function($){
-            var addJsMain = '\n<script src="../../js/jquery-3.0.0.min.js"></script>\n<script src="../../js/fastclick.js"></script>\n<script src="../../js/dingding.js"></script>\n';//主要的脚本文件
+            var addJsMain = '\n<script src="../../js/jquery-3.0.0.min.js"></script>\n<script src="../../js/dingding.min.js"></script>\n';//主要的脚本文件
 
             var addJsHtml="";//保存用的业务脚本
 
@@ -63,6 +77,9 @@ function devEjs(){
             $('body').append(addJsHtml);
 
             $('body').append(addJsRun);
+
+
+
 
         }))
 

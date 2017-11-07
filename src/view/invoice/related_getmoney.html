@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>关联收款记录</title>
+
+</head>
+<body>
+
+
+<!--中间部分-->
+
+<!--信息1-->
+<div class="jf_fapiao_lists">
+    <!-- list 1-->
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p>企业名称</p>
+        </div>
+        <div class="jf_list_ft"> <p>嘉银</p></div>
+    </a>
+
+    <!-- list 2-->
+    <a class="jf_list" >
+        <div class="jf_list_bd">
+            <p>销售代表</p>
+        </div>
+        <div class="jf_list_ft"> <p >何云东</p></div>
+    </a>
+
+    <!--4-->
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p>开票公司</p>
+        </div>
+        <div class="jf_list_ft"> <p >上海淘略数据处理有限公司</p></div>
+    </a>
+    <!--5-->
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p >发票科目</p>
+        </div>
+        <div class="jf_list_ft"> <p >技术服务费</p></div>
+    </a>
+
+
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p >发票抬头</p>
+        </div>
+        <div class="jf_list_ft">  <p>上海嘉银技术有限公司</p></div>
+    </a>
+
+
+    <a class="jf_list">
+        <div class="jf_list_bd">
+                <p>开票金额（元）</p>
+
+        </div>
+        <div class="jf_list_ft"> <p>450,000</p></div>
+    </a>
+
+    <a class="jf_list">
+        <div class="jf_list_bd">
+            <p class="list_minmoneyinput">申请开票日期</p>
+        </div>
+        <div class="jf_list_ft jf_list_text"> <p>2017-01-01</p></div>
+    </a>
+
+
+</div>
+
+<!--收款金额-->
+<div class="payment_records">
+
+    <div class="payment_total">
+        <span class="payment_total_list">收款总金额：<span>0元（3）</span></span>
+    </div>
+
+    <div class="payment_total">
+        <span class="payment_total_list">企业收款金额：<span>6500元</span></span>
+
+        <span class="payment_total_list" id="company_add_records"><a>+添加企业收款</a></span>
+    </div>
+
+    <div class="payment_lists">
+        <div class="payment_list">
+            <div class="payment_info">
+                <div class="payment_info_name">
+                    <span>付款账户：</span>
+                    <span>老顽童</span>
+                </div>
+                <div class="payment_info_number">
+                    <span>付款账号：</span>
+                    <span>1565265465356</span>
+                </div>
+                <div class="payment_info_name">
+                    <span>收款时间：</span>
+                    <span>2017/01/01</span>
+                </div>
+            </div>
+            <div class="payment_moneyvalue">￥400.00</div>
+            <div class="payment_close"><img src="../../images/dingding/icon_pay_close.png" class="close_icon"></div>
+        </div>
+
+        <div class="payment_list">
+            <div class="payment_info">
+                <div class="payment_info_name">
+                    <span>付款账户：</span>
+                    <span>老顽童</span>
+                </div>
+                <div class="payment_info_number">
+                    <span>付款账号：</span>
+                    <span>1565265465356</span>
+                </div>
+                <div class="payment_info_name">
+                    <span>收款时间：</span>
+                    <span>2017/01/01</span>
+                </div>
+            </div>
+            <div class="payment_moneyvalue">￥400.00</div>
+            <div class="payment_close"><img src="../../images/dingding/icon_pay_close.png" class="close_icon"></div>
+        </div>
+
+    </div>
+    <div class="payment_total">
+        <span class="payment_total_list">个人收款金额：<span>6500元</span></span>
+
+        <span class="payment_total_list" id="person_add_records"><a>+添加个人收款</a></span>
+    </div>
+
+    <div class="payment_lists">
+        <div class="payment_list">
+            <div class="payment_info">
+                <div class="payment_info_name">
+                    <span>付款账户：</span>
+                    <span>老顽童</span>
+                </div>
+                <div class="payment_info_number">
+                    <span>付款账号：</span>
+                    <span>1565265465356</span>
+                </div>
+                <div class="payment_info_name">
+                    <span>收款时间：</span>
+                    <span>2017/01/01</span>
+                </div>
+            </div>
+            <div class="payment_moneyvalue">￥400.00</div>
+            <div class="payment_close"><img src="../../images/dingding/icon_pay_close.png" class="close_icon"></div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 按钮 -->
+<div class="jf_fabiao_btn">
+    <a class="jf_btn jf_btn_blue">保存</a>
+</div>
+
+
+
+
+
+<!--侧拉页面1--添加企业收款-->
+<div class="getmoney_details_page company_getmoney_page" id="company_getmoney_page">
+    <!--中间部分-->
+    <div class="getmoney_details_top">
+        <div class="getmoney_details">
+            <p class="getmoney_day">
+                <span>到账日期<input type="date" class="date_input" placeholder="请输入日期"/></span>
+                <span>至<input type="date" class="date_input" placeholder="请输入日期"/></span>
+            </p>
+            <label class="jf_list search_company">
+                <div class="jf_list_bd">
+                    <p class="fapiao_bussiness_type">付款企业</p>
+                </div>
+                <div class="jf_list_ft jf_list_arrow"><input readonly value="1000010111-嘉银" id="companyname_input" onfocus="this.blur()" ></div>
+            </label>
+
+        </div>
+
+        <!--收款记录-->
+        <div class="getmoney_details_lists">
+            <div class="getmoney_details_check">
+                <input class="current_checkbox" type="checkbox" checked="checked"/>
+                <span>只显示未关联记录</span>
+            </div>
+            <!--list1-->
+            <label class="getmoney_details_list">
+                <div>
+                    <p>
+                        <span>付款户名：</span>
+                        <span>老顽童</span>
+                    </p>
+                    <p>
+                        <span>付款账号：</span>
+                        <span>5682953839539539568</span>
+                    </p>
+                    <p>
+                        <span>收款户名</span>
+                        <span>上海淘略数据处理有限公司</span>
+                    </p>
+                    <p>
+                        <span>金额：</span>
+                        <span>400.00</span>
+                    </p>
+                    <p>
+                        <span>银行到账时间：</span>
+                        <span>2017.01.02 13:00:00</span>
+                    </p>
+                    <p>
+                        <span>嘉福入账时间：</span>
+                        <span>2017.01.02 13:00:00</span>
+                    </p>
+                </div>
+                <div class="getmoney_checkbox">
+                    <input type="checkbox" class="aui-radio" name="company" checked="checked"/>
+                </div>
+            </label>
+            <!--list1-->
+            <label class="getmoney_details_list">
+                <div>
+                    <p>
+                        <span>付款户名：</span>
+                        <span>老顽童</span>
+                    </p>
+                    <p>
+                        <span>付款账号：</span>
+                        <span>5682953839539539568</span>
+                    </p>
+                    <p>
+                        <span>收款户名</span>
+                        <span>上海淘略数据处理有限公司</span>
+                    </p>
+                    <p>
+                        <span>金额：</span>
+                        <span>400.00</span>
+                    </p>
+                    <p>
+                        <span>银行到账时间：</span>
+                        <span>2017.01.02 13:00:00</span>
+                    </p>
+                    <p>
+                        <span>嘉福入账时间：</span>
+                        <span>2017.01.02 13:00:00</span>
+                    </p>
+                </div>
+                <div class="getmoney_checkbox">
+                    <input type="checkbox" class="aui-radio" name="company"/>
+                </div>
+            </label>
+            <!--list1-->
+            <label class="getmoney_details_list">
+                <div>
+                    <p>
+                        <span>付款户名：</span>
+                        <span>老顽童</span>
+                    </p>
+                    <p>
+                        <span>付款账号：</span>
+                        <span>5682953839539539568</span>
+                    </p>
+                    <p>
+                        <span>收款户名</span>
+                        <span>上海淘略数据处理有限公司</span>
+                    </p>
+                    <p>
+                        <span>金额：</span>
+                        <span>400.00</span>
+                    </p>
+                    <p>
+                        <span>银行到账时间：</span>
+                        <span>2017.01.02 13:00:00</span>
+                    </p>
+                    <p>
+                        <span>嘉福入账时间：</span>
+                        <span>2017.01.02 13:00:00</span>
+                    </p>
+                </div>
+                <div class="getmoney_checkbox">
+                    <input type="checkbox" class="aui-radio" name="company" />
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <!-- 固定底部-->
+    <div class="tabbar">
+        <div class="">
+            <div class="weui_tabbar">
+                <div class="weui_tabbar_item weui_tabbar_font"><span>总金额：</span><span>￥656.00</span></div>
+                <a class="weui_actionsheet_cell weui_tabbar_buy" id="weui_tabbar_buy">确认</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--侧拉页面2--添加个人收款-->
+<div class="getmoney_details_page person_getmoney_page" >
+    <!--中间部分-->
+    <div class="getmoney_details_top">
+        <div class="getmoney_details">
+            <p class="getmoney_day">
+                <span>到账日期<input type="date" class="date_input" placeholder="请输入日期"/></span>
+                <span>至<input type="date" class="date_input" placeholder="请输入日期"/></span>
+            </p>
+
+            <label class="jf_list search_sales">
+                <div class="jf_list_bd">
+                    <p>&#x9500;&#x552E;&#x4EE3;&#x8868;</p>
+                </div>
+                <div class="jf_list_ft jf_list_arrow"> <input readonly type="text" value="&#x4F55;&#x4E91;&#x4E1C;" id="salename_input" onfocus="this.blur()"></div>
+            </label>
+
+        </div>
+
+        <!--收款记录-->
+        <div class="getmoney_details_lists">
+
+            <!--list1-->
+            <label class="getmoney_details_list">
+                <div>
+                    <p>
+                        <span>付款户名：</span>
+                        <span>老顽童</span>
+                    </p>
+                    <p>
+                        <span>付款账号：</span>
+                        <span>5682953839539539568</span>
+                    </p>
+                    <p>
+                        <span>收款户名</span>
+                        <span>上海淘略数据处理有限公司</span>
+                    </p>
+                    <p>
+                        <span>金额：</span>
+                        <span>400.00</span>
+                    </p>
+                    <p>
+                        <span>银行到账时间：</span>
+                        <span>2017.01.02 13:00:00</span>
+                    </p>
+                    <p>
+                        <span>嘉福入账时间：</span>
+                        <span>2017.01.02 13:00:00</span>
+                    </p>
+                </div>
+                <div class="getmoney_checkbox">
+                    <input type="checkbox" class="aui-radio" name="company" checked="checked"/>
+                </div>
+            </label>
+            <!--list1-->
+            <label class="getmoney_details_list">
+                <div>
+                    <p>
+                        <span>付款户名：</span>
+                        <span>老顽童</span>
+                    </p>
+                    <p>
+                        <span>付款账号：</span>
+                        <span>5682953839539539568</span>
+                    </p>
+                    <p>
+                        <span>收款户名</span>
+                        <span>上海淘略数据处理有限公司</span>
+                    </p>
+                    <p>
+                        <span>金额：</span>
+                        <span>400.00</span>
+                    </p>
+                    <p>
+                        <span>银行到账时间：</span>
+                        <span>2017.01.02 13:00:00</span>
+                    </p>
+                    <p>
+                        <span>嘉福入账时间：</span>
+                        <span>2017.01.02 13:00:00</span>
+                    </p>
+                </div>
+                <div class="getmoney_checkbox">
+                    <input type="checkbox" class="aui-radio" name="company"/>
+                </div>
+            </label>
+            <!--list1-->
+            <label class="getmoney_details_list">
+                <div>
+                    <p>
+                        <span>付款户名：</span>
+                        <span>老顽童</span>
+                    </p>
+                    <p>
+                        <span>付款账号：</span>
+                        <span>5682953839539539568</span>
+                    </p>
+                    <p>
+                        <span>收款户名</span>
+                        <span>上海淘略数据处理有限公司</span>
+                    </p>
+                    <p>
+                        <span>金额：</span>
+                        <span>400.00</span>
+                    </p>
+                    <p>
+                        <span>银行到账时间：</span>
+                        <span>2017.01.02 13:00:00</span>
+                    </p>
+                    <p>
+                        <span>嘉福入账时间：</span>
+                        <span>2017.01.02 13:00:00</span>
+                    </p>
+                </div>
+                <div class="getmoney_checkbox">
+                    <input type="checkbox" class="aui-radio" name="company" />
+                </div>
+            </label>
+        </div>
+    </div>
+
+    <!-- 固定底部-->
+    <div class="tabbar">
+        <div class="">
+            <div class="weui_tabbar">
+                <div class="weui_tabbar_item weui_tabbar_font"><span>总金额：</span><span>￥656.00</span></div>
+                <a class="weui_actionsheet_cell weui_tabbar_buy" id="person_tabbar_buy">确认</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--搜索公司-->
+<div id="top_search" class="top_search search_company_page">
+    <div class="top_search_mian">
+        <a class="left goback"><img src="../../images/dingding/icon_pay_return.png"/></a>
+        <div class="center">
+            <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
+                <input type="search" placeholder="请输入查找的内容" class="search_input"/>
+                <a class="weui_icon_clear" id="company_text_cancle">×</a>
+            </label>
+        </div>
+        <a class="right">搜索</a>
+    </div>
+
+    <div class="company_name_lists">
+        <label class="name_list company_jiayin" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany" checked="true" data-sale="谯"/>
+            </div>
+            <div>
+                <p>上海淘略数据处理有限公司上海淘略数据处理有限公司上海淘略数据处理有限公司</p>
+                <p>193648665365193648665365193648665365193648665365193648665365</p>
+            </div>
+
+        </label>
+
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany" data-sale="李"/>
+            </div>
+
+            <div>
+                <p>上海嘉银支付有限公司</p>
+                <p>26225625632656</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany" data-sale="王"/>
+            </div>
+            <div>
+                <p>支付宝</p>
+                <p>4612656262555625</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany" data-sale="王"/>
+            </div>
+            <div>
+                <p>淘略</p>
+                <p>45245825455</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div> <input type="radio" class="aui-radio" name="searchcompany" data-sale="王"/></div>
+            <div>
+                <p>上海嘉银支付有限公司</p>
+                <p>496256956</p>
+            </div>
+
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div> <input type="radio" class="aui-radio" name="searchcompany" data-sale="王"/></div>
+            <div>
+                <p>上海嘉银支付有限公司</p>
+                <p>496256956</p>
+            </div>
+
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div> <input type="radio" class="aui-radio" name="searchcompany" data-sale="王"/></div>
+            <div>
+                <p>上海嘉银支付有限公司</p>
+                <p>496256956</p>
+            </div>
+
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div> <input type="radio" class="aui-radio" name="searchcompany" data-sale="王"/></div>
+            <div>
+                <p>上海嘉银支付有限公司</p>
+                <p>496256956</p>
+            </div>
+
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div> <input type="radio" class="aui-radio" name="searchcompany" data-sale="王"/></div>
+            <div>
+                <p>上海嘉银支付有限公司</p>
+                <p>496256956</p>
+            </div>
+
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div> <input type="radio" class="aui-radio" name="searchcompany" data-sale="王"/></div>
+            <div>
+                <p>上海嘉银支付有限公司</p>
+                <p>496256956</p>
+            </div>
+
+
+        </label>
+    </div>
+</div>
+
+
+<!--搜索销售代表-->
+<div id="top_search_sale" class="top_search search_salespage_page">
+    <div class="top_search_mian">
+        <a class="left gobackone"><img src="../../images/dingding/icon_pay_return.png"></a>
+        <div class="center">
+            <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
+                <input type="search" placeholder="&#x8BF7;&#x8F93;&#x5165;&#x67E5;&#x627E;&#x7684;&#x5185;&#x5BB9;" class="search_input">
+                <a class="weui_icon_clear" id="text_cancle">&#xD7;</a>
+            </label>
+        </div>
+        <a class="right">&#x641C;&#x7D22;</a>
+    </div>
+
+    <div class="company_name_lists">
+
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+
+            <div>
+                <p>&#x4F55;&#x4E91;&#x4E1C;</p>
+            </div>
+
+        </label>
+
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+            <div>
+                <p>&#x8C2F;</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+            <div>
+                <p>&#x8C2F;</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+            <div>
+                <p>&#x8C2F;</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+            <div>
+                <p>&#x8C2F;</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+            <div>
+                <p>&#x8C2F;</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale">
+            </div>
+            <div>
+                <p>&#x8C2F;</p>
+            </div>
+
+        </label>
+    </div>
+</div>
+</body>
+
+<script>
+
+    /*点击删除按钮，实现删除该条记录*/
+    $('.payment_close').on("click", function () {
+
+        var thislist = $(this).parent();
+
+        jfShowTips.dialogShow({
+            "mainText": "确认撤销这笔收款记录",
+            "minText": " ",
+            "hasCheck": true,
+            "hasCancel": true,
+            "checkFn": function () {
+
+                thislist.addClass('payment_list_hide');
+
+                jfShowTips.dialogRemove();//弹出框消失
+
+                setTimeout(function () {
+                    thislist.css("display", "none");
+
+                }, 300);
+
+            }
+        })
+    });
+
+    //点击添加收款实现侧拉(企业收款)
+    $('#company_add_records').on('click', function () {
+
+        jfFrameFlyShow.mainFrameShow({
+            "flyTime": "0.3s",//侧拉飞入平滑时间
+
+            "flyEleArea": "company_getmoney_page",//侧拉飞入的元素class选择器
+
+            "hideButton": "weui_tabbar_buy"//关闭侧拉飞入的元素class选择器
+        })
+    });
+
+
+    //点击添加收款实现侧拉(个人收款)
+    $('#person_add_records').on('click', function () {
+
+        jfFrameFlyShow.mainFrameShow({
+            "flyTime": "0.3s",//侧拉飞入平滑时间
+
+            "flyEleArea": "person_getmoney_page",//侧拉飞入的元素class选择器
+
+            "hideButton": "weui_tabbar_buy"//关闭侧拉飞入的元素class选择器
+        })
+    });
+
+    //点击侧滑选择企业名称以及开票企业
+    $('label.search_company').on('click', function () {
+
+        jfFrameFlyShow.mainFrameShow({
+            "flyTime": "0.3s",//侧拉飞入平滑时间
+
+            "flyEleArea": "search_company_page",//侧拉飞入的元素class选择器
+
+            "hideButton": "goback",//侧拉返回关闭按钮的class选择器
+
+            hideFn: function () {//关闭时执行的方法
+
+                chooseCompanyName('companyname_input','top_search');//参数一是当前需要填写的元素的ID值，参数二是当前侧拉页面的ID选择器
+            }
+        })
+    });
+
+
+    //点击侧滑选择销售代表
+
+    $('label.search_sales').on('click', function () {
+
+        jfFrameFlyShow.mainFrameShow({
+            "flyTime": "0.3s",//侧拉飞入平滑时间
+
+            "flyEleArea": "search_salespage_page",//侧拉飞入的元素class选择器
+
+            "hideButton": "gobackone",//侧拉返回关闭按钮的class选择器
+
+            hideFn: function () {//关闭时执行的方法
+
+                chooseCompanyName('salename_input','top_search_sale');//参数一是当前需要填写的元素的ID值，参数二是当前侧拉页面的ID选择器
+            }
+        })
+    });
+
+
+
+    $('.jf_fabiao_btn').on("click",function(){
+
+        jfShowTips.toastShow({
+            "text":"保存成功"
+        })
+
+        setTimeout(function(){
+            window.location="kaipiao_lookup.html"
+        },3000)
+
+    })
+
+
+</script>
+</html>

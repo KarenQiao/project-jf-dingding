@@ -7,8 +7,6 @@ module.exports = {
 
         root: 'build',//目录
 
-        //host: "192.168.68.213",//ip
-
         port:333,//端口
 
         livereload: true//是否支持实时刷新

@@ -3,38 +3,32 @@
 
   "options": [
     {
-      "course": "采购费",
-      "max": 50000,
+      "companyname": "上海淘略数据处理有限公司",
+      "max": 50000.00,
       "min": 50,
       "tax": 5
     },
     {
-      "course": "培训费",
-      "max": 500000,
-      "min": 500,
-      "tax": 3
+      "companyname": "上海嘉银支付有限公司",
+      "max": 60000,
+      "min": 1000,
+      "tax": 2
     },
     {
-      "course": "福利费",
+      "companyname": "上海贝耀数据科技有限公司大连分公司",
       "max": 40000,
-      "min": 10,
-      "tax": 1
+      "min": 200,
+      "tax": 10
     },
     {
-      "course": "咨询服务费",
-      "max": 500000,
+      "companyname": "支付宝",
+      "max": 100000,
       "min": 500,
       "tax": 0.8
     },
     {
-      "course": "会务费",
-      "max": 50000,
-      "min": 50,
-      "tax": 5
-    },
-    {
-      "course": "技术服务费",
-      "max": 50000,
+      "companyname": "淘略数据",
+      "max": 20000,
       "min": 50,
       "tax": 5
     }

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>绩效详情</title>
+</head>
+<body>
+<div class="recharge_balance">
+    <img src="../../images/dingding/icon_warning.png">
+    <span>注意：若对金额由疑问，请询问财务或运营</span>
+</div>
+
+
+
+<!--中间部分-->
+<div>
+    <div class="getmoney_details">
+        <p class="getmoney_day">
+            <span>发放时间<input type="date" class="date_input" placeholder="请输入日期"/></span>
+            <span>至<input type="date" class="date_input" placeholder="请输入日期"/></span>
+        </p>
+        <label class="jf_list">
+            <div class="jf_list_bd">
+                <p>绩效类型</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow">
+                <select>
+                    <option>全部</option>
+                    <option>订单提成</option>
+                    <option>开户提成</option>
+                    <option>大区绩效</option>
+                </select>
+            </div>
+        </label>
+        <label class="jf_list search_company">
+            <div class="jf_list_bd">
+                <p>企业名称</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow"> <input readonly type="text" value="1000010111-嘉银" id="company_name" onfocus="this.blur()"/></div>
+        </label>
+
+    </div>
+
+    <div class="payment_records">
+        <p class="no_record">暂无相关记录</p>
+    </div>
+</div>
+
+<!--刷新按钮-->
+<a class="refresh_btn" href="no_performance_record.html">
+    <img src="../../images/dingding/refresh.png">
+    <p>刷新</p>
+</a>
+<!--搜索公司侧拉页面-->
+<div id="top_search_company" class="top_search search_companypage ">
+    <div class="top_search_mian">
+        <a class="left goback"><img src="../../images/dingding/icon_pay_return.png"/></a>
+        <div class="center">
+            <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
+                <input type="search" placeholder="请输入查找的内容" class="search_input"/>
+                <a class="weui_icon_clear" id="text_cancle">×</a>
+            </label>
+        </div>
+        <a class="right">搜索</a>
+    </div>
+
+    <div class="company_name_lists">
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany"/>
+            </div>
+            <div>
+                <p>全部</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany"/>
+            </div>
+            <div>
+                <p>101010000-嘉银</p>
+                <p>2632612562</p>
+            </div>
+
+        </label>
+
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany"/>
+            </div>
+            <div>
+                <p>1012052455-嘉银</p>
+                <p>12321536256323</p>
+            </div>
+
+        </label>
+    </div>
+</div>
+
+<script>
+    //点击侧滑选择企业名称以及开票企业
+    $('label.search_company').on('click', function () {
+
+        jfFrameFlyShow.mainFrameShow({
+            "flyTime": "0.3s",//侧拉飞入平滑时间
+
+            "flyEleArea": "search_companypage",//侧拉飞入的元素class选择器
+
+            "hideButton": "goback",//侧拉返回关闭按钮的class选择器
+
+            "hideFn":function(){//关闭时执行的方法
+
+                chooseCompanyName('company_name','top_search_company');//参数一是当前需要填写的元素的ID值，参数二是当前侧拉页面的ID选择器
+            }
+        })
+    });
+</script>
+</body>
+</html>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
     <meta content="telephone=no" name="format-detection"/>
-    <meta content="telephone=no" name="format-detection"/>
     <title>开票申请结束</title>
 
 </head>
@@ -14,19 +13,22 @@
 <!--支付成功-->
 <div class="submit_info">
     <div class="weui_icon_area" style="margin-bottom:0px;">
-        <div class="swal2-icon swal2-success animate"> <span class="line tip animate-success-tip"></span> <span class="line long animate-success-long"></span>
-            <div class="placeholder"></div>
-            <div class="fix"></div>
+        <div class="swal2-icon swal2-error animate-error-icon">
+          <span class="x-mark animate-x-mark">
+            <span class="line left"></span>
+            <span class="line right"></span>
+          </span>
         </div>
     </div>
     <div class="weui_text_area" style="padding:0px;">
-        <h2 class="msg_title_0718">垫资成功</h2>
+        <h2 class="msg_title_0718">垫资失败</h2>
+
+        <p class="fail_help">请联系钉钉管理员<span>021-64280689</span></p>
 
         <!--底部按钮-->
         <div class="submit_btn_area">
             <p class="submit_btn">
-                <a href="company_pay.html" class="submit_btnone">继续垫资</a>
-                <a href="company_pay_records.html" class="submit_btntwo">查看垫资记录</a>
+                <a href="company_pay.html" class="submit_failone">再分配一笔</a>
             </p>
 
         </div>
@@ -34,7 +36,7 @@
 </div>
 
 <!--刷新按钮-->
-<a class="refresh_btn" href="invoice_main.html">
+<a class="refresh_btn" href="../main/invoice_main.html">
     <img src="../../images/dingding/icon_nav_home_black.png">
     <p>返回首页</p>
 </a>
