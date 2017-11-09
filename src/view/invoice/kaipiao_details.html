@@ -445,6 +445,105 @@
 
 </div>
 
+<div class="payment_records">
+<p class="kaipiao_details_title">物流信息</p>
+<!--物流信息已签收-->
+<div class="payment_lists">
+    <a class="payment_list sign_info" >
+        <div class="payment_info edit">
+            <div class="payment_info_name">
+                <span>物流状态：</span>
+                <span>已签收</span>
+            </div>
+            <div class="payment_info_number">
+                <span>快递单号：</span>
+                <span>216707123321</span>
+            </div>
+        </div>
+
+        <div class="jf_logistics_down"></div>
+    </a>
+    <div class="sign_up list_noline">
+        <div class="payment_list">
+            <a class="jf_logistics fapiao_bussiness">
+                <div class="payment_info_name">
+                    <span>发票号码：</span>
+                    <span>121375896、121375896、121375896、121375896、121375896、121375896</span>
+                </div>
+            </a>
+        </div>
+        <!--流程图-->
+        <div class="progress_bar">
+            <!--当前处于哪一步则添加class值show,如果接下来还有步骤则添加class值more-->
+            <!--<div class="step show">
+                <p class="title">审批成功</p>
+                <p class="min_text">恭喜您，审批通过，当前信用额度为<span class="green_text">5800元</span></p>
+                <span class="time">2017-01-01 10：00：00</span>
+            </div>-->
+            <div class="step show">
+                <p class="logistics">已签收</p>
+                <p class="min_text">上海市闵行区浦江公司</p>
+                <span class="time">2017-01-01 10：00：00</span>
+            </div>
+            <div class="step">
+                <p class="logistics">配送中</p>
+                <p class="min_text">上海市闵行区浦江公司</p>
+                <span class="time">2017-01-01 10：00：00</span>
+            </div>
+            <div class="step">
+                <p class="logistics">已收入</p>
+                <p class="min_text">上海市闵行区浦江公司</p>
+                <span class="time">2017-01-01 10：00：00</span>
+            </div>
+        </div>
+    </div>
+
+    <a class="payment_list distribution_info" >
+        <div class="payment_info edit">
+            <div class="payment_info_name">
+                <span>物流状态：</span>
+                <span>配送中</span>
+            </div>
+            <div class="payment_info_number">
+                <span>快递单号：</span>
+                <span>446707123321</span>
+            </div>
+        </div>
+
+        <div class="jf_logistics_down"></div>
+    </a>
+    <div class="distribution_up list_noline">
+        <div class="payment_list">
+            <a class="jf_logistics fapiao_bussiness">
+                <div class="payment_info_name">
+                    <span>发票号码：</span>
+                    <span>121375896、121375896、121375896、121375896、121375896、121375896</span>
+                </div>
+            </a>
+        </div>
+        <!--流程图-->
+        <div class="progress_bar">
+            <!--当前处于哪一步则添加class值show,如果接下来还有步骤则添加class值more-->
+            <!--<div class="step show">
+                <p class="title">审批成功</p>
+                <p class="min_text">恭喜您，审批通过，当前信用额度为<span class="green_text">5800元</span></p>
+                <span class="time">2017-01-01 10：00：00</span>
+            </div>-->
+            <div class="step show more">
+                <p class="logistics">配送中</p>
+                <p class="min_text">上海市闵行区浦江公司</p>
+                <span class="time">2017-01-01 10：00：00</span>
+            </div>
+            <div class="step">
+                <p class="logistics">已收入</p>
+                <p class="min_text">上海市闵行区浦江公司</p>
+                <span class="time">2017-01-01 10：00：00</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
 
 </body>
 
@@ -467,6 +566,14 @@
     $('a.checkmoney_info').click(function () {
 
         upShowInfo(this, 'div.checkmoney_up', 'checkmoney_up_show')
+    })
+    $('a.sign_info').click(function () {
+
+        upShowInfo(this, 'div.sign_up', 'sign_up_show')
+    })
+    $('a.distribution_info').click(function () {
+
+        upShowInfo(this, 'div.distribution_up', 'distribution_up_show')
     })
 
 </script>
