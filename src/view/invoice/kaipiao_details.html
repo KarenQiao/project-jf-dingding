@@ -482,12 +482,12 @@
             </div>-->
             <div class="step show">
                 <p class="logistics">已签收</p>
-                <p class="min_text">上海市闵行区浦江公司</p>
+                <p class="min_text">上海市闵行区浦江公司,联系电话：15236895761</p>
                 <span class="time">2017-01-01 10：00：00</span>
             </div>
             <div class="step">
                 <p class="logistics">配送中</p>
-                <p class="min_text">上海市闵行区浦江公司</p>
+                <p class="min_text">上海市闵行区浦江公司 快递员：李师傅</p>
                 <span class="time">2017-01-01 10：00：00</span>
             </div>
             <div class="step">
@@ -523,12 +523,6 @@
         </div>
         <!--流程图-->
         <div class="progress_bar">
-            <!--当前处于哪一步则添加class值show,如果接下来还有步骤则添加class值more-->
-            <!--<div class="step show">
-                <p class="title">审批成功</p>
-                <p class="min_text">恭喜您，审批通过，当前信用额度为<span class="green_text">5800元</span></p>
-                <span class="time">2017-01-01 10：00：00</span>
-            </div>-->
             <div class="step show more">
                 <p class="logistics">配送中</p>
                 <p class="min_text">上海市闵行区浦江公司</p>
@@ -567,13 +561,15 @@
 
         upShowInfo(this, 'div.checkmoney_up', 'checkmoney_up_show')
     })
+
     $('a.sign_info').click(function () {
 
-        upShowInfo(this, 'div.sign_up', 'sign_up_show')
+        showMoreLogistics(this,'div.sign_up');//物流信息切换//参数一时当前的元素，参数二是展开区域元素的class选择器
     })
+
     $('a.distribution_info').click(function () {
 
-        upShowInfo(this, 'div.distribution_up', 'distribution_up_show')
+        showMoreLogistics(this,'div.distribution_up');
     })
 
 </script>

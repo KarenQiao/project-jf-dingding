@@ -3354,7 +3354,7 @@ box-shadow: none;
       right: 0;
     }
   }
-  .jf_logistics_up{
+  .jf_logistics_up.jf_logistics_down{
     position: relative;
     padding-right: 12px;
     color: grey;
@@ -3379,27 +3379,28 @@ box-shadow: none;
   overflow: hidden;
   transition: all 0.3s;
 }
-.sign_up_show{
-  height: 410px;
-  overflow: scroll;
-}
+
 .distribution_up{
   height: 0;
   overflow: hidden;
   transition: all 0.3s;
 }
-.distribution_up_show{
-  height: 410px;
-  overflow: scroll;
+
+.sign_up_show{
+  height: 450px;
+  overflow: auto;
 }
+
+
 /*进度条*/
 .progress_bar{
-  width: 85%;
+  width: 90%;
   background: #fff;
   padding: 30px 10px 10px 10px;
-  box-shadow: 0 1px 1px 1px #e9e9e9;
+  box-shadow: 0 0 2px 1px #e9e9e9;
   margin: 0 auto;
   margin-bottom: 10px;
+  border-radius: 6px;
 
   .step{
     margin-left: 15%;
@@ -3416,6 +3417,7 @@ box-shadow: none;
     &:after{
       content: "";
       display: block;
+      height: 145%;
       height:calc(~"100% + 30px");
       width: 1px;
       background: #dddddd;
