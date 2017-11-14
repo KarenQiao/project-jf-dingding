@@ -49,22 +49,14 @@
             </div>
         </label>
         <!--4-->
-        <label class="jf_list choose_company">
+        <a class="jf_list choose_company" href="choose_company.html">
             <div class="jf_list_bd">
                 <p>开票公司</p>
             </div>
             <div class="jf_list_ft jf_list_arrow">
-                <select>
-                    <option>请选择</option>
-                    <option>上海淘略数据处理有限公司</option>
-                    <option>上海嘉银支付有限公司</option>
-                    <option>支付宝</option>
-                    <option>上海贝耀数据科技有限公司大连分公司</option>
-                    <option>上海淘略数据处理有限公司</option>
-                    <option>上海贝耀数据科技有限公司大连分公司</option>
-                </select>
+               <input type="text"  readonly onfocus="this.blur()" placeholder="请选择开票公司"/>
             </div>
-        </label>
+        </a>
 
 
             <!--6--带单位，题目超长-->
@@ -277,74 +269,6 @@
 </div>
 
 
-
-<!--开票公司-->
-<div id="search_invoice_company" class="top_search search_invoice_company">
-    <div class="top_search_mian">
-        <a class="left goback"><img src="../../images/dingding/icon_pay_return.png"/></a>
-        <div class="center">
-            <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
-                <input type="search" placeholder="请输入查找的内容" class="search_input"/>
-                <a class="weui_icon_clear">×</a>
-            </label>
-        </div>
-        <a class="right">搜索</a>
-    </div>
-
-    <div class="company_name_lists">
-        <label class="name_list company_jiayin" onclick=" jfFrameFlyShow.mainFrameHide()">
-            <div>
-                <input type="radio" class="aui-radio" name="invoice_company"/>
-            </div>
-            <div>
-                <p><span>上海淘略数据处理有限公司</span> <small>（普通科目）</small></p>
-            </div>
-
-        </label>
-
-        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
-            <div>
-                <input type="radio" class="aui-radio" name="invoice_company"/>
-            </div>
-
-            <div>
-                <p><span>上海嘉银支付有限公司</span> <small>（附加科目）</small></p>
-
-            </div>
-
-        </label>
-        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
-            <div>
-                <input type="radio" class="aui-radio" name="invoice_company"/>
-            </div>
-            <div>
-                <p><span>上海贝耀数据科技有限公司大连分公司</span> <small>（全国科目）</small></p>
-
-            </div>
-
-        </label>
-        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
-            <div>
-                <input type="radio" class="aui-radio" name="invoice_company"/>
-            </div>
-            <div>
-                <p><span>支付宝</span><small>（本地科目）</small></p>
-            </div>
-
-        </label>
-        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
-            <div> <input type="radio" class="aui-radio" name="invoice_company"/></div>
-            <div>
-                <p><span>淘略数据</span> <small>（本地科目）</small></p>
-            </div>
-
-
-        </label>
-    </div>
-</div>
-
-
-
 <!--选择配送地址-->
 <div id="choose_address" class="top_search choose_application_address">
     <div class="top_search_mian">
@@ -491,41 +415,11 @@
     });
 
 
-/*
-
-    //点击侧滑开票企业
-    $('label.choose_company').on('click', function () {
-
-        document.activeElement.blur();
-
-        setTimeout(function(){
-
-            jfFrameFlyShow.mainFrameShow({
-                "flyTime": "0.3s",//侧拉飞入平滑时间
-
-                "flyEleArea": "search_invoice_company",//侧拉飞入的元素class选择器
-
-                "hideButton": "goback",//侧拉返回关闭按钮的class选择器
-
-                hideFn: function () {
-
-                    chooseCompanyName('invoice_company_name','search_invoice_company');//参数一是当前需要填写的元素的ID值，参数二是当前侧拉页面的ID选择器
-
-                }
-            })
-
-        },300)
-
-
-    });
-*/
 
 
 
-    /*当select框里的值发生变化时，改变相应值*/
-    document.getElementsByClassName('course_select')[0].addEventListener('change', function () {
-        //this.style.color="#4d4d4d"
-    }, false);
+
+
 
 
 
