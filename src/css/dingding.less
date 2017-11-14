@@ -10,6 +10,10 @@ body {
 a {
   -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
 }
+
+*{
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0);
+}
 #tip_toast {
   width: 100%;
   margin: 0 auto;
@@ -702,13 +706,15 @@ a.payment_list{
         &:first-child{
           font-size: 18px;
           color: #4a4a4a;
+          margin-right: 10px;
         }
       }
 
 
     }
 
-    .payment_moneyvalue.company_pay.show_more{
+   .show_more{
+
       &:after{
 
         content: " ";
@@ -720,7 +726,6 @@ a.payment_list{
         border-style: solid;
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
-        margin-left: 20px;
 
       }
     }
@@ -902,6 +907,7 @@ a.payment_list{
           top: 49%;
           margin-top:-4px;;
           right: -1px;
+          color: #c8c8cd;;
         }
 
       }
@@ -1033,8 +1039,13 @@ a.payment_list{
     }
   }
   .kaipiao_up_show{
-    height: 568px;
-    overflow: auto
+    height: 800px;
+    overflow: auto;
+
+    .payment_list{
+      width: 90%;
+      margin: 0 auto 10px;
+     }
   }
   .getmoney_up{
     height: 0;
@@ -1048,7 +1059,12 @@ a.payment_list{
   }
   .getmoney_up_show{
     height: 423px;
-    overflow: auto
+    overflow: auto;
+
+    .payment_list{
+    width: 90%;
+      margin: 0 auto 10px;
+  }
   }
   .checkmoney_up{
     height: 0;
@@ -1211,6 +1227,43 @@ a.payment_list{
 
 
   }
+  /*客服付款纪录*/
+  .customer_pay.payment_records{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10px;
+
+    label{
+      height: 100px;
+      line-height: 100px;
+    }
+
+    .payment_lists{
+      flex-grow: 1;
+
+    }
+
+  }
+
+  .application_btn{
+    text-align: right;
+
+    a{
+      margin: 10px 20px 0 10px;
+      padding: 3px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      color: #FFFFFF;
+      border: solid 1px #10a6e2;
+      background: #10a6e2;
+
+      &:active{
+        opacity: 0.5;
+      }
+    }
+
+  }
 
   /*搜索栏*/
 
@@ -1307,6 +1360,7 @@ a.payment_list{
         box-sizing: content-box;
         display: inline-block;
         height: 100%;
+        flex-grow: 1;
 
         &::-webkit-search-cancel-button {
           display: none;
@@ -1346,8 +1400,12 @@ a.payment_list{
   .top_search_mian{
     position: fixed;
     top: 0;
-    left: 0;
     z-index: 1000;
+    max-width: 992px;
+    margin: 0 auto;
+   @media screen and(max-width: 800px) {
+     left:0 ;
+   }
   }
   .bar{
     padding-bottom: 45px;
@@ -1983,78 +2041,44 @@ a.payment_list{
         padding: 5px 10px;
         p {
           padding: 2px 0;
+          color: #4a4a4a;
 
           &:last-child{
             position: relative;
-            .edit_cancle{
-              color: grey;
-              border: solid 1px #DDDDDD;
-            }
 
             .edit_cancle_application{
               color: #10a6e2;
-              border: solid 1px #10a6e2
+              border: solid 1px #10a6e2;
+              display: inline-block;
+              position: absolute;
+              right: 5px;
+              bottom: 12px;
+              border-radius: 5px;
+              padding: 4px 20px;
+              outline: 0;
+
+
+              &:active{
+                opacity: 0.5;
+              }
+
+              @media screen and(max-width: 330px) {
+
+                padding: 2px 15px;
+              }
+
             }
 
-            span{
-              &:last-child{
-                display: inline-block;
-                position: absolute;
-                right: 5px;
-                bottom: -4px;
-                padding: 1px 18px;
-                border-radius: 5px;
-              }
-              &:nth-child(3){
-                display: inline-block;
-                position: absolute;
-                right: 5px;
-                bottom: 30px;
-                border-radius: 5px;
-                border: solid 1px #10a6e2;
-
-                .collection_btn{
-                  color: #10a6e2;
-                  display: block;
-                  padding: 2px 4px;
-                }
-
-              }
-            }
           }
           span {
             &:first-child {
               color: grey;
             }
+
           }
         }
       }
     }
-      .list_right{
-       position: absolute;
-        top: 0;
-        right: -67px;
-        height: 100%;
-        border-left: solid 1px #DDDDDD;
-
-        div{
-          &:first-child{
-            vertical-align: middle;
-            text-align: center;
-            padding: 0 5px;
-            line-height: 80px
-          }
-          &:last-child{
-            vertical-align: middle;
-            text-align: center;
-            padding: 0 5px;
-            align-items: stretch;
-            line-height: 80px;
-            border-top: solid 1px #ddd;
-          }
-        }
-      }
-
   }
   }
 
@@ -2119,6 +2143,28 @@ a.payment_list{
       font-size: 20px;
       text-align: center;
     }
+    .blue_text,.orange_text{
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .blue_text{
+      >span{
+        &:last-child{
+          color: #10a6e2;
+        }
+      }
+    }
+
+    .orange_text{
+      >span{
+        &:last-child{
+          color: #ff9933;
+        }
+      }
+    }
 
     .fail_help{
       text-align: center;
@@ -2126,7 +2172,7 @@ a.payment_list{
     }
 
     .submit_btn_area{
-    margin-top: 80px;
+    margin-top: 40px;
       .submit_btn{
         margin: 1.17647059em 15px .3em;
         .submit_btnone{
@@ -2629,17 +2675,6 @@ a.payment_list{
     margin-left: 0;
     width: 110px!important;
   }
-
-  .getmoney_details_lists .kaipiao_lsit .list_left .list_bottom p:last-child span:last-child {
-    position: absolute;
-    right: -8px;
-    bottom: -4px;
-  }
-  .getmoney_details_lists .kaipiao_lsit .list_left .list_bottom p:last-child span:nth-child(3){
-    position: absolute;
-    right: -8px;
-    bottom: 30px;
-  }
 }
 
 
@@ -2844,7 +2879,7 @@ a.payment_list{
 
 .refresh_btn{
   position: fixed;
-  bottom:50px;
+  bottom:55px;
   right: 0;
   background: white;
   z-index: 10;
@@ -2993,7 +3028,7 @@ box-shadow: none;
 .recharge_balance {
   padding: 8px 5px;
   font-size: 12px;
-  margin-bottom: 15px;
+ // margin-bottom: 15px;
   background: rgba(243, 152, 0, 0.2);
   position: relative;
   display: flex;
@@ -3011,6 +3046,7 @@ box-shadow: none;
   padding-left: 8px;
   line-height: 14px;
   box-sizing: border-box;
+  padding-top: 2px;
 }
 
 .scrollPage{
@@ -3535,6 +3571,176 @@ box-shadow: none;
     }
   }
 }
+
+/*固定底部按钮*/
+.fixed_bottom_btn{
+  .fixed_bar{
+    width: 100%;
+    padding-bottom: 50px;
+    max-width: 992px;
+  }
+  a{
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    color: #fff;
+    height: 50px;
+    background-color: #10a6e2;
+    vertical-align: middle;
+    line-height: 50px;
+    width: 100%;
+    max-width: 992px;
+    text-align: center;
+    font-size: 18px;
+    margin: 0 auto;
+    @media screen and(max-width: 800px) {
+      left: 0;
+    }
+
+    &:active{
+      opacity: 0.5;
+    }
+  }
+
+}
+
+/*开票公司搜索*/
+.all_result_list{
+
+  .list{
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 10px 20px 10px;
+    position: relative;
+    margin-bottom: 5px;
+    box-shadow: 0 2px 3px #e9e9e9;
+
+
+    &:after{
+      content:"有票";
+      position: absolute;
+      width: 30px;
+      height: 60px;
+      top: 0;
+      right: 10px;
+      background: url("../images/dingding/icon_blue_ticket.png") center no-repeat;
+      background-size: 100%;
+      color: #FFFFFF;
+      writing-mode: vertical-rl;
+      text-align: center;
+      line-height: 30px;
+      letter-spacing: 4px;
+    }
+
+    input{
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+
+    >div{
+      width: 85%;
+      .name{
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      .course{
+        color: #ababab;
+        margin-bottom: 5px;
+        span{
+          display: inline-block;
+          margin-right: 10px;
+        }
+      }
+      .ticket{
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+        color: #10a6e2;
+
+        span{
+          &:last-child{
+            font-size: 20px;
+          }
+        }
+
+
+      }
+    }
+
+  }
+
+  .none.list{
+
+    &:after{
+      content:"无票";
+      background: url("../images/dingding/icon_orange_ticket.png") center no-repeat;
+      background-size: 100%;
+    }
+
+    >div{
+
+      .ticket{
+        color: #ff9933;
+      }
+    }
+
+  }
+
+
+}
+
+/*有票无票*/
+.have_tickets,.none_tickets{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #FFFFFF;
+  padding: 8px 15px;
+  box-shadow: 0 2px 3px #e9e9e9;
+
+  p{
+    font-size: 16px;
+    @media screen and(max-width: 330px) {
+      font-size: 14px;
+    }
+    img{
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+      margin-right: 5px;
+
+      @media screen and(max-width: 330px) {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    &:last-child{
+      display: flex;
+      align-items: center;
+      >span:last-child{
+        font-size: 24px;
+
+        @media screen and(max-width: 330px) {
+          font-size: 18px;
+        }
+      }
+
+    }
+  }
+}
+.have_tickets{
+  background: #10a6e2;
+}
+.none_tickets{
+
+
+  background: #ff9933;
+}
+
 
 
 

@@ -71,7 +71,7 @@
     <div class="getmoney_details_lists">
 
         <!--list-->
-        <div class="kaipiao_lsit" >
+        <a href="kaipiao_details.html" class="kaipiao_lsit" >
             <div class="list_left">
 
             <!--上-->
@@ -100,8 +100,8 @@
                         <span>未开票</span>
                     </p>
                     <p>
-                        <span>收款状态：</span>
-                        <span>未收款</span>
+                        <span>未收款金额：</span>
+                        <span>6222.00</span>
                     </p>
                 </div>
             </div>
@@ -115,14 +115,13 @@
                 <p>
                     <span>开票时间：</span>
                     <span>2017-01-17 15:00:00</span>
-                    <span><a href="related_getmoney.html" class="collection_btn">关联收款</a></span>
-                    <span class="edit_cancle">撤销</span>
+                    <span class="edit_cancle_application">撤销</span>
                 </p>
             </div>
             </div>
-        </div>
+        </a>
         <!--list-->
-        <div class="kaipiao_lsit">
+        <a href="kaipiao_details_none.html" class="kaipiao_lsit">
             <div class="list_left">
                 <!--上-->
                 <div class="list_top">
@@ -150,11 +149,12 @@
                             <span>未开票</span>
                         </p>
                         <p>
-                            <span>收款状态：</span>
-                            <span>未收款</span>
+                            <span>未收款金额：</span>
+                            <span>6222.00</span>
                         </p>
                     </div>
                 </div>
+
 
                 <!--下-->
                 <div class="list_bottom">
@@ -165,17 +165,14 @@
                     <p>
                         <span>开票时间：</span>
                         <span>2017-01-17 15:00:00</span>
-                        <span><a href="related_getmoney.html" class="collection_btn">关联收款</a></span>
                         <span class="edit_cancle_application">撤销</span>
 
                     </p>
                 </div>
             </div>
-
-            <div class="list_right"></div>
-        </div>
+        </a>
         <!--list-->
-        <div class="kaipiao_lsit">
+        <a href="kaipiao_details.html" class="kaipiao_lsit">
             <div class="list_left">
                 <!--上-->
                 <div class="list_top">
@@ -203,8 +200,8 @@
                             <span>未开票</span>
                         </p>
                         <p>
-                            <span>收款状态：</span>
-                            <span>未收款</span>
+                            <span>未收款金额：</span>
+                            <span>6222.00</span>
                         </p>
                     </div>
                 </div>
@@ -218,14 +215,12 @@
                     <p>
                         <span>开票时间：</span>
                         <span>2017-01-17 15:00:00</span>
-                        <span><a href="related_getmoney.html" class="collection_btn">关联收款</a></span>
                         <span class="edit_cancle_application">撤销</span>
                     </p>
                 </div>
             </div>
 
-            <div class="list_right"></div>
-        </div>
+        </a>
 
 
     </div>
@@ -241,7 +236,7 @@
         <div class="center">
             <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
                 <input type="search" placeholder="请输入查找的内容" class="search_input"/>
-                <a class="weui_icon_clear" id="text_cancle">×</a>
+                <a class="weui_icon_clear">×</a>
             </label>
         </div>
         <a class="right">搜索</a>
@@ -289,7 +284,7 @@
         <div class="center">
             <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
                 <input type="search" placeholder="请输入查找的内容" class="search_input"/>
-                <a class="weui_icon_clear" id="text_cancle">×</a>
+                <a class="weui_icon_clear">×</a>
             </label>
         </div>
         <a class="right">搜索</a>
@@ -454,15 +449,6 @@
                 }, 300);
 
             }
-        })
-    })
-
-
-    $('.edit_cancle').on("click",function(){
-
-        jfShowTips.toastShow({
-
-            "text":"已经通过审批"
         })
     })
 
