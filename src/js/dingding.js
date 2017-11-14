@@ -1249,7 +1249,37 @@ function chooseCompanyName(companyNameELe,thisChoosePage) {//参数一是当前�
 function upShowInfo(thisele, showEle, eleAddClass) {//参数一是选择的当前元素，参数二是出现的元素class,参数三是增加的class选择器
 
     $(showEle).toggleClass(eleAddClass);
-    $(thisele).find('.jf_list_down').toggleClass('jf_list_up')
+
+    $(thisele).find('.jf_list_down').toggleClass('jf_list_up');
+
+
+
+}
+
+function showMoreLogistics(ele,showEle){
+
+    if($(showEle).hasClass('sign_up_show')){
+
+      $(showEle).removeClass('sign_up_show');
+
+      $(ele).find('.jf_logistics_down').removeClass('jf_logistics_up');
+
+
+    }else {
+        $('.sign_up_show').removeClass('sign_up_show');
+
+        $('.jf_logistics_up').removeClass('jf_logistics_up');
+
+        $(showEle).addClass('sign_up_show');
+
+        $(ele).find('.jf_logistics_down').addClass('jf_logistics_up');
+
+    }
+
+
+
+
+
 
 }
 
