@@ -1256,31 +1256,25 @@ function upShowInfo(thisele, showEle, eleAddClass) {//参数一是选择的当�
 
 }
 
-function showMoreLogistics(ele,showEle){
+function showMoreLogistics(ele){
 
-    if($(showEle).hasClass('sign_up_show')){
+    if($(ele).next('.logistics_step').hasClass('logistics_show')){
 
-      $(showEle).removeClass('sign_up_show');
+        $(ele).next('.logistics_step').removeClass('logistics_show');
 
-      $(ele).find('.jf_logistics_down').removeClass('jf_logistics_up');
+        $(ele).find('.jf_logistics_down').removeClass('jf_logistics_up');
 
 
     }else {
-        $('.sign_up_show').removeClass('sign_up_show');
+        $('.logistics_show').removeClass('logistics_show');
 
-        $('.jf_logistics_up').removeClass('jf_logistics_up');
+        $('.jf_logistics_down').removeClass('jf_logistics_up');
 
-        $(showEle).addClass('sign_up_show');
+        $(ele).next('.logistics_step').addClass('logistics_show');
 
         $(ele).find('.jf_logistics_down').addClass('jf_logistics_up');
 
     }
-
-
-
-
-
-
 }
 
 
