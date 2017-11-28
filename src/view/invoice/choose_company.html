@@ -37,7 +37,7 @@
 <div class="all_result_list">
 
     <label class="list">
-     <input type="radio" class="aui-radio" name="result" checked>
+     <input type="checkbox" class="aui-radio" name="result" checked >
         <div>
             <p class="name">上海淘略<small>(普通科目)</small></p>
             <p class="course"><span>培训费</span><span>服务费</span><span>技术服务费</span><span>代理服务费</span><span>广告制作服务费</span></p>
@@ -45,7 +45,7 @@
         </div>
     </label>
     <label class="list ">
-        <input type="radio" class="aui-radio" name="result">
+        <input type="checkbox" class="aui-radio" name="result">
         <div>
             <p class="name">上海淘略<small>(普通科目)</small></p>
             <p class="course"><span>培训费</span><span>服务费</span><span>技术服务费</span><span>代理服务费</span><span>广告制作服务费</span></p>
@@ -53,7 +53,7 @@
         </div>
     </label>
     <label class="list ">
-        <input type="radio" class="aui-radio" name="result" >
+        <input type="checkbox" class="aui-radio" name="result" >
         <div>
             <p class="name">上海淘略<small>(普通科目)</small></p>
             <p class="course"><span>培训费</span><span>服务费</span><span>技术服务费</span><span>代理服务费</span><span>广告制作服务费</span></p>
@@ -62,7 +62,7 @@
     </label>
     <!--无票添加class值none-->
     <label class="list none">
-        <input type="radio" class="aui-radio" name="result" >
+        <input type="checkbox" class="aui-radio" name="result" >
         <div>
             <p class="name">上海淘略<small>(普通科目)</small></p>
             <p class="course"><span>培训费</span><span>服务费</span><span>技术服务费</span><span>代理服务费</span><span>广告制作服务费</span></p>
@@ -71,7 +71,7 @@
     </label>
 
     <label class="list none">
-        <input type="radio" class="aui-radio" name="result">
+        <input type="checkbox" class="aui-radio" name="result">
         <div>
             <p class="name">上海淘略<small>(普通科目)</small></p>
             <p class="course"><span>培训费</span><span>服务费</span><span>技术服务费</span><span>代理服务费</span><span>广告制作服务费</span></p>
@@ -80,7 +80,7 @@
     </label>
 
     <label class="list none">
-        <input type="radio" class="aui-radio" name="result">
+        <input type="checkbox" class="aui-radio" name="result">
         <div>
             <p class="name">上海淘略<small>(普通科目)</small></p>
             <p class="course"><span>培训费</span><span>服务费</span><span>技术服务费</span><span>代理服务费</span><span>广告制作服务费</span></p>
@@ -102,5 +102,28 @@
     <img src="../../images/dingding/refresh.png">
     <p>刷新</p>
 </a>
+<script>
+
+
+   $('.list').on("click",function(e){
+
+        var evt=e||window.event;
+
+        evt.preventDefault();
+
+       if($(this).find('.aui-radio').is(':checked')){
+
+           $(this).find('.aui-radio').prop('checked',false);
+       }else {
+           $('.aui-radio').prop('checked',false);
+
+           $(this).find('.aui-radio').prop('checked',true);
+       }
+
+    });
+
+
+
+</script>
 </body>
 </html>
