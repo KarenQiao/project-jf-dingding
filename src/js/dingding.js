@@ -1914,7 +1914,7 @@ var moneyNumChange={
 
             if(thisInsertValue.length>1){
 
-                document.getElementsByClassName('text_money')[0].value=moneyNumChange.smallToBig(thisInsertValue);//实现金额大写
+                document.getElementsByClassName('text_money')[0].innerHTML=moneyNumChange.smallToBig(thisInsertValue);//实现金额大写
 
             }
 
@@ -1923,7 +1923,7 @@ var moneyNumChange={
         document.getElementsByClassName('num_money')[0].addEventListener("focus",function(){
 
 
-            document.getElementsByClassName('text_money')[0].value=""
+            document.getElementsByClassName('text_money')[0].innerHTML=""
 
         },false);
     },
@@ -1985,6 +1985,8 @@ function showAddress(){
 
     var showNameTel=document.getElementsByClassName('name_tel')[0];
 
+  //  var showAddressId=document.getElementsByClassName('name_addressId')[0];
+
     function getIndex(){
         for(var i=0;i<allCheckAddress.length;i++){
 
@@ -2006,7 +2008,9 @@ function showAddress(){
 
         var nameTel=getFatherEle[j].getElementsByClassName('name')[0].innerHTML+'('+getFatherEle[j].getElementsByClassName('tel')[0].innerHTML+')';
 
-        console.log(chooseAddress)
+       // var addressId=getFatherEle[j].getElementsByClassName('addressId')[0].innerHTML;
+
+       // showAddressId.value=addressId;
 
         showAddressEle.value=chooseAddress;
 
