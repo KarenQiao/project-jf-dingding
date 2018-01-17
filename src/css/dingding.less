@@ -3755,6 +3755,223 @@ box-shadow: none;
   }
 }
 
+/************************************/
+/*************开票申请sun************/
+input {
+  Outline:none;
+}
+
+.ticket_application_fonts {
+  background-color: #f2f2f2;
+  padding: 8px 0 8px 15px;
+  font-size: 14px;
+  color: #ababab;
+}
+/*************申请结果************/
+.result_gray_fonts {
+  span {
+    padding-right: 15px;
+    span {
+      padding-left: 5px;
+    }
+  }
+}
+/*************申请记录按钮************/
+.application_cancle_btn {
+  color: #10a6e2;
+  border: 1px solid #10a6e2;
+  background-color: #FFFFFF;
+  position: absolute;
+  border-radius: 5px;
+  padding: 4px 20px;
+  right: 8px;
+  bottom: 2px;
+  font-size: 14px;
+  outline: 0;
+  &:active{
+    opacity: 0.5;
+  }
+  @media screen and(max-width: 330px) {
+    padding: 2px 18px;
+    right: 1px;
+    bottom: 8px;
+  }
+}
+.application_record_btn {
+  color: #10a6e2;
+  border: 1px solid #10a6e2;
+  background-color: #FFFFFF;
+  position: absolute;
+  border-radius: 5px;
+  padding: 4px 6px;
+  right: 3px;
+  bottom: 36px;
+  margin: 5px;
+  font-size: 14px;
+  outline: 0;
+  &:active{
+    opacity: 0.5;
+  }
+  @media screen and(max-width: 330px) {
+    padding: 2px 4px;
+    right: -4px;
+    bottom: 38px;
+  }
+}
+/*************锁定动画************/
+.lock_up_plate {
+  width: 80%;
+  height: 85px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  /*************锁定结果************/
+  .lock_up_green {
+    img {
+      width: 90px;
+      height: 64px;
+    }
+  }
+  .lock_up_red {
+    width: 90px;
+    margin: 0 auto;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 16px;
+      right: 0px;
+      top: -12px;
+      background-image: url("../images/dingding/lock_fail_root.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      z-index: 1001;
+      animation:myimg 0.2s;
+      animation-fill-mode:forwards;
+      animation-delay: 1s;
+      opacity: .0;
+      filter: alpha(opacity=0);
+      @keyframes myimg {
+        0% {
+          opacity: .0;
+          filter: alpha(opacity=0);
+        }
+        100% {
+          opacity: 1;
+          filter: alpha(opacity=1);
+        }
+      }
+    }
+    img {
+      width: 90px;
+      height: 64px;
+    }
+  }
+  .lock_up_success {
+    margin-bottom: -7px;
+    animation:mysucc 0.2s;
+    animation-fill-mode:forwards;
+    transform-origin: 45% bottom;
+    animation-delay: 0.5s;
+    transform: rotate(-10deg);
+    @keyframes mysucc {
+      0% {
+        transform: rotate(-10deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+    img {
+      width: 64px;
+      height: 24px;
+    }
+  }
+  .lock_up_fail {
+    margin-bottom: -8px;
+    animation:myfail 0.5s;
+    animation-fill-mode:forwards;
+    transform-origin: 40% bottom;
+    animation-delay: 0.5s;
+    transform: rotate(-12deg);
+    @media screen and(min-width: 768px) {
+      transform-origin: 46% bottom;
+    }
+    @keyframes myfail {
+      0% {
+        transform: rotate(-12deg);
+      }
+      90% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(-12deg);
+      }
+    }
+    img {
+      width: 66px;
+      height: 24px;
+    }
+  }
+}
+/*************无票结果************/
+.ticket_fly {
+  width: 80%;
+  height: 100px;
+  margin: 80px auto 30px auto;
+  text-align: center;
+  img {
+    width: 220px;
+    height: 82px;
+  }
+}
+.ticket_fly_fonts {
+  font-size: 14px;
+  color: #ababab;
+  text-align: center;
+}
+/*************锁的动画字号，颜色************/
+.lock_fonts {
+  color: #ababab;
+  font-size: 15px;
+}
+/*************汇总************/
+.summary_fonts {
+  margin-top: 15px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+  .summary_inline_fonts {
+    width: 75%;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    margin-left: 35px;
+    p {
+      width: 40%;
+      padding-left: 10%;
+      span {
+        &:first-child {
+          color: grey;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
