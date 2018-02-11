@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1">
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>客户付款记录</title>
+
+</head>
+
+<body>
+
+<!--支付成功-->
+<div class="submit_info">
+    <div class="weui_icon_area" style="margin-bottom:0px;">
+        <div class="lock_up_plate">
+            <div class="lock_up_green">
+                <img src="../../images/dingding/appointment_none_ticket.png">
+            </div>
+        </div>
+    </div>
+    <div class="weui_text_area" style="padding:0px;">
+        <p class="blue_text"><span class="lock_fonts">暂无余票~</span><span></span></p>
+
+        <!--底部按钮-->
+        <div class="submit_btn_area appointment_orange_font">
+            <p class="submit_btn">
+                <a href="../data/customer_pay_records.html" class="submit_btnone">返回</a>
+                <a href="#" class="submit_btntwo">去预约</a>
+            </p>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+<script>
+
+    $('.submit_btntwo').on("click",function(){
+        var thislist = $(this).parents('.payment_list');
+        jfShowTips.dialogShow({
+            "mainText": "注意",
+            "minText": "预约申请将在下次发票入库时，自动提交开票，不可撤销",
+            "hasCheck": true,
+            "hasCancel": true,
+            "checkFn": function () {
+
+                thislist.addClass('payment_list_hide');
+
+                jfShowTips.dialogRemove();//弹出框消失
+
+                var lianJie="application_bespeak.html";
+
+                window.location.href = lianJie;  //跳转页面链接
+
+            }
+        })
+
+        document.getElementsByClassName('dialog_check')[0].style.background='#fc6329';
+
+        document.getElementsByClassName('dialog_cancel')[0].style.color='#fc6329';
+    })
+
+
+
+
+
+
+</script>
+
+
+</html>
