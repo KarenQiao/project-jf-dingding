@@ -49,7 +49,7 @@
             </div>
         </label>
         <!--4-->
-        <a class="jf_list fapiao_type" href="choose_company.html">
+        <a class="jf_list fapiao_type" href="#">
             <div class="jf_list_bd  ">
                 <p>开票公司</p>
             </div>
@@ -147,7 +147,7 @@
             <div class="jf_list_bd">
                 <p>开票金额（元）</p>
             </div>
-            <div class="jf_list_ft"><input class="num_money" placeholder="8位以内" type="number"/></div>
+            <div class="jf_list_ft"><input class="num_money" readonly onfocus="this.blur()" placeholder="8位以内" type="number"/></div>
         </label>
 
         <label class="jf_list ">
@@ -371,29 +371,29 @@
 
 
     //点击侧滑选择企业名称
-    $('label.search_company').on('click', function () {
+    //$('label.search_company').on('click', function () {
 
-        document.activeElement.blur();
+        //document.activeElement.blur();
 
-        setTimeout(function(){
+        //setTimeout(function(){
 
-            jfFrameFlyShow.mainFrameShow({
-                "flyTime": "0.3s",//侧拉飞入平滑时间
+            //jfFrameFlyShow.mainFrameShow({
+                //"flyTime": "0.3s",//侧拉飞入平滑时间
 
-                "flyEleArea": "search_company_name",//侧拉飞入的元素class选择器
+                //"flyEleArea": "search_company_name",//侧拉飞入的元素class选择器
 
-                "hideButton": "goback",//侧拉返回关闭按钮的class选择器
+                //"hideButton": "goback",//侧拉返回关闭按钮的class选择器
 
-                hideFn: function () {
+                //hideFn: function () {
 
-                    chooseCompanyName('companyname_input','top_search');//参数一是当前需要填写的元素的ID值，参数二是当前侧拉页面的ID选择器
-                }
-            })
+                    //chooseCompanyName('companyname_input','top_search');//参数一是当前需要填写的元素的ID值，参数二是当前侧拉页面的ID选择器
+                //}
+            //})
 
-        },300)
+        //},300)
 
 
-    });
+    //});
 
 
 
