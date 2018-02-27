@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimum-scale=1, maximum-scale=1"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <title>预约记录</title>
+
+</head>
+<body>
+
+<nav class="Top_navigation">
+    <div class="weui_tab_bd"></div>
+    <div class="container_tab">
+        <a onclick="window.history.go(-1)">
+            <div class="nav_left"><img src="../../images/dingding/icon_pay_return.png"/></div>
+        </a>
+        <div class="nav_center">
+            <div>预约记录</div>
+        </div>
+        <a class="edit_choose">
+            <div class="nav_right"><img src="../../images/dingding/icon_choose.png"></div>
+        </a>
+    </div>
+</nav>
+
+
+<!--中间部分-->
+<div>
+    <div class="getmoney_details">
+        <p class="getmoney_day">
+            <span>开票日期<input type="date" class="date_input" value="2017-01-17"/></span>
+            <span>至<input type="date" class="date_input" placeholder="2017-01-19"/></span>
+        </p>
+        <label class="jf_list search_company">
+            <div class="jf_list_bd">
+                <p>企业名称</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow"> <input readonly type="text" value="上海嘉银金融服务有限公司" id="company_name" onfocus="this.blur()"/></div>
+        </label>
+        <label class="jf_list choose_company">
+            <div class="jf_list_bd">
+                <p>开票公司</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow">
+                <select>
+                    <option>上海淘略数据处理有限公司</option>
+                    <option>嘉付宝</option>
+                    <option>淘略</option>
+                </select>
+            </div>
+        </label>
+        <label class="jf_list search_sales">
+            <div class="jf_list_bd">
+                <p>销售代表</p>
+            </div>
+            <div class="jf_list_ft jf_list_arrow"> <input readonly type="text" value="孙晓辉" id="salename_input" onfocus="this.blur()"/></div>
+        </label>
+        <a href="../../images/dingding/icon_pay_close.png" target="_blank" class="download_file" download="">
+            <label class="jf_list">
+                <div class="jf_list_bd">
+                    <p>下载表格</p>
+                </div>
+                <div class="jf_list_ft jf_list_arrow"> <input readonly type="text"  onfocus="this.blur()"/></div>
+            </label>
+        </a>
+
+    </div>
+
+    <div class="getmoney_details_lists">
+
+        <!--list-->
+        <div class="kaipiao_lsit" >
+            <div class="list_left">
+
+                <!--上-->
+                <div class="list_top">
+                    <div style="width: 66%;">
+                        <p>
+                            <span>开票公司：</span>
+                            <span>上海开茂企业服务有限公司</span>
+                        </p>
+                        <p>
+                            <span>企业名称：</span>
+                            <span>北京一控科技有限公司</span>
+                        </p>
+                        <p>
+                            <span>开票金额：</span>
+                            <span>800，000</span>
+                        </p>
+                    </div>
+                    <div style="width: 32%;">
+                        <p>
+                            <span>预约状态：</span>
+                            <span>已预约</span>
+                        </p>
+                        <p>
+                            <span>锁定状态：</span>
+                            <span>未锁定</span>
+                        </p>
+                        <div style="padding: 13px 0;"></div>
+                    </div>
+                </div>
+
+                <!--下-->
+                <div class="list_bottom">
+                    <p>
+                        <!--删除第一个带有文案的 span 标签即可-->
+                        <span>前方还有<span style="color: #fc6329;">28</span>张票未开</span>
+                        <span></span>
+                        <span class="application_cancle_btn">取消预约</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--list-->
+        <div class="kaipiao_lsit" >
+            <div class="list_left">
+
+                <!--上-->
+                <div class="list_top">
+                    <div style="width: 66%;">
+                        <p>
+                            <span>开票公司：</span>
+                            <span>上海开茂企业服务有限公司</span>
+                        </p>
+                        <p>
+                            <span>企业名称：</span>
+                            <span>北京一控科技有限公司</span>
+                        </p>
+                        <p>
+                            <span>开票金额：</span>
+                            <span>800,000</span>
+                        </p>
+                    </div>
+                    <div style="width: 32%;">
+                        <p>
+                            <span>预约状态：</span>
+                            <span>已预约</span>
+                        </p>
+                        <p>
+                            <span>锁定状态：</span>
+                            <span>未锁定</span>
+                        </p>
+                        <div style="padding: 13px 0;"></div>
+                    </div>
+                </div>
+
+                <!--下-->
+                <div class="list_bottom">
+                    <p>
+                        <span></span>
+                        <span class="application_cancle_btn">取消预约</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--list-->
+        <div class="kaipiao_lsit" >
+            <div class="list_left">
+
+                <!--上-->
+                <div class="list_top">
+                    <div style="width: 66%;">
+                        <p>
+                            <span>开票公司：</span>
+                            <span>上海开茂企业服务有限公司</span>
+                        </p>
+                        <p>
+                            <span>企业名称：</span>
+                            <span>北京一控科技有限公司</span>
+                        </p>
+                        <p>
+                            <span>开票金额：</span>
+                            <span>1,303,000</span>
+                        </p>
+                    </div>
+                    <div style="width: 32%;">
+                        <p>
+                            <span>预约状态：</span>
+                            <span>已取消</span>
+                        </p>
+                        <p>
+                            <span>锁定状态：</span>
+                            <span>未锁定</span>
+                        </p>
+                        <div style="padding: 13px 0;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <a class="refresh_btn" href="appointment_record.html">
+        <img src="../../images/dingding/refresh.png">
+        <p>刷新</p>
+    </a>
+
+</div>
+
+
+<!--搜索公司-->
+<div id="top_search_company" class="top_search search_companypage ">
+    <div class="top_search_mian">
+        <a class="left goback"><img src="../../images/dingding/icon_pay_return.png"/></a>
+        <div class="center">
+            <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
+                <input type="search" placeholder="请输入查找的内容" class="search_input"/>
+                <a class="weui_icon_clear">×</a>
+            </label>
+        </div>
+        <a class="right">搜索</a>
+    </div>
+
+    <div class="company_name_lists">
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany"/>
+            </div>
+            <div>
+                <p>全部</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany"/>
+            </div>
+            <div>
+                <p>101010000-嘉银</p>
+                <p>2632612562</p>
+            </div>
+
+        </label>
+
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchcompany"/>
+            </div>
+            <div>
+                <p>1012052455-嘉银</p>
+                <p>12321536256323</p>
+            </div>
+
+        </label>
+    </div>
+</div>
+
+
+<!--搜索销售代表-->
+<div id="top_search_sale" class="top_search search_salespage">
+    <div class="top_search_mian">
+        <a class="left gobackone"><img src="../../images/dingding/icon_pay_return.png"/></a>
+        <div class="center">
+            <label> <i class="weui_icon_search"><img src="../../images/dingding/icon_search.png"></i>
+                <input type="search" placeholder="请输入查找的内容" class="search_input"/>
+                <a class="weui_icon_clear">×</a>
+            </label>
+        </div>
+        <a class="right">搜索</a>
+    </div>
+
+    <div class="company_name_lists">
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale"/>
+            </div>
+            <div>
+                <p>全部</p>
+            </div>
+
+        </label>
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale"/>
+            </div>
+
+            <div>
+                <p>何云东</p>
+            </div>
+
+        </label>
+
+        <label class="name_list" onclick=" jfFrameFlyShow.mainFrameHide()">
+            <div>
+                <input type="radio" class="aui-radio" name="searchsale"/>
+            </div>
+            <div>
+                <p>谯</p>
+            </div>
+
+        </label>
+    </div>
+</div>
+
+<!--筛选条件下拉框-->
+<div class="frame_drag_down">
+    <div class="frame-main">
+        <div class="frame-main-body">
+            <div class="approval_status choose_type">
+                <div class="choose_type_title">锁定状态</div>
+                <div class="sorts_list">
+                    <div class="sorts_selected choose_all">全部</div>
+                    <div>未锁定</div>
+                    <div>已锁定</div>
+                    <div>取消锁定</div>
+                </div>
+            </div>
+            <div class="getmoney_status choose_type">
+                <div class="choose_type_title">提交状态</div>
+                <div class="sorts_list">
+                    <!--可复制div-->
+                    <div class="sorts_selected choose_all">全部</div>
+                    <div>未确认</div>
+                    <div>已确认</div>
+
+                </div>
+            </div>
+            <div class="welfare_type choose_type">
+                <div class="choose_type_title">开票状态</div>
+                <div class="sorts_list">
+                    <!--可复制div-->
+                    <div class="sorts_selected choose_all">全部</div>
+                    <div >未开票</div>
+                    <div>已拒绝</div>
+                    <div>已开票</div>
+                    <div>已作废</div>
+
+                </div>
+            </div>
+            <div class="check_btn ">
+                <div class="sorts_list">
+                    <!--可复制div-->
+                    <div class="choose_cancle">重置</div>
+                    <div class="choose_check">确认</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weui_mask_transition mask_drag"></div>
+</div>
+
+
+
+</body>
+
+<script>
+
+    addEventListener('load',function(){
+        /*判断页面是否有下载按钮*/
+        if(browser.os.android||browser.os.iOS){
+
+            document.getElementsByClassName('download_file')[0].style.display="none"
+        }else {
+            document.getElementsByClassName('download_file')[0].style.display="block"
+        }
+    },false);
+
+    //点击侧滑选择企业名称以及开票企业
+    $('label.search_company').on('click', function () {
+
+        jfFrameFlyShow.mainFrameShow({
+            "flyTime": "0.3s",//侧拉飞入平滑时间
+
+            "flyEleArea": "search_companypage",//侧拉飞入的元素class选择器
+
+            "hideButton": "goback",//侧拉返回关闭按钮的class选择器
+
+            "hideFn":function(){//关闭时执行的方法
+
+                chooseCompanyName('company_name','top_search_company');//参数一是当前需要填写的元素的ID值，参数二是当前侧拉页面的ID选择器
+            }
+        })
+    });
+
+    //点击侧滑选择企业名称以及开票企业
+    $('label.search_sales').on('click', function () {
+
+        jfFrameFlyShow.mainFrameShow({
+            "flyTime": "0.3s",//侧拉飞入平滑时间
+
+            "flyEleArea": "search_salespage",//侧拉飞入的元素class选择器
+
+            "hideButton": "gobackone",//侧拉返回关闭按钮的class选择器
+
+            "hideFn":function(){//关闭时执行的方法
+
+                chooseCompanyName('salename_input','top_search_sale')
+            }
+        })
+    });
+
+    $('.edit_cancle_application').on("click",function(){
+        var thislist = $(this).parents('.kaipiao_lsit');
+        jfShowTips.dialogShow({
+            "mainText": "确认撤销这条开票记录吗？",
+            "minText": " ",
+            "checkFn": function () {
+
+                thislist.addClass('payment_list_hide');
+
+                jfShowTips.dialogRemove();//弹出框消失
+
+
+                setTimeout(function () {
+                    thislist.css("display", "none");
+                }, 300);
+
+            }
+        })
+    })
+
+
+
+    $('.edit_choose').on("click",function(){//下拉筛选框
+
+        jfDragDown.Eleshow({
+
+            "hideButton": "choose_check",//关闭按钮
+        })
+    })
+
+
+
+
+</script>
+</html>

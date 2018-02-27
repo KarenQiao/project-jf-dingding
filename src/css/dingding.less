@@ -290,6 +290,7 @@ a {
   overflow: hidden;
 }
 #tip_dialog .text_dialog_container .dialog_button a {
+  display: block;
   width: 100%;
   text-decoration: none;
   text-align: center;
@@ -301,11 +302,13 @@ a {
   opacity: .6;
 }
 #tip_dialog .text_dialog_container .dialog_button a.dialog_check {
+  width: 50%;
   background-color: #10a6e2;
   color: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 #tip_dialog .text_dialog_container .dialog_button a.dialog_cancel {
+  width: 50%;
   background-color: white;
   color: #10a6e2;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -3791,7 +3794,6 @@ input {
 }
 
 .ticket_application_fonts {
-  background-color: #f2f2f2;
   padding: 8px 0 8px 15px;
   font-size: 14px;
   color: #ababab;
@@ -4198,6 +4200,50 @@ input {
 
   }
 
+}
+
+/********收款预约********/
+.receivables_reservation_tips {
+  width: 100%;
+  background-color: #ffc389;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+
+  p {
+    font-size: 12px;
+    color: #fc6329;
+    padding-left: 15px;
+    line-height: 16px;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+    padding-left: 15px;
+  }
+
+}
+
+.receivables_reservation_btn {
+
+  .jf_fabiao_btn {
+
+    @media screen and(max-width: 360px) {
+      margin-top: 5px;
+    }
+
+  }
+
+}
+
+/*****收款预约温馨提示*****/
+.receivables_reservation_tips_font {
+  font-size: 14px;
+  color: #ababab;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: -10px;
 }
 
 
