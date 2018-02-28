@@ -15,14 +15,17 @@
     <div class="jf_fapiao_lists">
         <!-- list 1-->
 
-        <label class="jf_list search_company">
-            <div class="jf_list_bd">
-                <p>企业名称</p>
-            </div>
-            <div class="jf_list_ft jf_list_arrow">
-                <input class="bussiness_type_name" placeholder="请选择企业名称" readonly  id="companyname_input" onfocus="this.blur()"/>
-            </div>
-        </label>
+        <!-------删除有 none_right_arrow 的 div 层,则出现右边小箭头，对布局无影响------>
+        <div class="none_right_arrow">
+            <label class="jf_list search_company">
+                <div class="jf_list_bd">
+                    <p>企业名称</p>
+                </div>
+                <div class="jf_list_ft jf_list_arrow">
+                    <input class="bussiness_type_name" placeholder="请选择企业名称" readonly  id="companyname_input" onfocus="this.blur()"/>
+                </div>
+            </label>
+        </div>
 
 
         <!-- list 2-->
@@ -49,14 +52,17 @@
             </div>
         </label>
         <!--4-->
-        <a class="jf_list fapiao_type" href="#">
-            <div class="jf_list_bd  ">
-                <p>开票公司</p>
-            </div>
-            <div class="jf_list_ft jf_list_arrow">
-                <input type="text"  readonly onfocus="this.blur()" placeholder="请选择开票公司"/>
-            </div>
-        </a>
+        <!-------删除有 none_right_arrow 的 div 层,则出现右边小箭头，对布局无影响------>
+        <div class="none_right_arrow">
+            <a class="jf_list fapiao_type" href="#">
+                <div class="jf_list_bd  ">
+                    <p>开票公司</p>
+                </div>
+                <div class="jf_list_ft jf_list_arrow">
+                    <input type="text"  readonly onfocus="this.blur()" placeholder="请选择开票公司"/>
+                </div>
+            </a>
+        </div>
 
 
             <!--6--带单位，题目超长-->
