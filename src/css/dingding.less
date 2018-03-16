@@ -956,6 +956,12 @@ a.payment_list{
       }
     }
 
+    .none_top_border {
+      &:after {
+        display: none;
+      }
+    }
+
     .jf_list.litter_show{
       padding: 12px 15px;
 
@@ -2026,7 +2032,7 @@ a.payment_list{
 
       .list_top {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
         padding: 5px 10px;
         p {
@@ -3797,6 +3803,7 @@ input {
   padding: 8px 0 8px 15px;
   font-size: 14px;
   color: #ababab;
+  background-color: #f2f2f2;
 }
 /*************申请结果************/
 .result_gray_fonts {
@@ -4152,8 +4159,6 @@ input {
   }
 
   .ticket_application_fonts {
-    padding: 8px 0 8px 15px;
-    font-size: 14px;
     color: #4a4a4a;
     background: none;
   }
