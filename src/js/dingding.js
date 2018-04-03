@@ -2025,6 +2025,33 @@ function showAddress(){
 
 }
 
+//开票申请查看更多
+var moreBlock={
+
+    moreBlockPlate:function () {
+
+        var clickMore=document.getElementsByClassName('look_more_btn')[0];
+
+        clickMore.addEventListener('click',function () {
+
+            var noneMore=document.getElementsByClassName('look_more_plate')[0];
+
+            if (noneMore.className.indexOf('block_more_plate')>-1) {
+
+                noneMore.className ='look_more_plate';
+
+            }else {
+
+                noneMore.className ='look_more_plate block_more_plate';
+
+            }
+
+        },false)
+
+    }
+
+}
+
 
 
 

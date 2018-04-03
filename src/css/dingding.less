@@ -4260,6 +4260,93 @@ input {
   margin-top: -10px;
 }
 
+/**开票申请展示更多**/
+.look_more_plate {
+  width: 100%;
+
+  button {
+    outline: none;
+  }
+
+}
+.look_more_btn {
+  width: 20%;
+  color: rgba(16,166,226,.8);
+  font-size: 14px;
+  background: none;
+  border: none;
+  padding-bottom: 12px;
+  margin: 0 auto;
+  display: block;
+
+  .down_rotate_icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      width: 6px;
+      height: 6px;
+      top: 0;
+      left: 0;
+      border-top: 1px rgba(16,166,226,.6) solid;
+      border-right: 1px rgba(16,166,226,.6) solid;
+      transform: rotate(135deg);
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: 6px;
+      height: 6px;
+      top: 5px;
+      left: 0;
+      border-top: 1px rgba(16,166,226,.6) solid;
+      border-right: 1px rgba(16,166,226,.6) solid;
+      transform: rotate(135deg);
+    }
+
+  }
+
+}
+
+.more_plate {
+  width: 100%;
+  height: 0;
+  transition: all .5s linear;
+}
+
+/**展示更多显示样式**/
+.block_more_plate {
+
+  .more_plate {
+    height: 145px;
+    transition: all .5s linear;
+  }
+
+  .look_more_btn {
+
+    .down_rotate_icon {
+
+      &:before {
+        top: 4px;
+        transform: rotate(315deg);
+      }
+
+      &:after {
+        top: 9px;
+        transform: rotate(315deg);
+      }
+
+    }
+
+  }
+
+}
+
 
 
 
