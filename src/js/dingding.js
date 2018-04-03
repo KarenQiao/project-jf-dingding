@@ -2050,7 +2050,49 @@ var moreBlock={
 
     }
 
-}
+};
+
+
+
+var marketMoreFn={
+
+    showFn:function(){
+        var allBar=document.getElementsByClassName('fixed_side_btn')[0];
+
+        if(allBar.className.indexOf('showMore')>-1){
+
+            allBar.className=allBar.className.replace('showMore','');
+
+            document.getElementsByClassName('origin_btn')[0].getElementsByTagName('img')[0].src='../../images/dingding/icon_btn_show.png';
+
+            document.getElementsByClassName('origin_btn')[0].getElementsByTagName('span')[0].innerText='展开'
+
+        }else {
+            allBar.className='fixed_side_btn showMore';
+
+            document.getElementsByClassName('origin_btn')[0].getElementsByTagName('img')[0].src='../../images/dingding/icon_btn_close.png';
+
+            document.getElementsByClassName('origin_btn')[0].getElementsByTagName('span')[0].innerText='收起';
+        }
+    },
+
+
+    hideFn:function(){
+        var allBar=document.getElementsByClassName('fixed_side_btn')[0];
+
+        if(allBar.className.indexOf('showMore')>-1){
+
+            allBar.className=allBar.className.replace('showMore','');
+
+            document.getElementsByClassName('origin_btn')[0].getElementsByTagName('img')[0].src='../../images/dingding/icon_btn_show.png';
+
+            document.getElementsByClassName('origin_btn')[0].getElementsByTagName('span')[0].innerText='展开';
+
+        }
+
+    }
+
+};
 
 
 
