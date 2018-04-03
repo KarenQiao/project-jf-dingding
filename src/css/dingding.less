@@ -4347,6 +4347,74 @@ input {
 
 }
 
+/***等待中动画***/
+.waiting_plate {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  max-height: 450px;
+}
+
+.waiting_icon_plate {
+  width: 55px;
+  height: 85px;
+  margin: 40px auto;
+  overflow: hidden;
+  position: relative;
+  display: block;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+}
+
+.green_water_palte {
+  width: 54px;
+  height: 48px;
+  position: absolute;
+  top: 0;
+  z-index: -2;
+  display: block;
+}
+
+.white_water_palte {
+  width: 120px;
+  height: 40px;
+  position: absolute;
+  top: 15px;
+  z-index: -1;
+  display: block;
+  animation:myfloat 4s infinite ease-in-out;
+
+  @keyframes myfloat {
+
+    0% {
+      transform: translateX(-60px);
+    }
+
+    50% {
+      transform: translateX(-5px);
+    }
+
+    100% {
+      transform: translateX(-60px);
+    }
+
+  }
+
+}
+
+
+
+
+
+
+
 
 
 
