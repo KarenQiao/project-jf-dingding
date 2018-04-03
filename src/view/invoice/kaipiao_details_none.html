@@ -614,12 +614,31 @@
 </div>
 
 
+<div class="fixed_side_btn ">
+    <div class="content cancle_order_page">
+
+        <a href="#"><img src="../../images/dingding/icon_submit_cancle1.png"><span>取消预约</span></a>
+
+    </div>
+    <a class="origin_btn" ><img src="../../images/dingding/icon_btn_show.png"><span>展开</span></a>
+
+
+</div>
+
+
 
 
 
 </body>
 
 <script>
+
+
+    //点击按钮扩展/关闭
+    document.getElementsByClassName('origin_btn')[0].addEventListener("click", marketMoreFn.showFn,false)
+
+    //页面滚动，关闭
+    addEventListener('scroll', marketMoreFn.hideFn,false)
 
 
     $('a.kaipiao_info').click(function () {
