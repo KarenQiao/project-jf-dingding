@@ -34,25 +34,39 @@
             </div>
         </div>
 
-        <!--开票公司信息-->
-        <p class="ticket_application_fonts">请输入开票公司信息（选填）</p>
+    </div>
 
-        <div class="jf_list search_company none_top_border">
-            <div class="jf_list_bd">
-                <p>开票公司</p>
-            </div>
-            <div class="jf_list_ft">
-                <input type="text"  placeholder="请输入2个关键字(选填)"/>
-            </div>
-        </div>
+    <div class="look_more_plate">
 
-        <div class="jf_list search_company">
-            <div class="jf_list_bd">
-                <p>开票科目</p>
+        <button class="look_more_btn">展示更多<span class="down_rotate_icon"></span></button>
+
+        <div class="jf_fapiao_lists">
+
+            <div class="more_plate">
+
+                <!--开票公司信息-->
+                <p class="ticket_application_fonts">请输入开票公司信息（选填）</p>
+
+                <div class="jf_list search_company none_top_border">
+                    <div class="jf_list_bd">
+                        <p>开票公司</p>
+                    </div>
+                    <div class="jf_list_ft">
+                        <input type="text"  placeholder="请输入2个关键字(选填)"/>
+                    </div>
+                </div>
+
+                <div class="jf_list search_company">
+                    <div class="jf_list_bd">
+                        <p>开票科目</p>
+                    </div>
+                    <div class="jf_list_ft">
+                        <input type="text"  placeholder="请输入2个关键字(选填)"/>
+                    </div>
+                </div>
+
             </div>
-            <div class="jf_list_ft">
-                <input type="text"  placeholder="请输入2个关键字(选填)"/>
-            </div>
+
         </div>
 
     </div>
@@ -203,6 +217,8 @@
     });
 
 
+    //点击展示更多，展开，收起
+    moreBlock.moreBlockPlate();
 
 
 
