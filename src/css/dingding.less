@@ -4548,6 +4548,69 @@ input {
 
 }
 
+/***滑动按钮***/
+.new_checkbox {
+  position: relative;
+  width: calc(100% - 95px);
+  text-align: right;
+}
+.open_close_btn {
+  position: relative;
+  &:checked {
+    &:before {
+      background-color: #00b6ff;
+      border: 1px #10a6e2 solid;
+    }
+    &:after {
+      left: -9px;
+      top: -5px;
+      border: 1px #10a6e2 solid;
+      /**box-shadow: 0 2px 2px 0 rgba(2,160,6,0.8);**/
+    }
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    background-color: #dedede;
+    z-index: 1001;
+    width: 45px;
+    height: 25px;
+    border-radius: 20px;
+    top: -5px;
+    right: -2px;
+    border: 1px #d4d4d4 solid;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    background-color: #FFFFFF;
+    border: 1px #d4d4d4 solid;
+    z-index: 1002;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    top: -5px;
+    left: -32px;
+  }
+}
+
+.orange_send_button {
+  .open_close_btn {
+
+    &:checked {
+      &:before {
+        background-color: #fc6329;
+        border: 1px #df3d00 solid;
+      }
+      &:after {
+        left: -9px;
+        top: -5px;
+        border: 1px #df3d00 solid;
+        /**box-shadow: 0 2px 2px 0 rgba(2,160,6,0.8);**/
+      }
+    }
+  }
+}
 
 
 
