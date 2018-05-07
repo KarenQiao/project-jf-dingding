@@ -173,24 +173,34 @@
             </div>
         </label>
 
-
-        <label class="jf_list choose_address">
-            <div class="jf_list_bd">
-                <p class="list_textinput">配送地址：</p>
-
-            </div>
-            <div class="jf_list_ft jf_list_arrow">
-                <textarea rows="3"  placeholder="请选择配送地址" readonly class="addressTextarea"></textarea>
-            </div>
-        </label>
-
-        <!-- list 2-->
         <label class="jf_list">
             <div class="jf_list_bd">
-                <p>收件人：</p>
+                <p>是否配送</p>
             </div>
-            <div class="jf_list_ft"><input type="text" class="name_tel" readonly/></div>
+            <div class="new_checkbox"><input type="checkbox" class="open_close_btn" checked="checked"></div>
         </label>
+
+        <div class="dress_plate">
+
+            <label class="jf_list choose_address">
+                <div class="jf_list_bd">
+                    <p class="list_textinput">配送地址：</p>
+
+                </div>
+                <div class="jf_list_ft jf_list_arrow">
+                    <textarea rows="3"  placeholder="请选择配送地址" readonly class="addressTextarea"></textarea>
+                </div>
+            </label>
+
+            <!-- list 2-->
+            <label class="jf_list">
+                <div class="jf_list_bd">
+                    <p>收件人：</p>
+                </div>
+                <div class="jf_list_ft"><input type="text" class="name_tel" readonly/></div>
+            </label>
+
+        </div>
 
     </div>
     <!-- 按钮 -->
@@ -423,6 +433,15 @@
 
 
     });
+
+
+
+    //点击是否配送，展开折叠
+   $(document).ready(function(){
+       $(".open_close_btn").click(function(){
+           $(".dress_plate").slideToggle("slow");
+       });
+   });
 
 
 
