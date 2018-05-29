@@ -635,10 +635,14 @@
 <script>
 
     //点击按钮扩展/关闭
-    document.getElementsByClassName('origin_btn')[0].addEventListener("click", marketMoreFn.showFn,false)
+    document.getElementsByClassName('origin_btn')[0].addEventListener("click",function () {
+        marketMoreFn.showFn('../../images/dingding/icon_btn_show.png','../../images/dingding/icon_btn_close.png')
+    },false)
 
     //页面滚动，关闭
-    addEventListener('scroll', marketMoreFn.hideFn,false)
+    addEventListener('scroll', function () {
+        marketMoreFn.hideFn('../../images/dingding/icon_btn_show.png')
+    },false)
 
 
     $('a.kaipiao_info').click(function () {
