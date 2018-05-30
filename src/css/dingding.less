@@ -682,6 +682,7 @@ a.payment_list{
         color: #10a6e2;
         border: solid 1px #10a6e2;
         text-align: center;
+        white-space: nowrap;
 
         a{
           color: #10a6e2;
@@ -1093,6 +1094,9 @@ a.payment_list{
   .jf_fabiao_btn {
     margin: 20px 10px 5px;
     padding-bottom: 20px;
+    .jf_btn_gray {
+      background-color: #cccccc;
+    }
     .jf_btn_blue {
       background-color: #10a6e2;
     }
@@ -4612,6 +4616,142 @@ input {
   }
 }
 
+
+/****查重页面****/
+.check_list_btn {
+
+  .payment_list {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 0;
+    border-bottom: 1px #DDDDDD solid;
+  }
+
+}
+
+.company_name_font {
+  font-size: 16px;
+}
+
+.sales_relationship_list {
+  padding: 18px 0;
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  box-align: center;
+  justify-content: flex-start;
+  margin: 0 15px;
+
+  .sales_relationship_font {
+    font-size: 14px;
+    color: #4a4a4a;
+    width: 92%;
+  }
+
+}
+
+.left_icon_plate {
+  width: 8%;
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
+
+}
+
+/*****查重无结果动画****/
+.check_repetition_amite {
+  width: 80%;
+  margin: 60px auto;
+  text-align: center;
+
+  .amite_img_plate {
+    width: 158px;
+    height: 154px;
+    display: inline-block;
+    margin-bottom: 40px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: -15px;
+      left: 5px;
+      width: 165px;
+      height: 62px;
+      background-image: url("../images/dingding/stars_icon.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      animation:mystars 3s infinite linear;
+
+      @keyframes mystars {
+
+        0% {
+          opacity: 0.3;
+        }
+
+        50% {
+          opacity: 1;
+        }
+
+        100% {
+          opacity: 0.3;
+        }
+
+      }
+
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: 55px;
+      height: 45px;
+      right: 15px;
+      top: 55px;
+      background-image: url("../images/dingding/magnifying_glass_icon.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      animation:mylookfor 5s infinite linear;
+
+      @keyframes mylookfor {
+
+        0% {
+          transform: translate(0,0);
+        }
+
+        25% {
+          transform: translate(-5px,-5px);
+        }
+
+        50% {
+          transform: translate(-10px,0);
+        }
+
+        75% {
+          transform: translate(-5px,5px);
+        }
+
+        100% {
+          transform: translate(0,0);
+        }
+
+      }
+
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+
+}
 
 
 
